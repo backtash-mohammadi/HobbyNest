@@ -10,7 +10,7 @@ import {ladeListe, speichereListe, STORAGE_KEYS} from "./utils/localStorage.js";
 import HobbyDetails from "./components/HobbyDetails.jsx";
 
 function App() {
-    const [benutzerListe] = useState(ladeListe(STORAGE_KEYS.BENUTZER) || anfangsBenutzer);
+    const [benutzerListe, setBenutzerListe] = useState(ladeListe(STORAGE_KEYS.BENUTZER) || anfangsBenutzer);
     const [beitraege, setBeitraege] = useState(ladeListe(STORAGE_KEYS.BEITRAEGE) || anfangsBeitraege);
     const [kommentare, setKommentare] = useState(ladeListe(STORAGE_KEYS.KOMMENTARE) || anfangsKommentare);
     // const [currentUser, setCurrentUser] = useState(null);
@@ -46,6 +46,10 @@ function App() {
         localStorage.removeItem('currentUser');
     }
 
+    function handleRegistrierung(n){
+        setBenutzerListe(prev=>[...prev,n]);
+    }
+
     return (
         <>
             <div className="fixed inset-0 -z-10">
@@ -53,7 +57,7 @@ function App() {
             </div>
 
             <Navbar />
-            <Navbar benutzerListe={benutzerListe} onLogin={handleLogin} currentUser={aktuellerBenutzer} onLogout={handleLogout}/>
+            <Navbar benutzerListe={benutzerListe} onLogin={handleLogin} currentUser={aktuellerBenutzer} onLogout={handleLogout} onRegistrieren={handleRegistrierung}/>
             <Routes>
                 <Route path="/" element={<Home benutzern={benutzerListe} beitraege={beitraege} kommentare={kommentare} benutzer={aktuellerBenutzer} />} />
                 {beitraege.map(beitrag => (

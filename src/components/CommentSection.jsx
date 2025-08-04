@@ -7,7 +7,7 @@ import {ladeListe, speichereListe, STORAGE_KEYS} from "../utils/localStorage.js"
 import {anfangsKommentare} from "../data/anfangsDaten.js";
 
 // Main component for displaying and submitting comments
-const CommentSection = ({ postId  }) => {
+const CommentSection = ({postId, benutzer, post}) => {
     // State for the list of comments
     // const [kommentare, setKommentare] = useState([]);
     //
@@ -81,7 +81,7 @@ const CommentSection = ({ postId  }) => {
             hour: "2-digit",
             minute: "2-digit",
         })
-        const neuerKommentar = { id: crypto.randomUUID(), beitragId: postId, autorId: '100', inhalt, erstelltAm: now};
+        const neuerKommentar = { id: crypto.randomUUID(), beitragId: postId, autorId: benutzer.id, inhalt, erstelltAm: now};
         setKommentare(prev => [...prev, neuerKommentar]);
         setInhalt("");
     }
@@ -91,7 +91,6 @@ const CommentSection = ({ postId  }) => {
     }
 
     const [inhalt, setInhalt] = useState('');
-
     return (
         <FaRegCommentAlt />,
             <div className="mt-10 max-w-2xl mx-auto bg-[var(--cl-surface0)] text-[var(--cl-text-name)] p-6 rounded-xl shadow-md">
@@ -116,15 +115,17 @@ const CommentSection = ({ postId  }) => {
                                 className="bg-[var(--cl-surface1)] p-4 rounded-md border border-[var(--cl-surface2)]"
                             >
                                 <div className="flex justify-between text-sm font-semibold">
-                                    {/*<span>{c.name}</span>*/}
+                                    {/*<span>{benutzer.benutzername}</span>*/}
                                     <span className="text-xs text-[var(--cl-subtext1)]">
                                 </span>
 
+                                    {/*Der DeleteButton ist nur für Admin und für den Author des Kommentares sichtbar*/}
+                                    { benutzer && (benutzer.id === c.autorId || benutzer.rolle === "admin") &&
                                     <div className="flex items-center space-x-2">
                                         <span className="text-xs text-[var(--cl-subtext1)]">{c.erstelltAm}</span>
                                         <DeleteButton onClick={() => handleKommentarLoeschen(c.id)} />
                                     </div>
-
+                                    }
                                 </div>
                                 <p className="mt-2 text-[var(--cl-subtext0)]">{c.inhalt}</p>
                             </motion.li>
@@ -132,7 +133,10 @@ const CommentSection = ({ postId  }) => {
                     </ul>
                 )}
 
+
                 {/* Comment input form */}
+                {/*The form is available only if the user is logged in/registered.*/}
+                { benutzer &&
                 <form onSubmit={kommentarHinzufuegen} className="space-y-3">
                     {/*<input*/}
                     {/*    name="name"*/}
@@ -165,6 +169,7 @@ const CommentSection = ({ postId  }) => {
                         Absenden
                     </motion.button>
                 </form>
+                }
             </div>
     );
 };

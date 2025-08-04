@@ -20,6 +20,8 @@ function App() {
     // const [currentUser, setCurrentUser] = useState(null);
     const [aktuellerBenutzer, setAktuellerBenutzer] = useState(JSON.parse(localStorage.getItem('currentUser')) || null);
     const [wasDeleted, setWasDeleted] = useState(false);
+    const [bearbeitetBeitrag, setBearbeitetBeitrag] = useState(null);
+
 
     useEffect(() => {
         speichereListe(STORAGE_KEYS.BENUTZER, benutzerListe);
@@ -33,7 +35,13 @@ function App() {
             setWasDeleted(false); // Reset flag
             navigate('/');        // Redirect to home
         }
-    }, [beitraege, wasDeleted, navigate]);
+        if(bearbeitetBeitrag){
+            const URL = `/${bearbeitetBeitrag.ueberschrift}`;
+            setBearbeitetBeitrag(null);
+            navigate(URL);
+        }
+
+    }, [beitraege, wasDeleted, navigate, bearbeitetBeitrag]);
 
     useEffect(() => {
         speichereListe(STORAGE_KEYS.KOMMENTARE, kommentare);
@@ -67,8 +75,8 @@ function App() {
         setBeitraege(prev =>
             prev.map(b => b.id === aktualisierterBeitrag.id ? aktualisierterBeitrag : b)
         );
+        setBearbeitetBeitrag(aktualisierterBeitrag);
     }
-
 
     return (
         <>

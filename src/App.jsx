@@ -20,6 +20,7 @@ function App() {
         speichereListe(STORAGE_KEYS.BENUTZER, benutzerListe);
     }, [benutzerListe]);
 
+
     useEffect(() => {
         speichereListe(STORAGE_KEYS.BEITRAEGE, beitraege);
     }, [beitraege]);

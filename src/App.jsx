@@ -56,11 +56,19 @@ function App() {
         localStorage.removeItem('currentUser');
     }
 
-    // delete a pos/Beitrag/hobby from the Beiträge array.
+    // Delete a pos/Beitrag/hobby from the Beiträge array.
     function handleBeitragLoeschen(beitragId){
         setBeitraege(prev => prev.filter(k => k.id !== beitragId));
         setWasDeleted(true);
     }
+
+    // Modifies the Beitrag/post that was edited in the HobbyDetails component.
+    function handleBeitragBearbeiten(aktualisierterBeitrag) {
+        setBeitraege(prev =>
+            prev.map(b => b.id === aktualisierterBeitrag.id ? aktualisierterBeitrag : b)
+        );
+    }
+
 
     return (
         <>
@@ -76,7 +84,7 @@ function App() {
                     <Route
                         key={beitrag.ueberschrift}
                         path={`/${beitrag.ueberschrift}`}
-                        element={<HobbyDetails hobby={beitrag} benutzer={aktuellerBenutzer} benutzern={benutzerListe} onBeitragLoeschen={handleBeitragLoeschen}/>}
+                        element={<HobbyDetails hobby={beitrag} benutzer={aktuellerBenutzer} benutzern={benutzerListe} onBeitragLoeschen={handleBeitragLoeschen} onBeitragBearbeiten={handleBeitragBearbeiten}/>}
                     />
                 ))}
             </Routes>

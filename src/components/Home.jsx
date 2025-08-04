@@ -39,7 +39,6 @@ const Home = (props) => {
         "#f472b6"  // rose
     ];
 
-
     const boxStyle = {
         width: 25,
         height: 25,
@@ -70,12 +69,13 @@ const Home = (props) => {
                 {/* Right: List of Featured Hobby Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                     {props.beitraege.map((hobby) => (
-                        <FeaturedHobby key={hobby.id} hobby={hobby} />
+                        <FeaturedHobby key={hobby.id} hobby={hobby} kommentare={props.kommentare}/>
                     ))}
                 </div>
             </div>
-
-            <CommentSection />
+            {/* Ich habe die CommentSection Component innerhalb dem HobbyDetails component versetzt.  */}
+            {/*Auf Wunsch, kann man auch die ganze Liste der Kommentare hier in Home page sichtbar lassen.*/}
+            {/*<CommentSection />*/}
         </div>
     );
 };

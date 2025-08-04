@@ -59,7 +59,7 @@ function App() {
                     <Route
                         key={beitrag.ueberschrift}
                         path={`/${beitrag.ueberschrift}`}
-                        element={<HobbyDetails hobby={beitrag} />}
+                        element={<HobbyDetails hobby={beitrag} benutzer={aktuellerBenutzer} />}
                     />
                 ))}
             </Routes>

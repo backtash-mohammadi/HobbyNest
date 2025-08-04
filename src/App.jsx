@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home.jsx';
+import { useNavigate } from 'react-router-dom';
+
 import CommentSection from './components/CommentSection.jsx';
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
@@ -10,20 +12,28 @@ import {ladeListe, speichereListe, STORAGE_KEYS} from "./utils/localStorage.js";
 import HobbyDetails from "./components/HobbyDetails.jsx";
 
 function App() {
+    const navigate = useNavigate();
+
     const [benutzerListe] = useState(ladeListe(STORAGE_KEYS.BENUTZER) || anfangsBenutzer);
     const [beitraege, setBeitraege] = useState(ladeListe(STORAGE_KEYS.BEITRAEGE) || anfangsBeitraege);
     const [kommentare, setKommentare] = useState(ladeListe(STORAGE_KEYS.KOMMENTARE) || anfangsKommentare);
     // const [currentUser, setCurrentUser] = useState(null);
     const [aktuellerBenutzer, setAktuellerBenutzer] = useState(JSON.parse(localStorage.getItem('currentUser')) || null);
+    const [wasDeleted, setWasDeleted] = useState(false);
 
     useEffect(() => {
         speichereListe(STORAGE_KEYS.BENUTZER, benutzerListe);
     }, [benutzerListe]);
 
 
+    // useEffect updated to redirect the user to the home page, after the post is removed.
     useEffect(() => {
         speichereListe(STORAGE_KEYS.BEITRAEGE, beitraege);
-    }, [beitraege]);
+        if (wasDeleted) {
+            setWasDeleted(false); // Reset flag
+            navigate('/');        // Redirect to home
+        }
+    }, [beitraege, wasDeleted, navigate]);
 
     useEffect(() => {
         speichereListe(STORAGE_KEYS.KOMMENTARE, kommentare);
@@ -46,6 +56,12 @@ function App() {
         localStorage.removeItem('currentUser');
     }
 
+    // delete a pos/Beitrag/hobby from the Beiträge array.
+    function handleBeitragLoeschen(beitragId){
+        setBeitraege(prev => prev.filter(k => k.id !== beitragId));
+        setWasDeleted(true);
+    }
+
     return (
         <>
             <div className="fixed inset-0 -z-10">
@@ -60,7 +76,7 @@ function App() {
                     <Route
                         key={beitrag.ueberschrift}
                         path={`/${beitrag.ueberschrift}`}
-                        element={<HobbyDetails hobby={beitrag} benutzer={aktuellerBenutzer} benutzern={benutzerListe}/>}
+                        element={<HobbyDetails hobby={beitrag} benutzer={aktuellerBenutzer} benutzern={benutzerListe} onBeitragLoeschen={handleBeitragLoeschen}/>}
                     />
                 ))}
             </Routes>

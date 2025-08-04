@@ -3,29 +3,29 @@ import { motion } from "framer-motion";
 import CommentSection from "./CommentSection.jsx";
 import FeaturedHobby from "./FeaturedHobby.jsx";
 
-const Home = (props) => {
-    // const featuredHobbies = [
-    //     {
-    //         id: "chess101",
-    //         title: "Getting Started with Chess",
-    //         short: "Learn the basics of chess — the board, the pieces, and beginner strategies.",
-    //     },
-    //     {
-    //         id: "music101",
-    //         title: "Learn to Play Music",
-    //         short: "Explore musical instruments, rhythm, and melody to start your music journey.",
-    //     },
-    //     {
-    //         id: "books101",
-    //         title: "Reading for Beginners",
-    //         short: "Tips on how to build a reading habit and enjoy books.",
-    //     },
-    //     {
-    //         id: "cooking101",
-    //         title: "Start Cooking at Home",
-    //         short: "Learn simple recipes and kitchen tips for delicious home cooking.",
-    //     },
-    // ];
+const Home = () => {
+    const featuredHobbies = [
+        {
+            id: "chess101",
+            title: "Getting Started with Chess",
+            short: "Learn the basics of chess — the board, the pieces, and beginner strategies.",
+        },
+        {
+            id: "music101",
+            title: "Learn to Play Music",
+            short: "Explore musical instruments, rhythm, and melody to start your music journey.",
+        },
+        {
+            id: "books101",
+            title: "Reading for Beginners",
+            short: "Tips on how to build a reading habit and enjoy books.",
+        },
+        {
+            id: "cooking101",
+            title: "Start Cooking at Home",
+            short: "Learn simple recipes and kitchen tips for delicious home cooking.",
+        },
+    ];
 
     const colors = [
         "#ff0088", // pink
@@ -38,6 +38,7 @@ const Home = (props) => {
         "#38bdf8", // blue
         "#f472b6"  // rose
     ];
+
 
     const boxStyle = {
         width: 25,
@@ -68,14 +69,13 @@ const Home = (props) => {
 
                 {/* Right: List of Featured Hobby Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                    {props.beitraege.map((hobby) => (
-                        <FeaturedHobby key={hobby.id} hobby={hobby} kommentare={props.kommentare}/>
+                    {featuredHobbies.map((hobby) => (
+                        <FeaturedHobby key={hobby.id} hobby={hobby} />
                     ))}
                 </div>
             </div>
-            {/* Ich habe die CommentSection Component innerhalb dem HobbyDetails component versetzt.  */}
-            {/*Auf Wunsch, kann man auch die ganze Liste der Kommentare hier in Home page sichtbar lassen.*/}
-            {/*<CommentSection />*/}
+
+            <CommentSection />
         </div>
     );
 };

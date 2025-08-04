@@ -17,7 +17,7 @@ function App() {
     const [benutzerListe, setBenutzerListe] = useState(ladeListe(STORAGE_KEYS.BENUTZER) || anfangsBenutzer);
     const navigate = useNavigate();
 
-    const [benutzerListe] = useState(ladeListe(STORAGE_KEYS.BENUTZER) || anfangsBenutzer);
+    // const [benutzerListe] = useState(ladeListe(STORAGE_KEYS.BENUTZER) || anfangsBenutzer);
     const [beitraege, setBeitraege] = useState(ladeListe(STORAGE_KEYS.BEITRAEGE) || anfangsBeitraege);
     const [kommentare, setKommentare] = useState(ladeListe(STORAGE_KEYS.KOMMENTARE) || anfangsKommentare);
     const [currentUser, setCurrentUser] = useState(null);

@@ -39,6 +39,7 @@ const Home = (props) => {
         "#f472b6"  // rose
     ];
 
+
     const boxStyle = {
         width: 25,
         height: 25,

@@ -109,28 +109,28 @@ const CommentSection = ({postId, benutzer, benutzern}) => {
                         {kommentare
                             .filter(c => c.beitragId === postId)
                             .map((c) => (
-                            <motion.li
-                                key={c.id}
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 1.2 }}
-                                className="bg-[var(--cl-surface1)] p-4 rounded-md border border-[var(--cl-surface2)]"
-                            >
-                                <div className="flex justify-between text-sm font-semibold">
-                                    <span>{benutzern.find(b => b.id === c.autorId)?.benutzername || "Unbekannt"}</span>
-                                    <span className="text-xs text-[var(--cl-subtext1)]">
+                                <motion.li
+                                    key={c.id}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 1.2 }}
+                                    className="bg-[var(--cl-surface1)] p-4 rounded-md border border-[var(--cl-surface2)]"
+                                >
+                                    <div className="flex justify-between text-sm font-semibold">
+                                        <span>{benutzern.find(b => b.id === c.autorId)?.benutzername || "Unbekannt"}</span>
+                                        <span className="text-xs text-[var(--cl-subtext1)]">
                                 </span>
 
-                                    {/*Der DeleteButton ist nur für Admin und für den Author des Kommentares sichtbar*/}
-                                    { benutzer && (benutzer.id === c.autorId || benutzer.rolle === "admin") &&
-                                    <div className="flex items-center space-x-2">
-                                        <span className="text-xs text-[var(--cl-subtext1)]">{c.erstelltAm}</span>
-                                        <DeleteButton onClick={() => handleKommentarLoeschen(c.id)} />
+                                        {/*Der DeleteButton ist nur für Admin und für den Author des Kommentares sichtbar*/}
+                                        { benutzer && (benutzer.id === c.autorId || benutzer.rolle === "admin") &&
+                                            <div className="flex items-center space-x-2">
+                                                <span className="text-xs text-[var(--cl-subtext1)]">{c.erstelltAm}</span>
+                                                <DeleteButton onClick={() => handleKommentarLoeschen(c.id)} />
+                                            </div>
+                                        }
                                     </div>
-                                    }
-                                </div>
-                                <p className="mt-2 text-[var(--cl-subtext0)]">{c.inhalt}</p>
-                            </motion.li>
-                        ))}
+                                    <p className="mt-2 text-[var(--cl-subtext0)]">{c.inhalt}</p>
+                                </motion.li>
+                            ))}
                     </ul>
                 )}
 
@@ -138,38 +138,38 @@ const CommentSection = ({postId, benutzer, benutzern}) => {
                 {/* Comment input form */}
                 {/*The form is available only if the user is logged in/registered.*/}
                 { benutzer &&
-                <form onSubmit={kommentarHinzufuegen} className="space-y-3">
-                    {/*<input*/}
-                    {/*    name="name"*/}
-                    {/*    value={form.name}*/}
-                    {/*    onChange={verarbeiteAenderung}*/}
-                    {/*    placeholder="Name"*/}
-                    {/*    required*/}
-                    {/*    className="w-full p-3 rounded-md bg-[var(--cl-surface1)] text-[var(--cl-text-name)]*/}
-                    {/*placeholder:text-[var(--cl-subtext1)]*/}
-                    {/*border border-[var(--cl-teal)]*/}
-                    {/*focus:outline-none focus:ring-2 focus:ring-[var(--cl-green)] transition"*/}
-                    {/*/>*/}
-                    <textarea
-                        name="text"
-                        value={inhalt}
-                        onChange={e => setInhalt(e.target.value)}
-                        placeholder="Kommentar"
-                        required
-                        className="w-full p-3 rounded-md bg-[var(--cl-surface1)] text-[var(--cl-text-name)]
+                    <form onSubmit={kommentarHinzufuegen} className="space-y-3">
+                        {/*<input*/}
+                        {/*    name="name"*/}
+                        {/*    value={form.name}*/}
+                        {/*    onChange={verarbeiteAenderung}*/}
+                        {/*    placeholder="Name"*/}
+                        {/*    required*/}
+                        {/*    className="w-full p-3 rounded-md bg-[var(--cl-surface1)] text-[var(--cl-text-name)]*/}
+                        {/*placeholder:text-[var(--cl-subtext1)]*/}
+                        {/*border border-[var(--cl-teal)]*/}
+                        {/*focus:outline-none focus:ring-2 focus:ring-[var(--cl-green)] transition"*/}
+                        {/*/>*/}
+                        <textarea
+                            name="text"
+                            value={inhalt}
+                            onChange={e => setInhalt(e.target.value)}
+                            placeholder="Kommentar"
+                            required
+                            className="w-full p-3 rounded-md bg-[var(--cl-surface1)] text-[var(--cl-text-name)]
                     placeholder:text-[var(--cl-subtext1)]
                     border border-[var(--cl-teal)]
                     shadow-[0_0_6px_1px_var(--cl-teal)]
                     focus:outline-none focus:ring-2 focus:ring-[var(--cl-green)] transition"
-                    />
-                    <motion.button
-                        type="submit"
-                        whileHover={{ scale: 1.2 }}
-                        className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
-                    >
-                        Absenden
-                    </motion.button>
-                </form>
+                        />
+                        <motion.button
+                            type="submit"
+                            whileHover={{ scale: 1.2 }}
+                            className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
+                        >
+                            Absenden
+                        </motion.button>
+                    </form>
                 }
             </div>
     );

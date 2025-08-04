@@ -18,9 +18,13 @@ const HobbyDetails = (props) => {
         return <p className="text-red-500">Hobby not found</p>;
     }
 
-
     return (
         <>
+            <div className="p-6 max-w-2xl mx-auto bg-white shadow rounded-xl mt-4">
+                <h1 className="text-3xl font-bold mb-2 text-[var(--cl-green)]">{props.hobby.ueberschrift}</h1>
+                <p className="mb-4 text-gray-700">{props.hobby.inhalt}</p>
+                {/*<p className="text-sm text-gray-500">Category: {hobby.category}</p>*/}
+            </div>
         <div className="p-6 max-w-2xl mx-auto bg-white shadow rounded-xl mt-4">
             <div className="flex justify-between">
                 <h1 className="text-3xl font-bold mb-2 text-[var(--cl-green)]">{props.hobby.ueberschrift}</h1>
@@ -44,6 +48,7 @@ const HobbyDetails = (props) => {
             {/*<p className="text-sm text-gray-500">Category: {hobby.category}</p>*/}
         </div>
 
+            {/*    Hier habe ich die Kommentare hinzugefügt, die zum Post/Hobby/Beitrag gehören*/}
             {/* This is the edit post section. It shows on screen when the admin clicks on "Bearbeiten" Button.*/}
             {editBeitragId === props.hobby.id && props.benutzer && props.benutzer.rolle === "admin" &&
                 <div className="p-6 max-w-2xl mx-auto bg-white shadow rounded-xl mt-4">

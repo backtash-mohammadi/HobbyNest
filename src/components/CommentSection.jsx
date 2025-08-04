@@ -6,6 +6,7 @@ import DeleteButton from "./DeleteButton.jsx";
 import {ladeListe, speichereListe, STORAGE_KEYS} from "../utils/localStorage.js";
 import {anfangsKommentare} from "../data/anfangsDaten.js";
 
+
 // Main component for displaying and submitting comments
 const CommentSection = ({postId, benutzer, benutzern}) => {
     // State for the list of comments

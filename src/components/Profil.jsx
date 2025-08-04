@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import bcrypt from "bcryptjs";
 import {
     Card,
     CardHeader,
@@ -11,7 +12,10 @@ import {
 import { FaSignOutAlt, FaTimes, FaUpload, FaEdit } from "react-icons/fa";
 
 // Komponente für Benutzerprofil mit Bearbeitungsfunktion
-export function Profil({ aktuellerBenutzer, onLogout, onClose, onSpeichern }) {
+export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSpeichern }) {
+    // Nur Admin darf Rolle ändern und nicht sich selbst
+    const darfRolleAendern = currentUser?.rolle === "admin" && currentUser.id !== aktuellerBenutzer.id;
+
     // Lokale Zustände für Bearbeitung
     const [bearbeitungsModus, setBearbeitungsModus] = useState(false);
     const [vorname, setVorname] = useState(aktuellerBenutzer.vorname);
@@ -20,6 +24,11 @@ export function Profil({ aktuellerBenutzer, onLogout, onClose, onSpeichern }) {
     const [foto, setFoto] = useState(aktuellerBenutzer.foto);
     const [rolle, setRolle] = useState(aktuellerBenutzer.rolle);
     const fileInputRef = useRef(null);
+    // Neue Zustände für Passwortänderung
+    const [aktuellesPasswort, setAktuellesPasswort] = useState("");
+    const [neuesPasswort, setNeuesPasswort] = useState("");
+    const [passwortBestaetigung, setPasswortBestaetigung] = useState("");
+    const [passwortFehler, setPasswortFehler] = useState("");
 
     // Datum formatieren
     const datum = new Date(aktuellerBenutzer.erstelltAm).toLocaleDateString("de-DE", {
@@ -37,18 +46,43 @@ export function Profil({ aktuellerBenutzer, onLogout, onClose, onSpeichern }) {
         reader.readAsDataURL(file);
     };
 
-    // Speichern-Handler
+    // Speichern Handler
     const handleSpeichern = () => {
+        // Passwort ändern, wenn eingegeben
+        let passwortHash = aktuellerBenutzer.passwortHash;
+        if (aktuellesPasswort || neuesPasswort || passwortBestaetigung) {
+            // Prüfen aktuelles Passwort
+            if (!bcrypt.compareSync(aktuellesPasswort, aktuellerBenutzer.passwortHash)) {
+                setPasswortFehler("Aktuelles Passwort ist falsch.");
+                return;
+            }
+            if (neuesPasswort !== passwortBestaetigung) {
+                setPasswortFehler("Neue Passwörter stimmen nicht überein.");
+                return;
+            }
+            if (neuesPasswort.length < 8) {
+                setPasswortFehler("Neues Passwort muss mindestens 8 Zeichen lang sein.");
+                return;
+            }
+            passwortHash = bcrypt.hashSync(neuesPasswort, bcrypt.genSaltSync(10));
+        }
+
         const aktualisierterBenutzer = {
             ...aktuellerBenutzer,
             vorname,
             nachname,
             email,
             foto,
-            rolle,
+            rolle: darfRolleAendern ? rolle : aktuellerBenutzer.rolle,
+            passwortHash,
         };
         onSpeichern(aktualisierterBenutzer);
         setBearbeitungsModus(false);
+        // Reset Passwortfelder
+        setAktuellesPasswort("");
+        setNeuesPasswort("");
+        setPasswortBestaetigung("");
+        setPasswortFehler("");
     };
 
     return (
@@ -121,24 +155,58 @@ export function Profil({ aktuellerBenutzer, onLogout, onClose, onSpeichern }) {
                         )}
                     </CardHeader>
 
-                    <CardBody className="p-6 space-y-6 ">
-                        {/* E-Mail oder Eingabe */}
+                    <CardBody className="p-6 space-y-4">
                         {bearbeitungsModus ? (
-                            <Input
-                                type="email"
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
-                                size="lg"
-                                label="E-Mail"
-                            />
+                            <div className="w-full flex flex-col gap-8">
+                                <Input
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    size="lg"
+                                    label="E-Mail"
+                                />
+                                {/* Passwortänderung nur für sich selbst */}
+                                {currentUser.id === aktuellerBenutzer.id && (
+                                    <>
+                                        <Input
+                                            type="password"
+                                            value={aktuellesPasswort}
+                                            onChange={(e) => setAktuellesPasswort(e.target.value)}
+                                            size="lg"
+                                            label="Aktuelles Passwort"
+                                        />
+                                        <Input
+                                            type="password"
+                                            value={neuesPasswort}
+                                            onChange={(e) => setNeuesPasswort(e.target.value)}
+                                            size="lg"
+                                            label="Neues Passwort"
+                                        />
+                                        <Input
+                                            type="password"
+                                            value={passwortBestaetigung}
+                                            onChange={(e) => setPasswortBestaetigung(e.target.value)}
+                                            size="lg"
+                                            label="Passwort bestätigen"
+                                        />
+                                        {passwortFehler && (
+                                            <Typography variant="small" color="red">
+                                                {passwortFehler}
+                                            </Typography>
+                                        )}
+                                    </>
+                                )}
+                            </div>
                         ) : (
                             <Typography variant="small" className="block">
                                 <span className="font-bold">E-Mail:</span> {email}
                             </Typography>
                         )}
 
+
+
                         {/* Rolle oder Auswahl */}
-                        {bearbeitungsModus ? (
+                        {bearbeitungsModus && darfRolleAendern ? (
                             <div>
                                 <label className="block mb-1 font-bold">Rolle</label>
                                 <select
@@ -174,7 +242,7 @@ export function Profil({ aktuellerBenutzer, onLogout, onClose, onSpeichern }) {
                                     Abbrechen
                                 </Button>
                                 <Button
-                                    variant="gradient"
+                                    variant="outlined"
                                     size="sm"
                                     onClick={handleSpeichern}
                                     className="flex items-center gap-2"
@@ -201,7 +269,7 @@ export function Profil({ aktuellerBenutzer, onLogout, onClose, onSpeichern }) {
                                     <FaEdit /> Bearbeiten
                                 </Button>
                                 <Button
-                                    variant="gradient"
+                                    variant="outlined"
                                     size="sm"
                                     onClick={onLogout}
                                     className="flex items-center gap-2"

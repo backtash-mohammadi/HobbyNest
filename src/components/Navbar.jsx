@@ -88,6 +88,7 @@ const Navbar = ({
             {profileOffen && currentUser && (
                 <Profil
                     aktuellerBenutzer={currentUser}
+                    currentUser={currentUser}
                     onBearbeiten={onBearbeiten}
                     onLogout={onLogout}
                     onClose={toggleProfileOffen}

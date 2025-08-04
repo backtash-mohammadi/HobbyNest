@@ -42,7 +42,7 @@ const Navbar = ({ benutzerListe, onLogin, currentUser, onLogout, onRegistrieren,
                             <motion.button
                                 type="button"
                                 whileHover={{ scale: 1.2 }}
-                                className="text-[var(--cl-text)] text-2xl"
+                                className="text-[var(--cl-green)] text-2xl"
                                 onClick={toggleProfileOffen}
                                 aria-label="Profil öffnen"
                             >
@@ -63,14 +63,14 @@ const Navbar = ({ benutzerListe, onLogin, currentUser, onLogout, onRegistrieren,
 
             {/* Profil-Modal */}
             {profileOffen && currentUser && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+
                     <Profil
                         aktuellerBenutzer={currentUser}
                         onLogout={onLogout}
                         onBearbeiten={onBearbeiten}
                         onClose={toggleProfileOffen}
                     />
-                </div>
+
             )}
         </nav>
     );

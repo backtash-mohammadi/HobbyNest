@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, {useRef, useState} from "react";
 import bcrypt from "bcryptjs";
 import {
     Card,
     CardBody,
     Typography,
     Input,
-    Checkbox,
+    Checkbox, Button, Avatar,
 } from "@material-tailwind/react";
 import { motion } from "framer-motion";
+import {FaUpload} from "react-icons/fa";
 
 // Komponente für Benutzerregistrierung, gesteuert von übergeordnetem Dialog
 export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
@@ -18,7 +19,20 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
     const [vorname, setVorname] = useState("");
     const [nachname, setNachname] = useState("");
     const [email, setEmail] = useState("");
+    const [foto, setFoto] = useState(""); // Base64-String des Bildes
     const [fehler, setFehler] = useState("");
+    // Ref für verstecktes File-Input
+    const fileInputRef = useRef(null);
+
+
+    // Handler zum Einlesen der Bilddatei
+    const handleFotoChange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => setFoto(reader.result);
+        reader.readAsDataURL(file);
+    };
 
     // Handler für Registrierung
     const handleRegistrierung = (e) => {
@@ -56,7 +70,7 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
             vorname,
             nachname,
             email,
-            foto: '',
+            foto,
             erstelltAm: new Date().toISOString(),
         };
         // Callback ausführen
@@ -88,6 +102,17 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                         <Typography variant="small" color="red">
                             {fehler}
                         </Typography>
+                    )}
+
+                    {/* Vorschau des ausgewählten Fotos */}
+                    {foto && (
+                        <Avatar
+                            src={foto}
+                            alt="Profilfoto"
+                            size="xl"
+                            variant="circular"
+                            className="mx-auto"
+                        />
                     )}
 
                     <form onSubmit={handleRegistrierung} className="flex flex-col gap-4">
@@ -133,9 +158,25 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                             placeholder="E-Mail"
                             size="lg"
                         />
-                        <div className="-ml-2.5 -mt-3">
-                            <Checkbox label="Angemeldet bleiben" />
-                        </div>
+
+                        {/* Verstecktes File-Input */}
+                        <input
+                            ref={fileInputRef}
+                            type="file"
+                            accept="image/*"
+                            onChange={handleFotoChange}
+                            className="hidden"
+                        />
+                        {/* Button zum Auslösen des File-Dialogs */}
+                        <Button
+                            variant="outlined"
+                            size="sm"
+                            onClick={() => fileInputRef.current.click()}
+                            className="flex items-center gap-2"
+                        >
+                            <FaUpload /> Profilfoto auswählen
+                        </Button>
+
                         <motion.button
                             type="submit"
                             whileHover={{ scale: 1.1 }}

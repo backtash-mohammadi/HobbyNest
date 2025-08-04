@@ -69,29 +69,17 @@ export function DialogWithForm({ benutzerListe, onLogin }) {
                             >
                                 Gib deine Benutzername und dein Passwort ein, um dich anzumelden.
                             </Typography>
-                            <Typography className="-mb-2" variant="h6"> Deine Email </Typography>
-                            <Input placeholder={"Email"}  size="lg" />
-                            <Typography className="-mb-2" variant="h6"> Dein Password</Typography>
-                            <Input placeholder={"Passwort"}  size="lg" />
-                            <div className="-ml-2.5 -mt-3">
-                                <Checkbox label="Remember Me" />
-                            </div>
 
                             {/* Role Toggle */}
 
 
                         </CardBody>
 
-                        <CardFooter className="pt-2">
-                            <Typography className="-mb-2" variant="h6"> Deine Benutzername </Typography>
-                        </CardFooter>
-
                         {/* Button */}
                         <CardFooter className="pt-2">
                             <div>
-
-
-                            <form onSubmit={handleAnmeldung} className="flex flex-col gap-4">
+                                <form onSubmit={handleAnmeldung} className="flex flex-col gap-4">
+                                <Typography className="-mb-2" variant="h6"> Deine Benutzername </Typography>
                                 <Input
                                     value={bn}
                                     onChange={e => setBn(e.target.value)}

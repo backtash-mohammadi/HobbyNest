@@ -11,6 +11,7 @@ import {
 } from "@material-tailwind/react";
 import {motion} from "framer-motion";
 import {FaUser} from "react-icons/fa";
+import RoleToggle from "./RoleToggle.jsx";
 
 //https://www.material-tailwind.com/docs/react/dialog#signup
 
@@ -33,6 +34,8 @@ export function DialogWithForm() {
 
             {open && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+
+                    {/* Dialog card  */}
                     <Card className="w-full max-w-[24rem] bg-[var(--cl-base)]">
                         <CardBody className="flex flex-col gap-4">
                             {/* The message inside the dialog */}
@@ -48,18 +51,21 @@ export function DialogWithForm() {
                             >
                                 Gib deine E-Mail-Adresse und dein Passwort ein, um dich anzumelden.
                             </Typography>
-                            <Typography className="-mb-2" variant="h6">
-                                Deine Email
-                            </Typography>
+                            <Typography className="-mb-2" variant="h6"> Deine Email </Typography>
                             <Input placeholder={"Email"}  size="lg" />
-                            <Typography className="-mb-2" variant="h6">
-                                Dein Password
-                            </Typography>
+                            <Typography className="-mb-2" variant="h6"> Dein Password</Typography>
                             <Input placeholder={"Passwort"}  size="lg" />
                             <div className="-ml-2.5 -mt-3">
                                 <Checkbox label="Remember Me" />
                             </div>
+
+                            {/* Role Toggle */}
+                            <div className="mt-2">
+                                <RoleToggle />
+                            </div>
+
                         </CardBody>
+
                         {/* Button */}
                         <CardFooter className="pt-2">
                             <div className="flex justify-center">

@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import RoleToggle from "./RoleToggle.jsx";
+
 import {DialogWithForm} from "./DialogWithForm.jsx";
 
 // https://react-icons.github.io/react-icons/search/#q=message
@@ -16,7 +16,7 @@ const Navbar = () => {
                     </li>
                     {/* Add more links here if needed */}
                 </ul>
-                <RoleToggle />
+
                 <DialogWithForm/>
             </div>
         </nav>

@@ -33,7 +33,7 @@
 }
 
 body {
-  background-color: var(--cl-base);
+  background-color: rgba(255, 255, 255, 0.8);
   color: var(--cl-text);
   padding-top: 5rem;
   box-sizing: border-box;

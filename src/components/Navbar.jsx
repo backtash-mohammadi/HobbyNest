@@ -1,11 +1,11 @@
-
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import {DialogWithForm} from "./DialogWithForm.jsx";
 
 // https://react-icons.github.io/react-icons/search/#q=message
 
-const Navbar = () => {
+const Navbar = ({ benutzerListe, onLogin, currentUser, onLogout }) => {
     return (
         <nav className="w-full fixed top-0 left-0 bg-[var(--cl-surface0)] text-[var(--cl-text)] z-50 shadow-md">
             <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -17,7 +17,21 @@ const Navbar = () => {
                     {/* Add more links here if needed */}
                 </ul>
 
-                <DialogWithForm/>
+                {currentUser && <>
+                <div>
+                    <p className="text-sm font-medium text-[var(--cl-subtext0)]">Sie sind angemeldet als {currentUser.benutzername}</p>
+
+                </div>
+                <div>
+                    <motion.button                         type="submit"
+                                                           whileHover={{ scale: 1.1 }}
+                                                           className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
+                                                           onClick={onLogout}>Abmelden
+                    </motion.button>
+                </div>
+                </>
+                }
+                <DialogWithForm benutzerListe={benutzerListe} onLogin={onLogin}/>
             </div>
         </nav>
     );

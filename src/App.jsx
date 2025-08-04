@@ -9,6 +9,7 @@ import {useEffect, useState} from "react";
 import {ladeListe, speichereListe, STORAGE_KEYS} from "./utils/localStorage.js";
 import { Profil } from "./components/Profil.jsx";
 import { AdminBenutzerVerwaltung } from "./components/AdminBenutzerVerwaltung.jsx";
+import HobbyDetails from "./components/HobbyDetails.jsx";
 
 function App() {
     const [benutzerListe, setBenutzerListe] = useState(ladeListe(STORAGE_KEYS.BENUTZER) || anfangsBenutzer);
@@ -65,7 +66,15 @@ function App() {
 
             <Navbar benutzerListe={benutzerListe} onLogin={handleLogin} currentUser={aktuellerBenutzer} onLogout={handleLogout} onRegistrieren={handleRegistrierung} onSpeichern={handleProfilSpeichern}/>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home benutzern={benutzerListe} beitraege={beitraege} kommentare={kommentare} benutzer={aktuellerBenutzer} />} />
+                {beitraege.map(beitrag => (
+                    <Route
+                        key={beitrag.ueberschrift}
+                        path={`/${beitrag.ueberschrift}`}
+                        element={<HobbyDetails hobby={beitrag} benutzer={aktuellerBenutzer} benutzern={benutzerListe}/>}
+                    />
+                ))}
+
                 <Route
                     path="/admin/benutzer"
                     element={

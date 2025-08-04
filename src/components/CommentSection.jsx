@@ -7,7 +7,7 @@ import {ladeListe, speichereListe, STORAGE_KEYS} from "../utils/localStorage.js"
 import {anfangsKommentare} from "../data/anfangsDaten.js";
 
 // Main component for displaying and submitting comments
-const CommentSection = ({postId, benutzer, post}) => {
+const CommentSection = ({postId, benutzer, benutzern}) => {
     // State for the list of comments
     // const [kommentare, setKommentare] = useState([]);
     //
@@ -115,7 +115,7 @@ const CommentSection = ({postId, benutzer, post}) => {
                                 className="bg-[var(--cl-surface1)] p-4 rounded-md border border-[var(--cl-surface2)]"
                             >
                                 <div className="flex justify-between text-sm font-semibold">
-                                    {/*<span>{benutzer.benutzername}</span>*/}
+                                    <span>{benutzern.find(b => b.id === c.autorId)?.benutzername || "Unbekannt"}</span>
                                     <span className="text-xs text-[var(--cl-subtext1)]">
                                 </span>
 

@@ -1,8 +1,8 @@
 import bcrypt from 'bcryptjs';
 
 export const anfangsBenutzer = [
-    { id: '1', benutzername: 'admin', passwortHash: bcrypt.hashSync('admin', bcrypt.genSaltSync(10)), rolle: 'admin', erstelltAm: '2025-07-01T00:00:00Z' },
-    { id: '2', benutzername: 'user', passwortHash: bcrypt.hashSync('user', bcrypt.genSaltSync(10)), rolle: 'user', erstelltAm: '2025-07-10T00:00:00Z' },
+    { id: '1', benutzername: 'admin', passwortHash: bcrypt.hashSync('admin', bcrypt.genSaltSync(10)), rolle: 'admin', vorname: 'Admin', nachname: 'Adminkovich', email: 'admin@gmail.com', foto: '', erstelltAm: '2025-07-01T00:00:00Z' },
+    { id: '2', benutzername: 'user', passwortHash: bcrypt.hashSync('user', bcrypt.genSaltSync(10)), rolle: 'user', vorname: 'Benutzer', nachname: 'Benutzkovich', email: 'user@gmail.com', foto: '', erstelltAm: '2025-07-10T00:00:00Z' },
 ];
 
 export const anfangsBeitraege = [

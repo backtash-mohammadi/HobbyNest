@@ -81,6 +81,7 @@ function App() {
                         aktuellerBenutzer?.rolle === "admin" ? (
                             <AdminBenutzerVerwaltung
                                 benutzerListe={benutzerListe}
+                                currentUser={aktuellerBenutzer}
                                 onBenutzerAktualisieren={handleProfilSpeichern}
                             />
                         ) : (

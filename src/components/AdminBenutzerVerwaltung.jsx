@@ -10,7 +10,7 @@ import { Profil } from "./Profil.jsx";
 import { FaUserEdit } from "react-icons/fa";
 
 // Komponente für Administrator: Liste der Benutzer und Profil öffnen
-export function AdminBenutzerVerwaltung({ benutzerListe, onBenutzerAktualisieren }) {
+export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzerAktualisieren }) {
     // Zustand für ausgewählten Benutzer
     const [ausgewaehlterBenutzer, setAusgewaehlterBenutzer] = useState(null);
 
@@ -52,6 +52,7 @@ export function AdminBenutzerVerwaltung({ benutzerListe, onBenutzerAktualisieren
             {ausgewaehlterBenutzer && (
                 <Profil
                     aktuellerBenutzer={ausgewaehlterBenutzer}
+                    currentUser={currentUser}
                     onClose={() => setAusgewaehlterBenutzer(null)}
                     onLogout={() => { /* Admin bleibt eingeloggt */ }}
                     onSpeichern={(geänderterBenutzer) => {

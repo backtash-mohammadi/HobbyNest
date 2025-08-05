@@ -41,7 +41,7 @@ export const anfangsBeitraege = [
         inhalt: 'Musik kann starke Emotionen auslösen, weil sie direkt auf das limbische System im Gehirn wirkt. Ein trauriger Song kann Erinnerungen hervorrufen, während schnelle Beats Energie geben. Studien zeigen, dass Musik sogar den Herzschlag und die Atmung beeinflussen kann. Deshalb ist sie in Therapie, Werbung und Film so wirksam.',
         autorId: '1',
         erstelltAm: new Date('2025-08-01'),
-        kategorie: 'musik',
+        kategorie: 'kunst',
         bild: 'src/assets/musik-emotion-beitrag.jpg'
     },
     {
@@ -50,7 +50,7 @@ export const anfangsBeitraege = [
         inhalt: 'Ein Instrument zu lernen fördert Konzentration, Geduld und Feinmotorik. Studien zeigen, dass musizierende Kinder oft besser in Mathematik abschneiden. Auch Erwachsene profitieren: Musik reduziert Stress und stärkt das Gedächtnis. Ob Gitarre, Klavier oder Geige – jedes Instrument bringt neue kreative Möglichkeiten.',
         autorId: '1',
         erstelltAm: new Date('2025-08-03'),
-        kategorie: 'musik',
+        kategorie: 'kunst',
         bild: 'src/assets/instrument-beitrag.png'
     },
     {
@@ -59,7 +59,7 @@ export const anfangsBeitraege = [
         inhalt: 'Kopfhörer bieten ein intensives Hörerlebnis, ideal für unterwegs oder konzentriertes Zuhören. Lautsprecher hingegen schaffen Raumklang und sind besser für Gruppen oder beim Musikhören zu Hause. Beide haben ihre Vor- und Nachteile – entscheidend ist der Einsatzzweck und persönliche Vorlieben beim Hören.',
         autorId: '1',
         erstelltAm: new Date('2025-08-05'),
-        kategorie: 'musik',
+        kategorie: 'kunst',
         bild: 'src/assets/kopfhoerer-beitrag.webp'
     },
     { id: '1', ueberschrift: 'Willkommen im Blog', inhalt: 'Das ist der erste Beitrag.', autorId: '1', erstelltAm: '2025-07-01T00:00:00Z', kategorie:"sport"},

@@ -63,7 +63,7 @@ const FeaturedHobby = ({ hobby, benutzern }) => {
                         </span>
                     </div>
 
-                    <button onClick={toggleLike} className="text-red-500 text-xl">
+                    <button onClick={toggleLike} className="text-red-500 text-xl cursor-pointer">
                         {liked ? <FcLike /> : "♡"}
                     </button>
                 </div>

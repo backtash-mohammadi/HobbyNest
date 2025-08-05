@@ -29,12 +29,16 @@ const Navbar = ({
                     {/* Left side: Home button and Logo */}
                     <div className="flex items-center gap-4">
                         {/* Home Button - modern style, goes to homepage */}
-                        <Link
+                        <motion.div
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.95 }}>
+                            <Link
                             to="/"
                             className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded-2xl font-bold shadow hover:bg-[var(--cl-green)] transition-colors duration-200"
                         >
                             Home
                         </Link>
+                        </motion.div>
                         {/* App Logo/Branding */}
                         <h1 className="text-xl font-bold text-[var(--cl-green)]">🌱 HobbyNest</h1>
                     </div>

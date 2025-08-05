@@ -79,11 +79,12 @@ const HobbyDetails = (props) => {
                         setEditBeitragId(null);
                     }}>
                         <input
+                            className="w-full p-2 border c rounded-md resize mb-3 focus:border-green-200 focus:border-4 focus:outline-none"
                             value={bearbeiteUeberschrift}
                             onChange={e => setBearbeiteUeberschrift(e.target.value)}
                         />
                         <textarea
-                            className="w-full p-2 border c rounded-md resize"
+                            className="w-full p-2 border c rounded-md resize min-h-70 focus:border-green-200 focus:border-4 focus:outline-none"
                             value={bearbeiteInhalt}
                             onChange={e => setBearbeiteInhalt(e.target.value)}
                         />
@@ -91,13 +92,13 @@ const HobbyDetails = (props) => {
                         <motion.button
                             type="submit"
                             whileHover={{ scale: 1.3 }}
-                            className="text-sm text-violet-900 hover:text-violet-700 ml-4 flex items-center gap-1 cursor-pointer mr-1">
+                            className="text-sm text-green-500 hover:text-green-700 ml-4 flex items-center gap-1 cursor-pointer mr-1">
                             <IoIosSave />Speichern
                         </motion.button>
                         <motion.button
                             type="button"
                             whileHover={{ scale: 1.3 }}
-                            className="text-sm text-orange-500 hover:text-orange-700 ml-4 flex items-center gap-1 cursor-pointer"
+                            className="text-sm text-orange-500 hover:text-orange-600 ml-4 flex items-center gap-1 cursor-pointer"
                             onClick={() => setEditBeitragId(null)}>
                             <GrRevert />Abbrechen
                         </motion.button>

@@ -6,7 +6,7 @@ import NewPost from "./NewPost.jsx";
 import CategoryNavBar from "./CategoryNavBar.jsx";
 
 const Home = (props) => {
-
+    const benutzernListe = props.benutzern;
     const colors = [
         "#ff0088", // pink
         "#00d1ff", // sky blue
@@ -50,7 +50,7 @@ const Home = (props) => {
                 {/* Right: List of Featured Hobby Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                     {props.beitraege.map((hobby) => (
-                        <FeaturedHobby key={hobby.id} hobby={hobby} kommentare={props.kommentare}/>
+                        <FeaturedHobby key={hobby.id} hobby={hobby} benutzern={benutzernListe} kommentare={props.kommentare}/>
                     ))}
                 </div>
             </div>

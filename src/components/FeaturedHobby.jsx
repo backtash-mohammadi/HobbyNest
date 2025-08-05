@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { FcLike } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 
-const FeaturedHobby = ({ hobby }) => {
+const FeaturedHobby = ({ hobby, benutzern }) => {
     const [liked, setLiked] = useState(false);
 
     // Beim Laden Like-Status aus localStorage lesen
@@ -47,11 +48,16 @@ const FeaturedHobby = ({ hobby }) => {
                     <div className="flex items-center">
                         <img
                             className="object-cover h-10 w-10 rounded-full"
-                            src={hobby.autorBild || "https://via.placeholder.com/40"}
+                            // https://via.placeholder.com/40 löst Felher in console aus.
+                            //ich nutze eine temporäre Variante, die ein Bild von assets nimmt.
+                            // src={hobby.autorBild || "https://via.placeholder.com/40"}
+                            src={hobby.autorBild || "src/assets/user-placeholder-icon.PNG"}
+
+
                             alt="Autor"
                         />
                         <span className="mx-2 font-semibold text-gray-700">
-                            {hobby.autorName || "Unbekannt"}
+                            {benutzern ? benutzern.find(b => b.id === hobby.autorId).benutzername : "Unbekannt"}
                         </span>
                         <span className="text-xs text-gray-600">
                             {new Date(hobby.erstelltAm).toLocaleDateString("de-DE")}

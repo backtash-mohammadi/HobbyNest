@@ -12,6 +12,7 @@ import {ladeListe, speichereListe, STORAGE_KEYS} from "./utils/localStorage.js";
 import { Profil } from "./components/Profil.jsx";
 import { AdminBenutzerVerwaltung } from "./components/AdminBenutzerVerwaltung.jsx";
 import HobbyDetails from "./components/HobbyDetails.jsx";
+import CategoryPage from "./components/CategoryPage.jsx";
 
 function App() {
     const [benutzerListe, setBenutzerListe] = useState(ladeListe(STORAGE_KEYS.BENUTZER) || anfangsBenutzer);
@@ -24,7 +25,7 @@ function App() {
     const [aktuellerBenutzer, setAktuellerBenutzer] = useState(JSON.parse(localStorage.getItem('currentUser')) || null);
     const [wasDeleted, setWasDeleted] = useState(false);
     const [bearbeitetBeitrag, setBearbeitetBeitrag] = useState(null);
-
+    const {gewaelteKategorie, setGewaelteKategorie} = useState(null)
 
     useEffect(() => {
         speichereListe(STORAGE_KEYS.BENUTZER, benutzerListe);
@@ -97,6 +98,10 @@ function App() {
         setBeitraege(prev => [...prev, neuerBeitrag]);
     }
 
+    function handleZumKategorie(gewaelteKat){
+        setGewaelteKategorie(gewaelteKat);
+    }
+
     return (
         <>
             <div className="fixed inset-0 -z-10">
@@ -127,6 +132,19 @@ function App() {
                         )
                     }
                 />
+                <Route
+                    path={`/sport`}
+                    element={<CategoryPage beitraege={beitraege} kategorie={"sport"}/>}/>
+                <Route
+                    path={`/kunst`}
+                    element={<CategoryPage beitraege={beitraege} kategorie={"kunst"}/>}/>
+                <Route
+                    path={`/outdoor`}
+                    element={<CategoryPage beitraege={beitraege} kategorie={"outdoor"}/>}/>
+                <Route
+                    path={`/sonsitges`}
+                    element={<CategoryPage beitraege={beitraege} kategorie={"sonstiges"}/>}/>
+
             </Routes>
             <Footer />
         </>

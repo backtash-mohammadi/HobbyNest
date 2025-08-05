@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import CommentSection from "./CommentSection.jsx";
 import FeaturedHobby from "./FeaturedHobby.jsx";
 import NewPost from "./NewPost.jsx";
+import CategoryNavBar from "./CategoryNavBar.jsx";
+
 
 const Home = (props) => {
     // const featuredHobbies = [
@@ -50,6 +52,7 @@ const Home = (props) => {
 
     return (
         <div className="min-h-screen px-6 py-10 bg-[var(--cl-base)] text-[var(--cl-text)]">
+            <CategoryNavBar />
             <h1 className="text-4xl font-bold mb-4">🎯 Welcome to HobbyNest</h1>
             <p className="text-lg mb-10 text-[var(--cl-subtext1)]">
                 Discover easy beginner guides for fun and rewarding hobbies!

@@ -62,7 +62,7 @@ const HobbyDetails = (props) => {
                             onChange={e => setBearbeiteUeberschrift(e.target.value)}
                         />
                         <textarea
-                            className="w-full p-2 border border-gray-300 rounded-md resize"
+                            className="w-full p-2 border c rounded-md resize"
                             value={bearbeiteInhalt}
                             onChange={e => setBearbeiteInhalt(e.target.value)}
                         />

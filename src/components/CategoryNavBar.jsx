@@ -13,7 +13,7 @@ const categories = [
 
 export default function CategoryNavBar() {
     return (
-        <div className="max-w-5xl mx-auto py-8 px-4 flex flex-wrap gap-8 justify-center items-center bg-white/30 rounded-3xl shadow-md border border-cyan-100">
+        <div className="max-w-5xl mx-auto py-8 px-4 flex flex-wrap gap-8 justify-center items-center bg-white/30 rounded-3xl shadow-md border border-cyan-100 mb-4">
             {categories.map(cat => (
                 <motion.div
                     whileHover={{ scale: 1.09, y: -8, boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }}

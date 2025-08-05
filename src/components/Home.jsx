@@ -29,9 +29,9 @@ const Home = (props) => {
     return (
         <div className="min-h-screen px-6 py-10 bg-[var(--cl-base)] text-[var(--cl-text)]">
             <CategoryNavBar />
-            <h1 className="text-4xl font-bold mb-4">🎯 Welcome to HobbyNest</h1>
+            <h1 className="text-4xl font-bold mb-4">🎯 Willkommen zu HobbyNest</h1>
             <p className="text-lg mb-10 text-[var(--cl-subtext1)]">
-                Discover easy beginner guides for fun and rewarding hobbies!
+                Einfache Anleitungen für Anfänger zu unterhaltsamen und lohnenden Hobbys!
             </p>
 
             <div className="flex items-start gap-6 mb-12">

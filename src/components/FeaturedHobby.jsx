@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { FcLike } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 
 const FeaturedHobby = ({ hobby, benutzern }) => {
     const [liked, setLiked] = useState(false);

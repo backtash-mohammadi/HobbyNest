@@ -78,7 +78,7 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
                         <Button
                             variant="outlined"
                             size="sm"
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-2 cursor-pointer"
                             onClick={() => setAusgewaehlterBenutzer(benutzer)}
                         >
                             <FaUserEdit /> Bearbeiten

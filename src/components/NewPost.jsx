@@ -14,7 +14,7 @@ export default function NewPost({ author, onBeitragHinzufuegen }) {
 
         const neuerBeitrag = {
             id: crypto.randomUUID(),
-            ueberschrift,
+            ueberschrift: ueberschrift.trim(),
             inhalt,
             autorId: author.id,
             autorName: author.benutzername,

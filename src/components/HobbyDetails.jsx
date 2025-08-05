@@ -6,6 +6,7 @@ import {FaEdit} from "react-icons/fa";
 import { motion } from "framer-motion";
 import { IoIosSave } from "react-icons/io";
 import { GrRevert } from "react-icons/gr";
+import ImageUploader from "./ImageUploader.jsx";
 
 // Component, der die Details des Hobby/beitrag Object anzeigt.
 // Der Component wird zu einer bestimmen path in App.jsx verbunden.
@@ -17,6 +18,8 @@ const HobbyDetails = (props) => {
     const [bearbeiteUeberschrift, setBearbeiteUeberschrift] = useState('');
     const [bearbeiteInhalt, setBearbeiteInhalt] = useState('');
 
+    const [bild, setBild] = useState(null);
+    const [resetImageKey, setResetImageKey] = useState(0);
     // **************** end ************************************************
 
     if (!props.hobby) {
@@ -74,10 +77,14 @@ const HobbyDetails = (props) => {
                         e.preventDefault();
                         props.onBeitragBearbeiten({
                             ...props.hobby,
-                            ueberschrift: bearbeiteUeberschrift,
+                            ueberschrift: bearbeiteUeberschrift.trim(),
                             inhalt: bearbeiteInhalt,
+                            bild: bild
                         });
                         setEditBeitragId(null);
+
+                        setBild(null);
+                        setResetImageKey(prev => prev + 1);
                     }}>
                         <input
                             className="w-full p-2 border c rounded-md resize mb-3 focus:border-green-200 focus:border-4 focus:outline-none"
@@ -89,6 +96,7 @@ const HobbyDetails = (props) => {
                             value={bearbeiteInhalt}
                             onChange={e => setBearbeiteInhalt(e.target.value)}
                         />
+                        <ImageUploader onImageUpload={setBild} key={resetImageKey} />
                         <div className="flex justify-start">
                         <motion.button
                             type="submit"

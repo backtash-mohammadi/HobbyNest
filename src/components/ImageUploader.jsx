@@ -18,13 +18,13 @@ export default function ImageUploader({ onImageUpload }) {
     }
 
     return (
-        <div className="mb-4">
-            <input type="file" accept="image/*" onChange={handleImageChange} />
+        <div className="mb-4 m-2">
+            <input type="file" accept="image/*" onChange={handleImageChange} className="cursor-pointer"/>
             {preview && (
                 <img
                     src={preview}
                     alt="Vorschau"
-                    className="mt-2 max-h-48 rounded-md shadow"
+                    className="mt-2 max-h-48 rounded-md shadow cursor-pointer"
                 />
             )}
         </div>

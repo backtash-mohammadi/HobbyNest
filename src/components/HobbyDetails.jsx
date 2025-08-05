@@ -2,6 +2,10 @@ import { useParams } from "react-router-dom";
 import CommentSection from "./CommentSection.jsx";
 import DeleteButton from "./DeleteButton.jsx";
 import {useState} from "react";
+import {FaEdit} from "react-icons/fa";
+import { motion } from "framer-motion";
+import { IoIosSave } from "react-icons/io";
+import { GrRevert } from "react-icons/gr";
 
 // Component, der die Details des Hobby/beitrag Object anzeigt.
 // Der Component wird zu einer bestimmen path in App.jsx verbunden.
@@ -21,23 +25,30 @@ const HobbyDetails = (props) => {
     return (
         <>
         <div className="p-6 max-w-2xl mx-auto bg-white shadow rounded-xl mt-4">
-            <div className="flex justify-between">
-                <h1 className="text-3xl font-bold mb-4 text-[var(--cl-green)]">{props.hobby.ueberschrift}</h1>
-
+            <div >
+                <h2 className="text-3xl font-bold mb-4 text-[var(--cl-green)]">{props.hobby.ueberschrift}</h2>
+            </div>
+                <div className="flex justify-end mb-4">
                 {props.benutzer && props.benutzer.rolle === "admin"
                     &&
                     <>
-                    <button onClick={() => {
-                    setEditBeitragId(props.hobby.id);
-                    setBearbeiteUeberschrift(props.hobby.ueberschrift);
-                    setBearbeiteInhalt(props.hobby.inhalt);
-                    }}>
-                        Bearbeiten
-                    </button>
+                        <motion.button
+                            whileHover={{ scale: 1.3 }}
+                            className="text-sm text-blue-950 hover:text-blue-700 ml-4 flex items-center gap-1 cursor-pointer"
+                            borderColor="black"
+                            onClick={() => {
+                                setEditBeitragId(props.hobby.id);
+                                setBearbeiteUeberschrift(props.hobby.ueberschrift);
+                                setBearbeiteInhalt(props.hobby.inhalt);
+                            }}>
+                            <FaEdit />
+                            Bearbeiten
+                        </motion.button>
                         <DeleteButton onClick={() => props.onBeitragLoeschen(props.hobby.id)}/>
                     </>
                 }
-            </div>
+                </div>
+
             <div>
                 {props.hobby.bild && (
                     <img
@@ -76,9 +87,21 @@ const HobbyDetails = (props) => {
                             value={bearbeiteInhalt}
                             onChange={e => setBearbeiteInhalt(e.target.value)}
                         />
-                        <button type="submit" className="text-sm text-cyan-300-500 hover:text-cyan-700 ml-4"
-                        >Speichern</button>
-                        <button type="button" className="text-sm text-violet-600-300-500 hover:text-violet-700 ml-4" onClick={() => setEditBeitragId(null)}>Abbrechen</button>
+                        <div className="flex justify-start">
+                        <motion.button
+                            type="submit"
+                            whileHover={{ scale: 1.3 }}
+                            className="text-sm text-violet-900 hover:text-violet-700 ml-4 flex items-center gap-1 cursor-pointer mr-1">
+                            <IoIosSave />Speichern
+                        </motion.button>
+                        <motion.button
+                            type="button"
+                            whileHover={{ scale: 1.3 }}
+                            className="text-sm text-orange-500 hover:text-orange-700 ml-4 flex items-center gap-1 cursor-pointer"
+                            onClick={() => setEditBeitragId(null)}>
+                            <GrRevert />Abbrechen
+                        </motion.button>
+                        </div>
                     </form>
 
                 </div>

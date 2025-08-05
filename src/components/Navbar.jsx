@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { DialogWithForm } from "./DialogWithForm.jsx";
 import { Profil } from "./Profil.jsx";
-import { FaUserCircle } from "react-icons/fa";
+import { Avatar } from "@material-tailwind/react";
+import platzhalterBild from "../assets/platzhalter.webp"; // или импорт из src/assets
 
-// Navbar mit Login-, Profil- und Admin-Navigation
+
 const Navbar = ({
                     benutzerListe,
                     onLogin,
@@ -15,7 +16,6 @@ const Navbar = ({
                     onBearbeiten,
                     onSpeichern,
                 }) => {
-    // Zustand zur Steuerung des Profil-Modals
     const [profileOffen, setProfileOffen] = useState(false);
     const toggleProfileOffen = () => setProfileOffen((cur) => !cur);
 
@@ -26,14 +26,11 @@ const Navbar = ({
                     <h1 className="text-xl font-bold text-[var(--cl-green)]">🌱 HobbyNest</h1>
                     <ul className="flex gap-6 text-sm font-medium">
                         <li>
-                            <Link to="/" className="hover:text-[var(--cl-blue)]">
-                                Home
-                            </Link>
+                            <Link to="/" className="hover:text-[var(--cl-blue)]">Home</Link>
                         </li>
                     </ul>
 
                     <div className="flex items-center gap-4">
-                        {/* Login/Registrierung */}
                         {!currentUser && (
                             <DialogWithForm
                                 benutzerListe={benutzerListe}
@@ -42,25 +39,26 @@ const Navbar = ({
                             />
                         )}
 
-                        {/* Profil und Admin */}
                         {currentUser && (
                             <>
                                 <p className="text-sm font-medium text-[var(--cl-subtext0)]">
                                     Sie sind angemeldet als {currentUser.benutzername}
                                 </p>
 
-                                {/* Profil-Icon öffnet Modal */}
+                                {/* 2. вместо иконки показываем Avatar */}
                                 <motion.button
                                     type="button"
                                     whileHover={{ scale: 1.2 }}
-                                    className="text-white text-2xl"
                                     onClick={toggleProfileOffen}
                                     aria-label="Profil öffnen"
                                 >
-                                    <FaUserCircle />
+                                    <Avatar
+                                        src={currentUser.foto || platzhalterBild}
+                                        alt={currentUser.benutzername}
+                                        className="h-10 w-10 rounded-full object-cover cursor-pointer"
+                                    />
                                 </motion.button>
 
-                                {/* Admin-Link (nur für Admin-Rolle) */}
                                 {currentUser.rolle === "admin" && (
                                     <Link
                                         to="/admin/benutzer"
@@ -70,21 +68,20 @@ const Navbar = ({
                                     </Link>
                                 )}
 
-                                {/* Abmelden */}
-                                <button
+                                <motion.button
                                     type="button"
-                                    className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
+                                    whileHover={{ scale: 1.2 }}
+                                    className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold cursor-pointer"
                                     onClick={onLogout}
                                 >
                                     Abmelden
-                                </button>
+                                </motion.button>
                             </>
                         )}
                     </div>
                 </div>
             </nav>
 
-            {/* Profil-Modal */}
             {profileOffen && currentUser && (
                 <Profil
                     aktuellerBenutzer={currentUser}

@@ -131,6 +131,25 @@ function App() {
                         )
                     }
                 />
+                <Route
+                    path={`/sport`}
+                    element={<CategoryPage beitraege={beitraege} kategorie={"sport"}/>}/>
+                <Route
+                    path={`/kunst`}
+                    element={<CategoryPage beitraege={beitraege} kategorie={"kunst"}/>}/>
+                <Route
+                    path={`/outdoor`}
+                    element={<CategoryPage beitraege={beitraege} kategorie={"outdoor"}/>}/>
+                <Route
+                    path={`/kochen`}
+                    element={<CategoryPage beitraege={beitraege} kategorie={"kochen"}/>}/>
+                <Route
+                    path={`/musik`}
+                    element={<CategoryPage beitraege={beitraege} kategorie={"musik"}/>}/>
+                <Route
+                    path={`/sonstiges`}
+                    element={<CategoryPage beitraege={beitraege} kategorie={"sonstiges"}/>}/>
+
             </Routes>
             <Footer />
         </>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-
 // Tutorial: https://www.youtube.com/watch?app=desktop&v=eDw46GYAIDQ&ab_channel=EricMurphy
 
 function StarRating({ rating, setRating }) {

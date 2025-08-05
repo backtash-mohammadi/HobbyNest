@@ -6,7 +6,9 @@ const categories = [
     { name: "Sport", path: "/sport", img: "src/assets/sport-cat-icon.PNG" },
     { name: "Kunst", path: "/kunst", img: "src/assets/kunst-cat-icon.png" },
     { name: "Outdoor", path: "/outdoor", img: "src/assets/outdoor-cat-icon.png" },
-    { name: "Sonstiges", path: "/sonsitges", img: "src/assets/sonstiges-icon.jpg" },
+    { name: "Kochen", path: "/kochen", img: "src/assets/kochen-cat-icon.jpg" },
+    { name: "Musik", path: "/musik", img: "src/assets/musik-icon.png" },
+    { name: "Sonstiges", path: "/sonstiges", img: "src/assets/sonstiges-icon.jpg" },
 ];
 
 export default function CategoryNavBar() {

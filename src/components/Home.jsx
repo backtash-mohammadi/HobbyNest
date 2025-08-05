@@ -6,28 +6,6 @@ import NewPost from "./NewPost.jsx";
 import CategoryNavBar from "./CategoryNavBar.jsx";
 
 const Home = (props) => {
-    // const featuredHobbies = [
-    //     {
-    //         id: "chess101",
-    //         title: "Getting Started with Chess",
-    //         short: "Learn the basics of chess — the board, the pieces, and beginner strategies.",
-    //     },
-    //     {
-    //         id: "music101",
-    //         title: "Learn to Play Music",
-    //         short: "Explore musical instruments, rhythm, and melody to start your music journey.",
-    //     },
-    //     {
-    //         id: "books101",
-    //         title: "Reading for Beginners",
-    //         short: "Tips on how to build a reading habit and enjoy books.",
-    //     },
-    //     {
-    //         id: "cooking101",
-    //         title: "Start Cooking at Home",
-    //         short: "Learn simple recipes and kitchen tips for delicious home cooking.",
-    //     },
-    // ];
 
     const colors = [
         "#ff0088", // pink
@@ -40,7 +18,6 @@ const Home = (props) => {
         "#38bdf8", // blue
         "#f472b6"  // rose
     ];
-
 
     const boxStyle = {
         width: 25,

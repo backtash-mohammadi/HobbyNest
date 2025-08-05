@@ -16,6 +16,7 @@ const HobbyDetails = (props) => {
     const [editBeitragId, setEditBeitragId] = useState(null);
     const [bearbeiteUeberschrift, setBearbeiteUeberschrift] = useState('');
     const [bearbeiteInhalt, setBearbeiteInhalt] = useState('');
+
     // **************** end ************************************************
 
     if (!props.hobby) {

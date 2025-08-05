@@ -10,6 +10,8 @@ import {
     Input,
 } from "@material-tailwind/react";
 import { FaSignOutAlt, FaTimes, FaUpload, FaEdit } from "react-icons/fa";
+import { FcCancel } from "react-icons/fc";
+import { IoCloseSharp } from "react-icons/io5";
 import platzhalterBild from '../assets/platzhalter.webp';
 
 // Komponente für Benutzerprofil mit Bearbeitungsfunktion
@@ -242,7 +244,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     className="flex items-center gap-2 cursor-pointer"
 
                                 >
-                                    Abbrechen
+                                    <FcCancel/> Abbrechen
                                 </Button>
                                 <Button
                                     variant="outlined"
@@ -259,7 +261,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     onClick={onClose}
                                     className="flex items-center gap-2 cursor-pointer"
                                 >
-                                    Schließen
+                                    <IoCloseSharp /> Schließen
                                 </Button>
                             </>
                         ) : (
@@ -287,7 +289,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     onClick={onClose}
                                     className="flex items-center gap-2 cursor-pointer"
                                 >
-                                    Schließen
+                                    <IoCloseSharp /> Schließen
                                 </Button>
                             </>
                         )}

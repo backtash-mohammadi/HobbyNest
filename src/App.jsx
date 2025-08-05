@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import CommentSection from './components/CommentSection.jsx';
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
-import UseTime from "./components/BackgroundAnimation.jsx";
+//import UseTime from "./components/BackgroundAnimation.jsx";
 import { anfangsBenutzer, anfangsBeitraege, anfangsKommentare } from './data/anfangsDaten';
 import {useEffect, useState} from "react";
 import {ladeListe, speichereListe, STORAGE_KEYS} from "./utils/localStorage.js";
@@ -104,9 +104,9 @@ function App() {
 
     return (
         <>
-            <div className="fixed inset-0 -z-10">
-                <UseTime />
-            </div>
+            {/*<div className="fixed inset-0 -z-10">*/}
+            {/*    <UseTime />*/}
+            {/*</div>*/}
 
             <Navbar benutzerListe={benutzerListe} onLogin={handleLogin} currentUser={aktuellerBenutzer} onLogout={handleLogout} onRegistrieren={handleRegistrierung} onSpeichern={handleProfilSpeichern}/>
             <Routes>

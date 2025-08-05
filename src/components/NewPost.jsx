@@ -3,13 +3,15 @@ import {useState} from "react";
 export default function NewPost({author, onBeitragHinzufuegen}){
     const [ueberschrift, setUeberschrift] = useState('');
     const [inhalt, setInhalt] = useState('');
+    const [kategorie, setKategorie] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
-        const neuerBeitrag = { id: crypto.randomUUID(), ueberschrift, inhalt, autorId: author.id, erstelltAm: new Date().toISOString() };
+        const neuerBeitrag = { id: crypto.randomUUID(), ueberschrift, inhalt, autorId: author.id, erstelltAm: new Date().toISOString(), kategorie: kategorie};
         onBeitragHinzufuegen(neuerBeitrag);
         setUeberschrift('');
         setInhalt('');
+        setKategorie('');
     }
 
     return( author && author.rolle === "admin" &&
@@ -27,6 +29,29 @@ export default function NewPost({author, onBeitragHinzufuegen}){
                     value={inhalt}
                     onChange={e => setInhalt(e.target.value)}
                     placeholder="Inhalt" />
+
+                <p>Kategorie</p>
+                <input
+                    type="radio"
+                    id="sport"
+                    name="kategorie"
+                    value="sport"
+                    // checked={choice === 'Option 1'}
+                    onChange={(e) => setKategorie(e.target.value)}
+                    required
+                />
+                <label htmlFor="sport">Sport</label><br></br>
+                <input type="radio" id="kunst" name="kategorie" value="kunst" onChange={(e) => setKategorie(e.target.value)}
+                />
+                <label htmlFor="kust">Kunst</label>
+                <br/>
+                <input type="radio" id="outdoor" name="kategorie" value="outdoor" onChange={(e) => setKategorie(e.target.value)}/>
+                <label htmlFor="outdoor">Outdoor</label>
+                <br></br>
+                <input type="radio" id="sonstiges" name="kategorie" value="sonstiges" onChange={(e) => setKategorie(e.target.value)}/>
+                <label htmlFor="sonstiges">Sonstiges</label>
+                <br></br>
+
                 <button type="submit">Beitrag hinzufügen</button>
             </form>
         </div>

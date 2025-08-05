@@ -14,7 +14,7 @@ const FeaturedHobby = ({ hobby }) => {
             {/*<p className="text-[var(--cl-subtext0)] mb-4">{hobby.short}</p>*/}
 
             <Link
-                to={hobby.ueberschrift}
+                to={`/${hobby.ueberschrift}`}
                 className="inline-block bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded hover:opacity-90 transition"
             >
                 zum Post →

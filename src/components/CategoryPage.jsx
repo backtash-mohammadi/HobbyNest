@@ -8,14 +8,15 @@ export default function CategoryPage({beitraege, kategorie}){
     return (
         <>
 
-            <h1 className="text-4xl font-bold mb-4">Category: sport</h1>
-            <div className="flex flex-col md:grid-cols-2 gap-6 w-full">
+            <h1 className="text-4xl font-bold mb-4">Kategorie: {kategorie}</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                 {beitraege
-                    .filter(b => b.kategorie === `${kategorie}`)
-                    .map((hobby) => (
-                    <FeaturedHobby key={hobby.id} hobby={hobby}/>
-                ))}
+                    .filter(b => b.kategorie === kategorie)
+                    .map(hobby => (
+                        <FeaturedHobby key={hobby.id} hobby={hobby} />
+                    ))}
             </div>
+
         </>
     )
 

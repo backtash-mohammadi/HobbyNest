@@ -6,7 +6,7 @@ import { Profil } from "./Profil.jsx";
 import { Avatar } from "@material-tailwind/react";
 import platzhalterBild from "../assets/platzhalter.webp";
 
-
+// Navbar component: Main navigation bar at the top of the app
 const Navbar = ({
                     benutzerListe,
                     onLogin,
@@ -17,20 +17,31 @@ const Navbar = ({
                     onSpeichern,
                 }) => {
     const [profileOffen, setProfileOffen] = useState(false);
+    // Toggles the user profile dialog open/close
     const toggleProfileOffen = () => setProfileOffen((cur) => !cur);
 
     return (
         <>
+            {/* Main Navbar */}
             <nav className="w-full fixed top-0 left-0 bg-[var(--cl-surface0)] text-[var(--cl-text)] z-50 shadow-md">
                 <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-                    <h1 className="text-xl font-bold text-[var(--cl-green)]">🌱 HobbyNest</h1>
-                    <ul className="flex gap-6 text-sm font-medium">
-                        <li>
-                            <Link to="/" className="hover:text-[var(--cl-blue)]">Home</Link>
-                        </li>
-                    </ul>
 
+                    {/* Left side: Home button and Logo */}
                     <div className="flex items-center gap-4">
+                        {/* Home Button - modern style, goes to homepage */}
+                        <Link
+                            to="/"
+                            className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded-2xl font-bold shadow hover:bg-[var(--cl-green)] transition-colors duration-200"
+                        >
+                            Home
+                        </Link>
+                        {/* App Logo/Branding */}
+                        <h1 className="text-xl font-bold text-[var(--cl-green)]">🌱 HobbyNest</h1>
+                    </div>
+
+                    {/* Right side: User/Session area */}
+                    <div className="flex items-center gap-4">
+                        {/* Login/Register dialog for non-logged-in users */}
                         {!currentUser && (
                             <DialogWithForm
                                 benutzerListe={benutzerListe}
@@ -39,13 +50,15 @@ const Navbar = ({
                             />
                         )}
 
+                        {/* User area for logged-in users */}
                         {currentUser && (
                             <>
+                                {/* Display logged-in user's name */}
                                 <p className="text-lg font-medium text-[var(--cl-subtext0)]">
                                     Sie sind angemeldet als {currentUser.benutzername}
                                 </p>
 
-                                {/*Avatar */}
+                                {/* User Avatar/Profile button */}
                                 <motion.button
                                     type="button"
                                     whileHover={{ scale: 1.2 }}
@@ -59,6 +72,7 @@ const Navbar = ({
                                     />
                                 </motion.button>
 
+                                {/* Admin only: Manage users button */}
                                 {currentUser.rolle === "admin" && (
                                     <Link
                                         to="/admin/benutzer"
@@ -68,6 +82,7 @@ const Navbar = ({
                                     </Link>
                                 )}
 
+                                {/* Logout button */}
                                 <motion.button
                                     type="button"
                                     whileHover={{ scale: 1.2 }}
@@ -82,6 +97,7 @@ const Navbar = ({
                 </div>
             </nav>
 
+            {/* User Profile dialog/popup */}
             {profileOffen && currentUser && (
                 <Profil
                     aktuellerBenutzer={currentUser}

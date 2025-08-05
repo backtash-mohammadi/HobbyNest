@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ImageUploader from "./ImageUploader";
+import { motion } from "framer-motion";
 
 export default function NewPost({ author, onBeitragHinzufuegen }) {
     const [ueberschrift, setUeberschrift] = useState('');
@@ -85,12 +86,13 @@ export default function NewPost({ author, onBeitragHinzufuegen }) {
                     <ImageUploader onImageUpload={setBild} key={resetImageKey} />
 
                     {/* Submit Button */}
-                    <button
+                    <motion.button
                         type="submit"
+                        whileHover={{ scale: 1.1 }}
                         className="bg-[var(--cl-green)] text-white px-4 py-2 rounded-md hover:bg-green-700"
                     >
                         Beitrag hinzufügen
-                    </button>
+                    </motion.button>
                 </div>
             </form>
         </div>

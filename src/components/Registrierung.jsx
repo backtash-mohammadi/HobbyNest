@@ -86,20 +86,20 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                 <button
                     aria-label="Schließen"
                     onClick={onClose}
-                    className="absolute top-4 right-5 text-[var(--cl-text-dark)] text-xl font-bold"
+                    className="absolute top-4 right-5 text-[var(--cl-text-dark)] text-xl font-bold cursor-pointer"
                 >
                     ✕
                 </button>
 
                 <CardBody className="flex flex-col gap-4 pt-6 px-6">
-                    <Typography variant="small" className="black font-medium">
+                    <Typography className="text-xl black font-medium">
                         Registrierung
                     </Typography>
                     <Typography variant="paragraph" color="gray" className="mb-3 font-normal">
                         Erstelle einen neuen Account.
                     </Typography>
                     {fehler && (
-                        <Typography variant="small" color="red">
+                        <Typography color="red">
                             {fehler}
                         </Typography>
                     )}
@@ -172,7 +172,7 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                             variant="outlined"
                             size="sm"
                             onClick={() => fileInputRef.current.click()}
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-2 cursor-pointer"
                         >
                             <FaUpload /> Profilfoto auswählen
                         </Button>
@@ -180,7 +180,7 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                         <motion.button
                             type="submit"
                             whileHover={{ scale: 1.1 }}
-                            className="bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold mt-2"
+                            className="bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold mt-2 cursor-pointer"
                         >
                             Registrieren
                         </motion.button>

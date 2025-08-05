@@ -113,7 +113,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={() => fileInputRef.current.click()}
-                                    className="flex items-center gap-2"
+                                    className="flex items-center gap-2 cursor-pointer"
                                 >
                                     <FaUpload /> Foto ändern
                                 </Button>
@@ -156,7 +156,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                         )}
                     </CardHeader>
 
-                    <CardBody className="p-6 space-y-4">
+                    <CardBody className="p-6 space-y-8">
                         {bearbeitungsModus ? (
                             <div className="w-full flex flex-col gap-8">
                                 <Input
@@ -213,7 +213,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                 <select
                                     value={rolle}
                                     onChange={(e) => setRolle(e.target.value)}
-                                    className="w-full p-2 border rounded"
+                                    className="w-full p-2 border rounded cursor-pointer"
                                 >
                                     <option value="user">User</option>
                                     <option value="admin">Admin</option>
@@ -239,6 +239,8 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={() => setBearbeitungsModus(false)}
+                                    className="flex items-center gap-2 cursor-pointer"
+
                                 >
                                     Abbrechen
                                 </Button>
@@ -246,7 +248,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={handleSpeichern}
-                                    className="flex items-center gap-2"
+                                    className="flex items-center gap-2 cursor-pointer"
                                 >
                                     <FaEdit /> Speichern
                                 </Button>
@@ -255,6 +257,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={onClose}
+                                    className="flex items-center gap-2 cursor-pointer"
                                 >
                                     Schließen
                                 </Button>
@@ -265,7 +268,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={() => setBearbeitungsModus(true)}
-                                    className="flex items-center gap-2"
+                                    className="flex items-center gap-2 cursor-pointer"
                                 >
                                     <FaEdit /> Bearbeiten
                                 </Button>
@@ -273,7 +276,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={onLogout}
-                                    className="flex items-center gap-2"
+                                    className="flex items-center gap-2 cursor-pointer"
                                 >
                                     <FaSignOutAlt /> Abmelden
                                 </Button>
@@ -282,6 +285,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={onClose}
+                                    className="flex items-center gap-2 cursor-pointer"
                                 >
                                     Schließen
                                 </Button>

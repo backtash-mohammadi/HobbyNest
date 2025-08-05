@@ -8,6 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { Profil } from "./Profil.jsx";
 import { FaUserEdit } from "react-icons/fa";
+import platzhalterBild from '../assets/platzhalter.webp';
 
 // Komponente für Administrator: Liste der Benutzer, Profil öffnen, nach Name filtern und paginieren
 export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzerAktualisieren }) {
@@ -61,7 +62,7 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
                 {angezeigteBenutzer.map((benutzer) => (
                     <Card key={benutzer.id} className="flex items-center gap-4 p-4">
                         <Avatar
-                            src={benutzer.foto || undefined}
+                            src={benutzer.foto || platzhalterBild}
                             alt={benutzer.benutzername}
                             size="xs"
                             variant="circular"

@@ -48,7 +48,7 @@ export function DialogWithForm({ benutzerListe, onLogin, onRegistrieren }) {
             <motion.button
                 type="button"
                 whileHover={{ scale: 1.2 }}
-                className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
+                className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold cursor-pointer"
                 onClick={toggleOffen}
             >
                 <FaUser />
@@ -61,12 +61,12 @@ export function DialogWithForm({ benutzerListe, onLogin, onRegistrieren }) {
                         <button
                             aria-label="Schließen"
                             onClick={toggleOffen}
-                            className="absolute top-4 right-5 text-[var(--cl-text-dark)] text-xl font-bold"
+                            className="absolute top-4 right-5 text-[var(--cl-text-dark)] text-xl font-bold cursor-pointer"
                         >
                             ✕
                         </button>
                         <CardBody className="flex flex-col gap-4 pt-6 px-6">
-                            <Typography variant="small" className="black font-medium">
+                            <Typography className="text-xl black font-medium">
                                 Einloggen
                             </Typography>
                             <Typography variant="paragraph" color="gray" className="mb-3 font-normal">
@@ -91,19 +91,19 @@ export function DialogWithForm({ benutzerListe, onLogin, onRegistrieren }) {
                                     required
                                 />
                                 {fehler && <Typography variant="small" color="red">{fehler}</Typography>}
-                                <Checkbox label="Angemeldet bleiben" className="-ml-2.5 -mt-3" />
                                 <motion.button
                                     type="submit"
                                     whileHover={{ scale: 1.1 }}
-                                    className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
+                                    className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold cursor-pointer"
                                 >
                                     Einloggen
                                 </motion.button>
-                                <RoleToggle />
+                                {/*<RoleToggle />*/}
                             </form>
                             <div className="mt-4 text-center">
+                                <p>Noch kein Konto?</p>
                                 <button
-                                    className="text-blue-500 font-bold"
+                                    className="text-blue-500 font-bold cursor-pointer"
                                     onClick={() => { toggleRegOffen(); }}
                                 >
                                     Registrieren

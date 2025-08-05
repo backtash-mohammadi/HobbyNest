@@ -102,7 +102,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     alt="Profilfoto"
                                     size="xl"
                                     variant="circular"
-                                    className="mb-4"
+                                    className="mb-4 "
                                 />
                                 <input
                                     ref={fileInputRef}
@@ -115,7 +115,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={() => fileInputRef.current.click()}
-                                    className="flex items-center gap-2 cursor-pointer"
+                                    className="flex items-center gap-2 cursor-pointer text-base mb-6"
                                 >
                                     <FaUpload /> Foto ändern
                                 </Button>
@@ -138,20 +138,22 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     onChange={e => setVorname(e.target.value)}
                                     size="lg"
                                     label="Vorname"
+                                    className="text-xl"
                                 />
                                 <Input
                                     value={nachname}
                                     onChange={e => setNachname(e.target.value)}
                                     size="lg"
                                     label="Nachname"
+                                    className="text-xl"
                                 />
                             </div>
                         ) : (
                             <>
-                                <Typography variant="h5" className="font-medium">
+                                <Typography variant="h5" className="font-medium text-xl">
                                     {vorname} {nachname}
                                 </Typography>
-                                <Typography variant="small" className="text-gray-500">
+                                <Typography variant="small" className="text-gray-500 text-xl">
                                     @{aktuellerBenutzer.benutzername}
                                 </Typography>
                             </>
@@ -167,6 +169,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     onChange={(e) => setEmail(e.target.value)}
                                     size="lg"
                                     label="E-Mail"
+                                    className="text-xl"
                                 />
                                 {/* Passwortänderung nur für sich selbst */}
                                 {currentUser.id === aktuellerBenutzer.id && (
@@ -201,8 +204,8 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                 )}
                             </div>
                         ) : (
-                            <Typography variant="small" className="block">
-                                <span className="font-bold">E-Mail:</span> {email}
+                            <Typography variant="small" className="block text-lg">
+                                <span className="font-bold ">E-Mail:</span> {email}
                             </Typography>
                         )}
 
@@ -211,7 +214,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                         {/* Rolle oder Auswahl */}
                         {bearbeitungsModus && darfRolleAendern ? (
                             <div>
-                                <label className="block mb-1 font-bold">Rolle</label>
+                                <label className="block mb-1 font-bold text-lg">Rolle</label>
                                 <select
                                     value={rolle}
                                     onChange={(e) => setRolle(e.target.value)}
@@ -222,12 +225,12 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                 </select>
                             </div>
                         ) : (
-                            <Typography variant="small" className="block">
+                            <Typography variant="small" className="block text-lg">
                                 <span className="font-bold">Rolle:</span> {rolle}
                             </Typography>
                         )}
 
-                        <Typography variant="small" className="block">
+                        <Typography variant="small" className="block text-lg">
                             <span className="font-bold">Registriert am:</span> {datum}
                         </Typography>
                     </CardBody>
@@ -241,7 +244,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={() => setBearbeitungsModus(false)}
-                                    className="flex items-center gap-2 cursor-pointer"
+                                    className="flex items-center gap-2 cursor-pointer text-sm"
 
                                 >
                                     <FcCancel/> Abbrechen
@@ -250,7 +253,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={handleSpeichern}
-                                    className="flex items-center gap-2 cursor-pointer"
+                                    className="flex items-center gap-2 cursor-pointer text-sm"
                                 >
                                     <FaEdit /> Speichern
                                 </Button>
@@ -259,7 +262,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={onClose}
-                                    className="flex items-center gap-2 cursor-pointer"
+                                    className="flex items-center gap-2 cursor-pointer text-sm"
                                 >
                                     <IoCloseSharp /> Schließen
                                 </Button>
@@ -270,7 +273,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={() => setBearbeitungsModus(true)}
-                                    className="flex items-center gap-2 cursor-pointer"
+                                    className="flex items-center gap-2 cursor-pointer text-sm"
                                 >
                                     <FaEdit /> Bearbeiten
                                 </Button>
@@ -278,7 +281,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={onLogout}
-                                    className="flex items-center gap-2 cursor-pointer"
+                                    className="flex items-center gap-2 cursor-pointer text-sm"
                                 >
                                     <FaSignOutAlt /> Abmelden
                                 </Button>
@@ -287,7 +290,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={onClose}
-                                    className="flex items-center gap-2 cursor-pointer"
+                                    className="flex items-center gap-2 cursor-pointer text-sm"
                                 >
                                     <IoCloseSharp /> Schließen
                                 </Button>

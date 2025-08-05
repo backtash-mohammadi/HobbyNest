@@ -66,35 +66,42 @@ export function DialogWithForm({ benutzerListe, onLogin, onRegistrieren }) {
                             ✕
                         </button>
                         <CardBody className="flex flex-col gap-4 pt-6 px-6">
-                            <Typography className="text-xl black font-medium">
+                            <Typography className="text-2xl black font-medium">
                                 Einloggen
                             </Typography>
-                            <Typography variant="paragraph" color="gray" className="mb-3 font-normal">
+                            <Typography variant="paragraph" color="gray" className="text-xl mb-3 font-normal">
                                 Gib deinen Benutzernamen und dein Passwort ein.
                             </Typography>
                         </CardBody>
                         <CardFooter className="pt-0">
-                            <form onSubmit={handleAnmeldung} className="flex flex-col gap-4 px-6 pb-4">
+                            <form onSubmit={handleAnmeldung} className="flex flex-col ">
+                                <label className="">
+                                    <span className="text-red-500">*Pflichtfeld</span>
+                                </label>
                                 <Input
                                     value={bn}
                                     onChange={e => setBn(e.target.value)}
+                                    className="h-8 text-xl mb-6"
                                     placeholder="Benutzername"
                                     size="lg"
-                                    required
                                 />
+                                <label className="block ">
+                                    <span className="text-red-500">*Pflichtfeld</span>
+                                </label>
                                 <Input
                                     type="password"
                                     value={pw}
                                     onChange={e => setPw(e.target.value)}
+                                    className="h-8 text-xl mb-10"
                                     placeholder="Passwort"
                                     size="lg"
-                                    required
+
                                 />
                                 {fehler && <Typography variant="small" color="red">{fehler}</Typography>}
                                 <motion.button
                                     type="submit"
                                     whileHover={{ scale: 1.1 }}
-                                    className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold cursor-pointer"
+                                    className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold cursor-pointer text-xl"
                                 >
                                     Einloggen
                                 </motion.button>
@@ -103,7 +110,7 @@ export function DialogWithForm({ benutzerListe, onLogin, onRegistrieren }) {
                             <div className="mt-4 text-center">
                                 <p>Noch kein Konto?</p>
                                 <button
-                                    className="text-blue-500 font-bold cursor-pointer"
+                                    className="text-blue-500 font-bold cursor-pointer text-xl"
                                     onClick={() => { toggleRegOffen(); }}
                                 >
                                     Registrieren

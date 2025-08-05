@@ -91,11 +91,11 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                     ✕
                 </button>
 
-                <CardBody className="flex flex-col gap-4 pt-6 px-6">
-                    <Typography className="text-xl black font-medium">
+                <CardBody className="flex flex-col gap-6 pt-6 px-6 ">
+                    <Typography className="text-2xl black font-medium">
                         Registrierung
                     </Typography>
-                    <Typography variant="paragraph" color="gray" className="mb-3 font-normal">
+                    <Typography variant="paragraph" color="gray" className="text-xl mb-3 font-normal">
                         Erstelle einen neuen Account.
                     </Typography>
                     {fehler && (
@@ -115,40 +115,51 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                         />
                     )}
 
-                    <form onSubmit={handleRegistrierung} className="flex flex-col gap-4">
+                    <form onSubmit={handleRegistrierung} className="flex flex-col">
+                        <label className="">
+                            <span className="text-red-500">*Pflichtfeld</span>
+                        </label>
                         <Input
                             value={benutzername}
                             onChange={e => setBenutzername(e.target.value)}
                             placeholder="Benutzername"
+                            className="h-8 text-xl mb-6"
                             size="lg"
-                            required
                         />
+                        <label className="">
+                            <span className="text-red-500">*Pflichtfeld</span>
+                        </label>
                         <Input
                             type="password"
                             value={passwort}
                             onChange={e => setPasswort(e.target.value)}
                             placeholder="Passwort"
+                            className="h-8 text-xl mb-6"
                             size="lg"
-                            required
                         />
+                        <label className="">
+                            <span className="text-red-500">*Pflichtfeld</span>
+                        </label>
                         <Input
                             type="password"
                             value={passwortBestaetigung}
                             onChange={e => setPasswortBestaetigung(e.target.value)}
                             placeholder="Passwort bestätigen"
+                            className="h-8 text-xl mb-6"
                             size="lg"
-                            required
                         />
                         <Input
                             value={vorname}
                             onChange={e => setVorname(e.target.value)}
                             placeholder="Vorname"
+                            className="h-8 text-xl mb-6"
                             size="lg"
                         />
                         <Input
                             value={nachname}
                             onChange={e => setNachname(e.target.value)}
                             placeholder="Nachname"
+                            className="h-8 text-xl mb-6"
                             size="lg"
                         />
                         <Input
@@ -156,6 +167,7 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                             value={email}
                             onChange={e => setEmail(e.target.value)}
                             placeholder="E-Mail"
+                            className="h-8 text-xl mb-6"
                             size="lg"
                         />
 
@@ -172,7 +184,7 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                             variant="outlined"
                             size="sm"
                             onClick={() => fileInputRef.current.click()}
-                            className="flex items-center gap-2 cursor-pointer"
+                            className="flex items-center gap-2 cursor-pointer text-xl"
                         >
                             <FaUpload /> Profilfoto auswählen
                         </Button>
@@ -180,7 +192,7 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                         <motion.button
                             type="submit"
                             whileHover={{ scale: 1.1 }}
-                            className="bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold mt-2 cursor-pointer"
+                            className="bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold mt-2 cursor-pointer text-xl"
                         >
                             Registrieren
                         </motion.button>

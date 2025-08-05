@@ -5,7 +5,6 @@ import FeaturedHobby from "./FeaturedHobby.jsx";
 import NewPost from "./NewPost.jsx";
 import CategoryNavBar from "./CategoryNavBar.jsx";
 
-
 const Home = (props) => {
     // const featuredHobbies = [
     //     {

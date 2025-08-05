@@ -92,6 +92,11 @@ function App() {
         setBearbeitetBeitrag(aktualisierterBeitrag);
     }
 
+    // Add a new Post to the beiträge array.
+    function handleBeitragHinzufuegen(neuerBeitrag) {
+        setBeitraege(prev => [...prev, neuerBeitrag]);
+    }
+
     return (
         <>
             <div className="fixed inset-0 -z-10">
@@ -100,7 +105,7 @@ function App() {
 
             <Navbar benutzerListe={benutzerListe} onLogin={handleLogin} currentUser={aktuellerBenutzer} onLogout={handleLogout} onRegistrieren={handleRegistrierung} onSpeichern={handleProfilSpeichern}/>
             <Routes>
-                <Route path="/" element={<Home benutzern={benutzerListe} beitraege={beitraege} kommentare={kommentare} benutzer={aktuellerBenutzer} />} />
+                <Route path="/" element={<Home benutzern={benutzerListe} beitraege={beitraege} kommentare={kommentare} benutzer={aktuellerBenutzer} onBeitragHinzufuegen={handleBeitragHinzufuegen}/>} />
                 {beitraege.map(beitrag => (
                     <Route
                         key={beitrag.ueberschrift}

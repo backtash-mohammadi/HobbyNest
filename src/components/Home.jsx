@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import CommentSection from "./CommentSection.jsx";
 import FeaturedHobby from "./FeaturedHobby.jsx";
+import NewPost from "./NewPost.jsx";
 
 const Home = (props) => {
     // const featuredHobbies = [
@@ -77,6 +78,10 @@ const Home = (props) => {
             {/* Ich habe die CommentSection Component innerhalb dem HobbyDetails component versetzt.  */}
             {/*Auf Wunsch, kann man auch die ganze Liste der Kommentare hier in Home page sichtbar lassen.*/}
             {/*<CommentSection />*/}
+
+
+            {/*    New Post section. This section acn be moved elsewhere, if needed.*/}
+            <NewPost author={props.benutzer} onBeitragHinzufuegen={props.onBeitragHinzufuegen}/>
         </div>
     );
 };

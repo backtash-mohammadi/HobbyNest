@@ -190,7 +190,7 @@ export const anfangsBeitraege = [
         id: '9',
         ueberschrift: 'Die Vorteile eines Instruments im Alltag',
         inhalt: 'Ein Instrument zu lernen fördert Konzentration, Geduld und Feinmotorik. Studien zeigen, dass musizierende Kinder oft besser in Mathematik abschneiden. Auch Erwachsene profitieren: Musik reduziert Stress und stärkt das Gedächtnis. Ob Gitarre, Klavier oder Geige – jedes Instrument bringt neue kreative Möglichkeiten.',
-        autorId: '1',
+        autorId: '2',
         erstelltAm: new Date('2025-08-03'),
         kategorie: 'musik',
         bild: 'src/assets/instrument-beitrag.png'
@@ -203,6 +203,33 @@ export const anfangsBeitraege = [
         erstelltAm: new Date('2025-08-05'),
         kategorie: 'musik',
         bild: 'src/assets/kopfhoerer-beitrag.webp'
+    },
+    {
+        id: '11',
+        ueberschrift: 'Warum moderne Kunst polarisiert',
+        inhalt: 'Moderne Kunst bricht oft mit traditionellen Formen, was zu Diskussionen führt. Viele Werke setzen auf Emotion statt Technik und fordern Betrachter dazu auf, neue Perspektiven einzunehmen. Diese Vielfalt macht moderne Kunst spannend, aber auch kontrovers – sie lädt zur Reflexion und zum Dialog ein.',
+        autorId: '2',
+        erstelltAm: new Date('2025-08-01'),
+        kategorie: 'kunst',
+        bild: 'src/assets/moderne-kunst-beitrag.png'
+    },
+    {
+        id: '12',
+        ueberschrift: 'Die Wirkung von Farben in der Malerei',
+        inhalt: 'Farben haben in der Kunst eine starke emotionale Bedeutung. Rot steht für Energie oder Gefahr, Blau wirkt beruhigend und Gelb vermittelt Optimismus. Künstler nutzen gezielt Farbkontraste und Farbharmonien, um Stimmung und Tiefe zu erzeugen. Farben sprechen das Unterbewusstsein direkt an und beeinflussen die Wahrnehmung.',
+        autorId: '2',
+        erstelltAm: new Date('2025-08-03'),
+        kategorie: 'kunst',
+        bild: 'src/assets/farben-beirag.png'
+    },
+    {
+        id: '13',
+        ueberschrift: 'Skulpturen im öffentlichen Raum',
+        inhalt: 'Skulpturen im Freien verschönern nicht nur Städte, sondern regen auch zum Nachdenken an. Sie machen Kunst für alle zugänglich und laden zur Interaktion ein. Ob abstrakt oder realistisch – solche Werke verändern die Wahrnehmung von Orten und schaffen kulturelle Identität im Alltag.',
+        autorId: '1',
+        erstelltAm: new Date('2025-08-05'),
+        kategorie: 'kunst',
+        bild: 'src/assets/skulpturen-beitrag.jpg'
     },
     { id: '1', ueberschrift: 'Willkommen im Blog', inhalt: 'Das ist der erste Beitrag.', autorId: '1', erstelltAm: '2025-07-01T00:00:00Z', kategorie:"sport"},
     { id: '2', ueberschrift: 'React lernen', inhalt: 'Hier teile ich meine Erfahrungen...', autorId: '2', erstelltAm: '2025-07-15T00:00:00Z', kategorie:"outdoor" },

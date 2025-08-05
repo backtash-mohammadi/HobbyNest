@@ -10,6 +10,7 @@ import {
     Input,
 } from "@material-tailwind/react";
 import { FaSignOutAlt, FaTimes, FaUpload, FaEdit } from "react-icons/fa";
+import platzhalterBild from '../assets/platzhalter.webp';
 
 // Komponente für Benutzerprofil mit Bearbeitungsfunktion
 export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSpeichern }) {
@@ -95,7 +96,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                         {bearbeitungsModus ? (
                             <>
                                 <Avatar
-                                    src={foto || undefined}
+                                    src={foto || platzhalterBild}
                                     alt="Profilfoto"
                                     size="xl"
                                     variant="circular"
@@ -119,7 +120,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                             </>
                         ) : (
                             <Avatar
-                                src={foto || undefined}
+                                src={foto || platzhalterBild}
                                 alt={aktuellerBenutzer.benutzername}
                                 size="xxl"
                                 variant="circular"

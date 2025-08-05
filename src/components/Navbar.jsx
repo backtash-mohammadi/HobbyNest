@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { DialogWithForm } from "./DialogWithForm.jsx";
 import { Profil } from "./Profil.jsx";
 import { Avatar } from "@material-tailwind/react";
-import platzhalterBild from "../assets/platzhalter.webp"; // или импорт из src/assets
+import platzhalterBild from "../assets/platzhalter.webp";
 
 
 const Navbar = ({
@@ -41,11 +41,11 @@ const Navbar = ({
 
                         {currentUser && (
                             <>
-                                <p className="text-sm font-medium text-[var(--cl-subtext0)]">
+                                <p className="text-lg font-medium text-[var(--cl-subtext0)]">
                                     Sie sind angemeldet als {currentUser.benutzername}
                                 </p>
 
-                                {/* 2. вместо иконки показываем Avatar */}
+                                {/*Avatar */}
                                 <motion.button
                                     type="button"
                                     whileHover={{ scale: 1.2 }}

@@ -15,14 +15,14 @@ const HobbyDetails = (props) => {
     // **************** end ************************************************
 
     if (!props.hobby) {
-        return <p className="text-red-500">Hobby not found</p>;
+        return <p className="text-red-500">Keinen Beitrag gefunden</p>;
     }
 
     return (
         <>
         <div className="p-6 max-w-2xl mx-auto bg-white shadow rounded-xl mt-4">
             <div className="flex justify-between">
-                <h1 className="text-3xl font-bold mb-2 text-[var(--cl-green)]">{props.hobby.ueberschrift}</h1>
+                <h1 className="text-3xl font-bold mb-4 text-[var(--cl-green)]">{props.hobby.ueberschrift}</h1>
 
                 {props.benutzer && props.benutzer.rolle === "admin"
                     &&
@@ -38,8 +38,18 @@ const HobbyDetails = (props) => {
                     </>
                 }
             </div>
-
-            <p className="mb-4 text-gray-700">{props.hobby.inhalt}</p>
+            <div>
+                {props.hobby.bild && (
+                    <img
+                        className="object-cover w-full h-64 mb-4"
+                        src={props.hobby.bild}
+                        alt={props.hobby.ueberschrift}
+                    />
+                )}
+            </div>
+            <div>
+                <p className="mb-4 text-gray-700">{props.hobby.inhalt}</p>
+            </div>
             {/*<p className="text-sm text-gray-500">Category: {hobby.category}</p>*/}
         </div>
 

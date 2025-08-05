@@ -115,7 +115,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={() => fileInputRef.current.click()}
-                                    className="flex items-center gap-2 cursor-pointer text-base mb-6"
+                                    className="normal-case flex items-center gap-2 cursor-pointer text-base mb-6"
                                 >
                                     <FaUpload /> Foto ändern
                                 </Button>
@@ -180,6 +180,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                             onChange={(e) => setAktuellesPasswort(e.target.value)}
                                             size="lg"
                                             label="Aktuelles Passwort"
+                                            className="text-xl"
                                         />
                                         <Input
                                             type="password"
@@ -187,6 +188,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                             onChange={(e) => setNeuesPasswort(e.target.value)}
                                             size="lg"
                                             label="Neues Passwort"
+                                            className="text-xl"
                                         />
                                         <Input
                                             type="password"
@@ -194,6 +196,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                             onChange={(e) => setPasswortBestaetigung(e.target.value)}
                                             size="lg"
                                             label="Passwort bestätigen"
+                                            className="text-xl"
                                         />
                                         {passwortFehler && (
                                             <Typography variant="small" color="red">
@@ -244,7 +247,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={() => setBearbeitungsModus(false)}
-                                    className="flex items-center gap-2 cursor-pointer text-sm"
+                                    className="normal-case flex items-center gap-2 cursor-pointer text-sm"
 
                                 >
                                     <FcCancel/> Abbrechen
@@ -253,7 +256,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={handleSpeichern}
-                                    className="flex items-center gap-2 cursor-pointer text-sm"
+                                    className="normal-case flex items-center gap-2 cursor-pointer text-sm"
                                 >
                                     <FaEdit /> Speichern
                                 </Button>
@@ -262,7 +265,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={onClose}
-                                    className="flex items-center gap-2 cursor-pointer text-sm"
+                                    className="normal-case flex items-center gap-2 cursor-pointer text-sm"
                                 >
                                     <IoCloseSharp /> Schließen
                                 </Button>
@@ -273,7 +276,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={() => setBearbeitungsModus(true)}
-                                    className="flex items-center gap-2 cursor-pointer text-sm"
+                                    className="normal-case flex items-center gap-2 cursor-pointer text-sm"
                                 >
                                     <FaEdit /> Bearbeiten
                                 </Button>
@@ -281,7 +284,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={onLogout}
-                                    className="flex items-center gap-2 cursor-pointer text-sm"
+                                    className="normal-case flex items-center gap-2 cursor-pointer text-sm"
                                 >
                                     <FaSignOutAlt /> Abmelden
                                 </Button>
@@ -290,7 +293,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     variant="outlined"
                                     size="sm"
                                     onClick={onClose}
-                                    className="flex items-center gap-2 cursor-pointer text-sm"
+                                    className="normal-case flex items-center gap-2 cursor-pointer text-sm"
                                 >
                                     <IoCloseSharp /> Schließen
                                 </Button>

@@ -101,7 +101,7 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
                         <Button
                             variant="outlined"
                             size="sm"
-                            className="flex items-center gap-2 cursor-pointer text-base"
+                            className="normal-case flex items-center gap-2 cursor-pointer text-base"
                             onClick={() => setAusgewaehlterBenutzer(benutzer)}
                         >
                             <FaUserEdit /> Bearbeiten
@@ -117,7 +117,7 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
                     variant="outlined"
                     disabled={aktuelleSeite === 1}
                     onClick={geheZuVorheriger}
-                    className="cursor-pointer flex items-center text-base"
+                    className="normal-case cursor-pointer flex items-center text-base"
                 >
                     <FaBackward />{"\u00A0"}Zurück
                 </Button>
@@ -129,7 +129,7 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
                     variant="outlined"
                     disabled={aktuelleSeite === gesamtSeiten}
                     onClick={geheZuNächster}
-                    className="cursor-pointer flex items-center text-base"
+                    className="normal-case cursor-pointer flex items-center text-base"
                 >
                      Weiter{"\u00A0"}<FaForward />
                 </Button>

@@ -184,7 +184,7 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                             variant="outlined"
                             size="sm"
                             onClick={() => fileInputRef.current.click()}
-                            className="flex items-center gap-2 cursor-pointer text-xl"
+                            className="normal-case flex items-center justify-center gap-2 cursor-pointer text-xl"
                         >
                             <FaUpload /> Profilfoto auswählen
                         </Button>

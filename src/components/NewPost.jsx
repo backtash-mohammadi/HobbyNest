@@ -5,28 +5,35 @@ export default function NewPost({ author, onBeitragHinzufuegen }) {
     const [ueberschrift, setUeberschrift] = useState('');
     const [inhalt, setInhalt] = useState('');
     const [kategorie, setKategorie] = useState('');
-    const [bild, setBild] = useState(null); // für Bilder
+    const [bild, setBild] = useState(null);
+    const [resetImageKey, setResetImageKey] = useState(0); // Used to reset ImageUploader
 
     function handleSubmit(e) {
         e.preventDefault();
+
         const neuerBeitrag = {
             id: crypto.randomUUID(),
             ueberschrift,
             inhalt,
             autorId: author.id,
-            autorName: author.benutzername,           // <—
-            autorBild: author.foto,                   // <—
-            erstelltAm: new Date().toISOString(),     // <—
+            autorName: author.benutzername,
+            autorBild: author.foto,
+            erstelltAm: new Date().toISOString(),
             kategorie,
             bild,
         };
+
         onBeitragHinzufuegen(neuerBeitrag);
+
+        // Reset form fields
         setUeberschrift('');
         setInhalt('');
         setKategorie('');
         setBild(null);
+        setResetImageKey(prev => prev + 1); // Force ImageUploader reset
     }
 
+    // Only admins can see the form
     if (!author || author.rolle !== "admin") return null;
 
     return (
@@ -34,6 +41,7 @@ export default function NewPost({ author, onBeitragHinzufuegen }) {
             <h3 className="text-3xl font-bold mb-2 text-[var(--cl-green)]">Neuer Beitrag</h3>
 
             <form onSubmit={handleSubmit}>
+                {/* Überschrift */}
                 <input
                     className="w-full p-2 border border-gray-300 rounded-md resize mb-4"
                     value={ueberschrift}
@@ -42,6 +50,7 @@ export default function NewPost({ author, onBeitragHinzufuegen }) {
                     required
                 />
 
+                {/* Inhalt */}
                 <textarea
                     className="w-full p-2 border border-gray-300 rounded-md resize mb-4"
                     value={inhalt}
@@ -50,33 +59,39 @@ export default function NewPost({ author, onBeitragHinzufuegen }) {
                     required
                 />
 
-                <p className="mb-2 font-medium">Kategorie</p>
-                {["sport", "kunst", "outdoor", "sonstiges"].map((cat) => (
-                    <div key={cat}>
-                        <input
-                            type="radio"
-                            id={cat}
-                            name="kategorie"
-                            value={cat}
-                            onChange={(e) => setKategorie(e.target.value)}
-                            checked={kategorie === cat}
-                            required
-                        />
-                        <label htmlFor={cat} className="ml-1 capitalize">{cat}</label>
-                    </div>
-                ))}
-
-                <div className="mt-4">
-                    <p className="mb-1 font-medium">Bild hochladen</p>
-                    <ImageUploader onImageUpload={setBild} />
-                </div>
-
-                <button
-                    type="submit"
-                    className="mt-4 bg-[var(--cl-green)] text-white px-4 py-2 rounded-md hover:bg-green-700"
+                {/* Kategorie Dropdown */}
+                <label htmlFor="kategorie" className="block mb-2 font-medium">
+                    Kategorie
+                </label>
+                <select
+                    id="kategorie"
+                    value={kategorie}
+                    onChange={(e) => setKategorie(e.target.value)}
+                    className="w-full p-2 border border-gray-300 rounded-md mb-4"
+                    required
                 >
-                    Beitrag hinzufügen
-                </button>
+                    <option value="">Bitte auswählen</option>
+                    <option value="sport">Sport</option>
+                    <option value="kunst">Kunst</option>
+                    <option value="outdoor">Outdoor</option>
+                    <option value="kochen">Kochen</option>
+                    <option value="musik">Musik</option>
+                    <option value="sonstiges">Sonstiges</option>
+                </select>
+
+                {/* Bild-Upload + Button nebeneinander */}
+                <div className="flex items-center justify-between gap-4 mt-4">
+                    {/* ImageUploader gets reset via key change */}
+                    <ImageUploader onImageUpload={setBild} key={resetImageKey} />
+
+                    {/* Submit Button */}
+                    <button
+                        type="submit"
+                        className="bg-[var(--cl-green)] text-white px-4 py-2 rounded-md hover:bg-green-700"
+                    >
+                        Beitrag hinzufügen
+                    </button>
+                </div>
             </form>
         </div>
     );

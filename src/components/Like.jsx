@@ -45,7 +45,7 @@ const LikeButton = ({ postId, currentUser, onLikesChanged }) => {
         <button
             onClick={currentUser ? toggleLike : undefined}
             className={
-                "flex items-center gap-1 text-red-500 " +
+                "flex items-center gap-1 text-red-500 cursor-pointer" +
                 (!currentUser ? "opacity-50 cursor-default" : "")
             }
             disabled={!currentUser}

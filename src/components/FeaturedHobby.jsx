@@ -1,31 +1,13 @@
-import { useState, useEffect } from "react";
-import { FcLike } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import {FaComments} from "react-icons/fa";
+import { FaComments } from "react-icons/fa";
+import LikeButton from "./Like.jsx"; // Import LikeButton!
 
-const FeaturedHobby = ({ hobby, benutzern, kommentare }) => {
-    const [liked, setLiked] = useState(false);
-
+const FeaturedHobby = ({ hobby, benutzern, kommentare, onLikesChanged, currentUser }) => {
     // Anzahl der Kommentare
     let anzahlDerKommentare = kommentare ? kommentare.filter(k => k.beitragId === hobby.id).length : 0;
 
     // autorFoto wird in benutzern array gesucht.
-    const autorFoto = benutzern && benutzern.find(benutzer => benutzer.id === hobby.autorId).foto;
-
-    // Beim Laden Like-Status aus localStorage lesen
-    useEffect(() => {
-        const likedPosts = JSON.parse(localStorage.getItem("likedPosts") || "{}");
-        setLiked(likedPosts[hobby.id] || false);
-    }, [hobby.id]);
-
-    // Toggle Like + speichern
-    const toggleLike = () => {
-        const updated = !liked;
-        setLiked(updated);
-        const likedPosts = JSON.parse(localStorage.getItem("likedPosts") || "{}");
-        likedPosts[hobby.id] = updated;
-        localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
-    };
+    const autorFoto = benutzern && benutzern.find(benutzer => benutzer.id === hobby.autorId)?.foto;
 
     return (
         <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md relative">
@@ -54,14 +36,11 @@ const FeaturedHobby = ({ hobby, benutzern, kommentare }) => {
                     <div className="flex items-center">
                         <img
                             className="object-cover h-10 w-10 rounded-full"
-                            // https://via.placeholder.com/40 löst Felher in console aus.
-                            //ich nutze eine temporäre Variante, die ein Bild von assets nimmt.
-                            // src={hobby.autorBild || "https://via.placeholder.com/40"}
                             src={autorFoto || "src/assets/user-placeholder-icon.PNG"}
                             alt="Autor"
                         />
                         <span className="mx-2 font-semibold text-gray-700">
-                            {benutzern ? benutzern.find(b => b.id === hobby.autorId).benutzername : "Unbekannt"}
+                            {benutzern ? benutzern.find(b => b.id === hobby.autorId)?.benutzername : "Unbekannt"}
                         </span>
                         <span className="text-xs text-gray-600">
                             {new Date(hobby.erstelltAm).toLocaleDateString("de-DE")}
@@ -69,12 +48,14 @@ const FeaturedHobby = ({ hobby, benutzern, kommentare }) => {
                     </div>
                     <span
                         className={`flex items-center gap-x-1 mx-2 font-semibold ${anzahlDerKommentare > 4 ? 'text-yellow-600' : 'text-blue-950'}`}>
-                            <FaComments />
+                        <FaComments />
                         {anzahlDerKommentare}
                     </span>
-                    <button onClick={toggleLike} className="text-red-500 text-xl cursor-pointer">
-                        {liked ? <FcLike /> : "♡"}
-                    </button>
+                    <LikeButton
+                        postId={hobby.id}
+                        currentUser={currentUser}
+                        onLikesChanged={onLikesChanged}
+                    />
                 </div>
             </div>
         </div>

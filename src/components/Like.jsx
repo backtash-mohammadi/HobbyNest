@@ -1,10 +1,8 @@
-// React Hooks importieren
 import { useState, useEffect } from 'react';
-// Herz-Icon für "Like"
 import { FcLike } from "react-icons/fc";
 
 // LikeButton-Komponente erhält postId und currentUser als Props
-const LikeButton = ({ postId, currentUser }) => {
+const LikeButton = ({ postId, currentUser, onLikesChanged }) => {
     // State: Ob der aktuelle Benutzer diesen Post geliked hat
     const [liked, setLiked] = useState(false);
     // State: Wie viele Benutzer diesen Post insgesamt geliked haben
@@ -14,40 +12,48 @@ const LikeButton = ({ postId, currentUser }) => {
     useEffect(() => {
         const stored = JSON.parse(localStorage.getItem("likesByPost") || "{}");
         const userList = stored[postId] || [];
-        setLiked(userList.includes(currentUser.id)); // true/false für den User
-        setLikeCount(userList.length); // Anzahl aller Likes für diesen Post
-    }, [postId, currentUser.id]);
+        setLiked(currentUser ? userList.includes(currentUser.id) : false);
+        setLikeCount(userList.length);
+    }, [postId, currentUser?.id]);
 
     // Funktion zum Liken oder Entliken
     const toggleLike = () => {
+        if (!currentUser) return; // Prevent like if not logged in
         const stored = JSON.parse(localStorage.getItem("likesByPost") || "{}");
         const userList = stored[postId] || [];
 
         let updatedList;
 
         if (userList.includes(currentUser.id)) {
-            // Wenn bereits geliked → Like entfernen
             updatedList = userList.filter(id => id !== currentUser.id);
             setLiked(false);
         } else {
-            // Wenn noch nicht geliked → Like hinzufügen
             updatedList = [...userList, currentUser.id];
             setLiked(true);
         }
 
-        // Update der Liste im localStorage
         stored[postId] = updatedList;
         localStorage.setItem("likesByPost", JSON.stringify(stored));
 
-        // Neue Like-Anzahl setzen
         setLikeCount(updatedList.length);
+
+        if (onLikesChanged) onLikesChanged();
     };
 
-    // Button-Render: Herz-Symbol + Anzahl der Likes
+    // Show count for everyone, only allow click for logged-in users
     return (
-        <button onClick={toggleLike} className="flex items-center gap-1 text-red-500">
-            {liked ? <FcLike /> : "♡"}  {/* Gefüllt oder leer je nach Status */}
-            <span>{likeCount}</span>   {/* Anzahl der Likes */}
+        <button
+            onClick={currentUser ? toggleLike : undefined}
+            className={
+                "flex items-center gap-1 text-red-500 " +
+                (!currentUser ? "opacity-50 cursor-default" : "")
+            }
+            disabled={!currentUser}
+            tabIndex={currentUser ? 0 : -1}
+            aria-label="Like"
+        >
+            {liked && currentUser ? <FcLike /> : "♡"}
+            <span>{likeCount}</span>
         </button>
     );
 };

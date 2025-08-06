@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LikeButton from "./Like.jsx";
 
 // Card component for displaying a single hobby/post
-const StyledPostCard = ({ hobby, currentUser }) => {
+const StyledPostCard = ({ hobby, currentUser, onLikesChanged }) => {
     return (
         <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md relative">
             {/* Show image at the top of the card if available */}
@@ -55,6 +55,7 @@ const StyledPostCard = ({ hobby, currentUser }) => {
                 </div>
             </div>
         </div>
+
     );
 
 };

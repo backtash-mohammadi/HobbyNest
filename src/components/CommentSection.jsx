@@ -89,7 +89,7 @@ const CommentSection = ({postId, benutzer, benutzern, onKommentareHinzu, onKomme
 
     return (
         <FaRegCommentAlt />,
-            <div className="mt-10 max-w-2xl mx-auto bg-[var(--cl-surface0)] text-[var(--cl-text-name)] p-6 rounded-xl shadow-md">
+            <div className="mt-10 max-w-2xl mx-auto bg-gray-100 text-[var(--cl-text-name)] p-6 rounded-xl shadow-md">
                 <h3 className="text-2xl font-bold mb-4 text-[var(--cl-green)]">
                     Kommentare
                 </h3>
@@ -108,9 +108,9 @@ const CommentSection = ({postId, benutzer, benutzern, onKommentareHinzu, onKomme
                                     key={c.id}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 1.2 }}
-                                    className="bg-[var(--cl-surface1)] p-4 rounded-md border border-[var(--cl-surface2)]"
+                                    className="bg-gray-200 p-4 rounded-md border border-blue-200 shadow-[0_0_3px_1px_var(--cl-blue)]"
                                 >
-                                    <div className="flex justify-between text-sm font-semibold">
+                                    <div className="flex justify-between text-m font-semibold text-black">
                                         <span>{benutzern.find(b => b.id === c.autorId)?.benutzername || "Unbekannt"}</span>
                                         <span className="text-xs text-[var(--cl-subtext1)]">
                                 </span>
@@ -151,10 +151,10 @@ const CommentSection = ({postId, benutzer, benutzern, onKommentareHinzu, onKomme
                             onChange={e => setInhalt(e.target.value)}
                             placeholder="Kommentar"
                             required
-                            className="w-full p-3 rounded-md bg-[var(--cl-surface1)] text-[var(--cl-text-name)]
+                            className="w-full p-3 rounded-md bg-white text-[var(--cl-text-name)]
                     placeholder:text-[var(--cl-subtext1)]
-                    border border-[var(--cl-teal)]
-                    shadow-[0_0_6px_1px_var(--cl-teal)]
+                    border border-blue-500
+                    shadow-[0_0_3px_1px_var(--cl-teal)]
                     focus:outline-none focus:ring-2 focus:ring-[var(--cl-green)] transition"
                         />
                         <motion.button

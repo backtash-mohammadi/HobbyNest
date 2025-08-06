@@ -311,7 +311,8 @@ export const anfangsBeitraege = [
         inhalt: "Backen macht Kindern riesigen Spaß! Ob einfache Muffins, Kekse oder ein bunter Kuchen – beim Rühren, Kneten und Verzieren können sie sich kreativ austoben. Gleichzeitig lernen sie spielerisch Mengen, Zutaten und den Umgang mit Lebensmitteln kennen.",
         autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
         erstelltAm: new Date(),
-        kategorie: "kochen"
+        kategorie: "kochen",
+        bild: 'src/assets/backen-kindern-beitrag.jpg'
     },
     {
         id: "24",
@@ -319,7 +320,8 @@ export const anfangsBeitraege = [
         inhalt: "Wer unter der Woche wenig Zeit zum Kochen hat, sollte Meal Prep ausprobieren. Am Wochenende vorgekocht, können Gerichte wie Chili, Reisgerichte oder Ofengemüse portionsweise aufbewahrt werden. So sparst du Zeit und isst trotzdem frisch und gesund.",
         autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
         erstelltAm: new Date(),
-        kategorie: "kochen"
+        kategorie: "kochen",
+        bild: 'src/assets/meal-prep-beitrag.jpg'
     },
     {
         id: "25",
@@ -327,7 +329,8 @@ export const anfangsBeitraege = [
         inhalt: "Ein Smart Home bietet Komfort und Sicherheit. Mit Sprachassistenten, smarten Lampen und Heizkörperthermostaten lässt sich der Alltag bequem per App oder Sprache steuern. Ideal für Technikbegeisterte, die ihr Zuhause modernisieren möchten.",
         autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
         erstelltAm: new Date(),
-        kategorie: "sonstiges"
+        kategorie: "sonstiges",
+        bild: 'src/assets/smarhome-beitrag.jpg'
     },
     {
         id: "26",
@@ -336,7 +339,7 @@ export const anfangsBeitraege = [
         autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
         erstelltAm: new Date(),
         kategorie: "sonstiges",
-        bild: 'src/assets/minimalismus-beitrag.jpg'
+        bild: 'src/assets/minimalismus-beitrag.jpg',
     },
     {
         id: "27",

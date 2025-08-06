@@ -111,7 +111,7 @@ const CommentSection = ({postId, benutzer, benutzern}) => {
                             .map((c) => (
                                 <motion.li
                                     key={c.id}
-                                    whileHover={{ scale: 1.1 }}
+                                    whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 1.2 }}
                                     className="bg-[var(--cl-surface1)] p-4 rounded-md border border-[var(--cl-surface2)]"
                                 >

@@ -69,7 +69,14 @@ const Home = (props) => {
                 {/* Right: List of Featured Hobby Cards */}
                 <div className="grid place-items-top grid-cols-1 md:grid-cols-3 gap-6 w-full">
                     {gefilterteBeitraege.map((hobby) => (
+                        <motion.div
+                            key={hobby.id}
+                            whileHover={{ scale: 1.03 }}
+                            transition={{ type: "spring", stiffness: 200, damping: 40 }}
+                            className="w-full"
+                        >
                         <FeaturedHobby key={hobby.id} hobby={hobby} benutzern={benutzernListe} kommentare={props.kommentare}/>
+                        </motion.div>
                     ))}
                 </div>
             </div>

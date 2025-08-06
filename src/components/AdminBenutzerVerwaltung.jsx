@@ -63,11 +63,11 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
             {/* Nach Rolle filtern */}
             <div className="flex gap-4 mb-4">
                 <label className="flex items-center gap-2 h-10">
-                    <span>Rolle:</span>
+                    <span className="text-xl">Rolle:</span>
                     <select
                         value={rollenFilter}
                         onChange={handleRollenChange}
-                        className="rounded border p-2  text-[var(--cl-text)]"
+                        className="rounded border p-2  text-[var(--cl-text)] cursor-pointer"
                     >
                         <option value="alle">Alle</option>
                         <option value="admin">Administratoren</option>

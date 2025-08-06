@@ -97,7 +97,7 @@ export function DialogWithForm({ benutzerListe, onLogin, onRegistrieren }) {
                                     size="lg"
 
                                 />
-                                {fehler && <Typography variant="small" color="red">{fehler}</Typography>}
+                                {fehler && <Typography color="red" className="mb-3">{fehler}</Typography>}
                                 <motion.button
                                     type="submit"
                                     whileHover={{ scale: 1.1 }}

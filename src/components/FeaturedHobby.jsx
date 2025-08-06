@@ -25,7 +25,7 @@ const FeaturedHobby = ({ hobby, benutzern, kommentare, onLikesChanged, currentUs
                 </span>
 
                 <Link to={`/${hobby.ueberschrift}`}>
-                    <h2 className="mt-2 text-xl font-semibold text-gray-800 hover:text-gray-600 hover:underline">
+                    <h2 className="mt-2 text-xl font-semibold text-gray-800 hover:text-gray-600 line-clamp-1 hover:underline">
                         {hobby.ueberschrift}
                     </h2>
                 </Link>

@@ -99,6 +99,7 @@ function App() {
     // Add a new Post to the beiträge array.
     function handleBeitragHinzufuegen(neuerBeitrag) {
         setBeitraege(prev => [...prev, neuerBeitrag]);
+        navigate(`/${encodeURIComponent(neuerBeitrag.ueberschrift)}`);
     }
 
     return (

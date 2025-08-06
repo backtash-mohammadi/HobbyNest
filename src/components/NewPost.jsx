@@ -53,7 +53,7 @@ export default function NewPost({ author, onBeitragHinzufuegen }) {
 
                 {/* Inhalt */}
                 <textarea
-                    className="w-full p-2 border border-gray-300 rounded-md resize mb-4"
+                    className="w-full p-2 border border-gray-300 rounded-md resize mb-4 min-h-[240px]"
                     value={inhalt}
                     onChange={e => setInhalt(e.target.value)}
                     placeholder="Inhalt"

@@ -32,7 +32,7 @@ const Home = (props) => {
     //     margin: "1px",
     // };
 
-    const gefilterteBeitraege = props.beitraege.filter((beitrag) =>
+    const gefilterteBeitraege = props.beitraege.sort((a, b) => new Date(b.erstelltAm) - new Date(a.erstelltAm)).filter((beitrag) =>
         beitrag.ueberschrift
             .toLowerCase()
             .includes(suchUeberschrift.toLowerCase())
@@ -82,7 +82,6 @@ const Home = (props) => {
                 {/* Right: List of Featured Hobby Cards */}
                 <div className="grid place-items-top grid-cols-1 md:grid-cols-3 gap-6 w-full">
                     {sichtbareBeitraege
-                        .sort((a, b) => new Date(b.erstelltAm) - new Date(a.erstelltAm))
                         .map((hobby) => (
                         <motion.div
                             key={hobby.id}

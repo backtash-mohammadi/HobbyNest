@@ -27,10 +27,11 @@ const Home = (props) => {
     };
 
     return (
+        // <div className="min-h-screen px-6 py-10 bg-[var(--cl-base)] text-[var(--cl-text)]">
         <div className="min-h-screen px-6 py-10 bg-[var(--cl-base)] text-[var(--cl-text)]">
             <CategoryNavBar />
-            <h1 className="text-4xl font-bold mb-4">🎯 Willkommen zu HobbyNest</h1>
-            <p className="text-lg mb-10 text-[var(--cl-subtext1)]">
+            <h1 className="text-4xl font-bold mb-4 text-center">🎯 Willkommen zu HobbyNest</h1>
+            <p className="text-lg mb-10 text-[var(--cl-subtext1)] text-center">
                 Einfache Anleitungen für Anfänger zu unterhaltsamen und lohnenden Hobbys!
             </p>
 
@@ -48,7 +49,7 @@ const Home = (props) => {
                 </div>
 
                 {/* Right: List of Featured Hobby Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                <div className="grid place-items-center grid-cols-1 md:grid-cols-3 gap-6 w-full">
                     {props.beitraege.map((hobby) => (
                         <FeaturedHobby key={hobby.id} hobby={hobby} benutzern={benutzernListe} kommentare={props.kommentare}/>
                     ))}

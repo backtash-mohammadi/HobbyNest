@@ -153,7 +153,7 @@ export const anfangsBeitraege = [
         id: '5',
         ueberschrift: 'Warum Ausdauertraining so wichtig ist',
         inhalt: 'Ausdauertraining stärkt das Herz-Kreislauf-System, verbessert die Lungenkapazität und erhöht die allgemeine Fitness. Schon 30 Minuten Laufen, Radfahren oder Schwimmen pro Tag können das Risiko für chronische Erkrankungen deutlich senken. Zudem hilft regelmäßiges Training beim Stressabbau und fördert einen besseren Schlaf.',
-        autorId: '1',
+        autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e',
         erstelltAm: new Date('2025-08-01'),
         kategorie: 'sport',
         bild: 'src/assets/ausdauern-beitrag.png'
@@ -162,7 +162,7 @@ export const anfangsBeitraege = [
         id: '6',
         ueberschrift: 'Die besten Dehnübungen für Fußballer',
         inhalt: 'Fußball beansprucht viele Muskelgruppen. Daher ist gezieltes Dehnen essenziell, um Verletzungen vorzubeugen. Übungen wie der Ausfallschritt, die Oberschenkeldehnung und das Kreisen der Hüfte sorgen für mehr Beweglichkeit. Ideal vor und nach dem Training, um die Muskeln geschmeidig zu halten.',
-        autorId: '1',
+        autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87',
         erstelltAm: new Date('2025-08-03'),
         kategorie: 'sport',
         bild: 'src/assets/fussball-beitrag.png'
@@ -171,7 +171,7 @@ export const anfangsBeitraege = [
         id: '7',
         ueberschrift: 'Krafttraining für Anfänger: So startest du richtig',
         inhalt: 'Wer neu mit Krafttraining beginnt, sollte sich auf Grundübungen konzentrieren: Kniebeugen, Liegestütze und Rudern mit dem eigenen Körpergewicht sind ideal. Wichtig ist eine saubere Technik, langsame Steigerung der Intensität und ausreichend Regeneration. So vermeidest du Verletzungen und baust gezielt Muskeln auf.',
-        autorId: '1',
+        autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87',
         erstelltAm: new Date('2025-08-05'),
         kategorie: 'sport',
         bild: 'src/assets/krafttraining-beitrag.jpg'
@@ -181,7 +181,7 @@ export const anfangsBeitraege = [
         id: '8',
         ueberschrift: 'Warum Musik Emotionen weckt',
         inhalt: 'Musik kann starke Emotionen auslösen, weil sie direkt auf das limbische System im Gehirn wirkt. Ein trauriger Song kann Erinnerungen hervorrufen, während schnelle Beats Energie geben. Studien zeigen, dass Musik sogar den Herzschlag und die Atmung beeinflussen kann. Deshalb ist sie in Therapie, Werbung und Film so wirksam.',
-        autorId: '1',
+        autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e',
         erstelltAm: new Date('2025-08-01'),
         kategorie: 'musik',
         bild: 'src/assets/musik-emotion-beitrag.jpg'
@@ -190,7 +190,7 @@ export const anfangsBeitraege = [
         id: '9',
         ueberschrift: 'Die Vorteile eines Instruments im Alltag',
         inhalt: 'Ein Instrument zu lernen fördert Konzentration, Geduld und Feinmotorik. Studien zeigen, dass musizierende Kinder oft besser in Mathematik abschneiden. Auch Erwachsene profitieren: Musik reduziert Stress und stärkt das Gedächtnis. Ob Gitarre, Klavier oder Geige – jedes Instrument bringt neue kreative Möglichkeiten.',
-        autorId: '2',
+        autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e',
         erstelltAm: new Date('2025-08-03'),
         kategorie: 'musik',
         bild: 'src/assets/instrument-beitrag.png'
@@ -199,7 +199,7 @@ export const anfangsBeitraege = [
         id: '10',
         ueberschrift: 'Kopfhörer oder Lautsprecher – was ist besser?',
         inhalt: 'Kopfhörer bieten ein intensives Hörerlebnis, ideal für unterwegs oder konzentriertes Zuhören. Lautsprecher hingegen schaffen Raumklang und sind besser für Gruppen oder beim Musikhören zu Hause. Beide haben ihre Vor- und Nachteile – entscheidend ist der Einsatzzweck und persönliche Vorlieben beim Hören.',
-        autorId: '1',
+        autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87',
         erstelltAm: new Date('2025-08-05'),
         kategorie: 'musik',
         bild: 'src/assets/kopfhoerer-beitrag.webp'
@@ -208,7 +208,7 @@ export const anfangsBeitraege = [
         id: '11',
         ueberschrift: 'Warum moderne Kunst polarisiert',
         inhalt: 'Moderne Kunst bricht oft mit traditionellen Formen, was zu Diskussionen führt. Viele Werke setzen auf Emotion statt Technik und fordern Betrachter dazu auf, neue Perspektiven einzunehmen. Diese Vielfalt macht moderne Kunst spannend, aber auch kontrovers – sie lädt zur Reflexion und zum Dialog ein.',
-        autorId: '2',
+        autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e',
         erstelltAm: new Date('2025-08-01'),
         kategorie: 'kunst',
         bild: 'src/assets/moderne-kunst-beitrag.png'
@@ -217,7 +217,7 @@ export const anfangsBeitraege = [
         id: '12',
         ueberschrift: 'Die Wirkung von Farben in der Malerei',
         inhalt: 'Farben haben in der Kunst eine starke emotionale Bedeutung. Rot steht für Energie oder Gefahr, Blau wirkt beruhigend und Gelb vermittelt Optimismus. Künstler nutzen gezielt Farbkontraste und Farbharmonien, um Stimmung und Tiefe zu erzeugen. Farben sprechen das Unterbewusstsein direkt an und beeinflussen die Wahrnehmung.',
-        autorId: '2',
+        autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87',
         erstelltAm: new Date('2025-08-03'),
         kategorie: 'kunst',
         bild: 'src/assets/farben-beirag.png'
@@ -226,33 +226,147 @@ export const anfangsBeitraege = [
         id: '13',
         ueberschrift: 'Skulpturen im öffentlichen Raum',
         inhalt: 'Skulpturen im Freien verschönern nicht nur Städte, sondern regen auch zum Nachdenken an. Sie machen Kunst für alle zugänglich und laden zur Interaktion ein. Ob abstrakt oder realistisch – solche Werke verändern die Wahrnehmung von Orten und schaffen kulturelle Identität im Alltag.',
-        autorId: '1',
+        autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87',
         erstelltAm: new Date('2025-08-05'),
         kategorie: 'kunst',
         bild: 'src/assets/skulpturen-beitrag.jpg'
     },
-    { id: '1', ueberschrift: 'Willkommen im Blog', inhalt: 'Das ist der erste Beitrag.', autorId: '1', erstelltAm: '2025-07-01T00:00:00Z', kategorie:"sport"},
-    { id: '2', ueberschrift: 'React lernen', inhalt: 'Hier teile ich meine Erfahrungen...', autorId: '2', erstelltAm: '2025-07-15T00:00:00Z', kategorie:"outdoor" },
-    { id: '3',
-        ueberschrift: 'Getting Started with Chess',
-        inhalt: 'Schach ist ein Brettspiel für zwei Spieler, bei dem es darum geht, den gegnerischen König durch Schachmatt zu setzen. Das bedeutet, dass der König angegriffen wird und keine Möglichkeit hat, dem Angriff zu entkommen. Das Spiel wird auf einem 64-Felder-Brett mit weißen und schwarzen Feldern gespielt, wobei jeder Spieler 16 Figuren hat: einen König, eine Dame, zwei Türme, zwei Läufer, zwei Springer und acht Bauern',
-        autorId: '2',
-        erstelltAm: '2025-07-25T00:00:00Z',
-        kategorie: "sonstiges" },
-    { id: '4', ueberschrift: 'Learn to Play Music', inhalt: 'Beginnen Sie mit den Grundlagen, setzen Sie sich realistische Ziele, üben Sie regelmäßig, und suchen Sie sich Unterstützung. \n' +
-            'Es ist wichtig, sich nicht zu überfordern, Spaß am Lernen zu haben und sich auch über kleine Erfolge zu freuen. \n' +
-            'Hier sind einige detaillierte Tipps:\n' +
-            '\n' +
-            '1. Grundlagen schaffen:\n' +
-            '\n' +
-            '2. Motivation und Spaß:\n' +
-            '\n' +
-            '3. Üben und Lernen:\n' +
-            '\n' +
-            '4. Unterstützung:\n', autorId: '1', erstelltAm: '2025-07-25T00:00:00Z', kategorie:"kunst" }
+    {
+        id: "14",
+        ueberschrift: "Waldabenteuer mit Kindern",
+        inhalt: "Ein Tag im Wald ist für Kinder ein echtes Abenteuer. Zwischen Bäumen, Moos und kleinen Tieren können sie spielerisch die Natur entdecken. Mit einer Lupe im Gepäck wird jeder Käfer spannend und ein selbst gebautes Waldtipi regt die Fantasie an. Gleichzeitig lernen Kinder den respektvollen Umgang mit Pflanzen und Tieren.",
+        autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
+        erstelltAm: new Date(),
+        kategorie: "outdoor",
+        bild: 'src/assets/kindern-beitrag-1.jpeg'
+    },
+    {
+        id: "15",
+        ueberschrift: "Familienausflug zum Barfußpfad",
+        inhalt: "Barfußpfade sind ein tolles Erlebnis für Groß und Klein. Kinder lieben es, verschiedene Untergründe wie Sand, Kies, Holz und Schlamm mit den Füßen zu ertasten. Es fördert nicht nur die Sinne und das Gleichgewicht, sondern sorgt auch für viel Spaß an der frischen Luft. Ideal für einen aktiven Familiennachmittag.",
+        autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
+        erstelltAm: new Date(),
+        kategorie: "outdoor",
+        bild: 'src/assets/barfusspad-beitrag.webp'
+    },
+    {
+        id: "16",
+        ueberschrift: "Wandern in den Alpen",
+        inhalt: "Eine Wanderung in den Alpen bietet nicht nur atemberaubende Ausblicke, sondern auch eine wunderbare Möglichkeit, Körper und Geist zu stärken. Die frische Bergluft, das Zwitschern der Vögel und die stille Natur helfen beim Abschalten vom Alltag. Ob eine gemütliche Tagestour oder eine anspruchsvolle Mehrtageswanderung – die Alpen bieten für jede Fitnessstufe die passende Route.",
+        autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
+        erstelltAm: new Date(),
+        kategorie: "outdoor",
+        bild: 'src/assets/alpen-beitrag.jpg'
+    },
+    {
+        id: "17",
+        ueberschrift: "Kanutour auf der Mecklenburgischen Seenplatte",
+        inhalt: "Die Mecklenburgische Seenplatte ist ein Paradies für Wassersportfreunde. Eine Kanutour dort führt durch idyllische Flussläufe und klare Seen, vorbei an dichten Wäldern und kleinen Dörfern. Wer Ruhe und Natur sucht, ist hier genau richtig. Unterwegs kann man Biber, Fischreiher und mit etwas Glück sogar Seeadler beobachten.",
+        autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
+        erstelltAm: new Date(),
+        kategorie: "outdoor",
+        bild: 'src/assets/kanu-beitrag.jpg'
+    },
+    {
+        id: "18",
+        ueberschrift: "Klettern im Elbsandsteingebirge",
+        inhalt: "Das Elbsandsteingebirge ist bekannt für seine markanten Felsformationen und zählt zu den besten Klettergebieten Europas. Neben klassischen Routen bietet die Region auch Klettersteige und Wanderwege mit spektakulären Aussichten. Wer lieber festen Boden unter den Füßen hat, kann auf zahlreichen Aussichtspunkten die Kletternden bestaunen.",
+        autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
+        erstelltAm: new Date(),
+        kategorie: "outdoor",
+        bild: 'src/assets/klettern-beitrag.webp',
 
+    },
+    {
+        id: "19",
+        ueberschrift: "Radfahren entlang der Nordseeküste",
+        inhalt: "Der Nordseeküstenradweg führt durch Dünenlandschaften, kleine Fischerdörfer und vorbei an historischen Leuchttürmen. Eine Radtour entlang der Küste bietet frische Seeluft, landschaftliche Vielfalt und viele Gelegenheiten zum Verweilen. Besonders schön sind die Sonnenuntergänge über dem Meer nach einem aktiven Tag im Sattel.",
+        autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
+        erstelltAm: new Date(),
+        kategorie: "outdoor",
+        bild: 'src/assets/radfahren-beitrag.png'
+    },
+    {
+        id: "20",
+        ueberschrift: "Schnelle Pasta unter 20 Minuten",
+        inhalt: "Für stressige Tage ist eine schnelle Pasta genau das Richtige. Mit nur wenigen Zutaten wie Knoblauch, Tomaten und Basilikum zauberst du ein leckeres Gericht, das der ganzen Familie schmeckt. Ideal für den Feierabend – unkompliziert, frisch und sättigend.",
+        autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
+        erstelltAm: new Date(),
+        kategorie: "kochen",
+        bild: 'src/assets/pasta-beitrag.jpg'
 
+    },
+    {
+        id: "21",
+        ueberschrift: "Vegane Gerichte einfach gemacht",
+        inhalt: "Veganes Kochen muss nicht kompliziert sein. Mit Linsen, Kichererbsen und frischem Gemüse entstehen nahrhafte Gerichte, die nicht nur gesund sind, sondern auch köstlich schmecken. Probiere ein veganes Curry oder eine Gemüsepfanne – einfach, lecker und tierfrei.",
+        autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
+        erstelltAm: new Date(),
+        kategorie: "kochen",
+        bild: 'src/assets/vegane-beitrag.jpeg'
+    },
+    {
+        id: "23",
+        ueberschrift: "Backen mit Kindern",
+        inhalt: "Backen macht Kindern riesigen Spaß! Ob einfache Muffins, Kekse oder ein bunter Kuchen – beim Rühren, Kneten und Verzieren können sie sich kreativ austoben. Gleichzeitig lernen sie spielerisch Mengen, Zutaten und den Umgang mit Lebensmitteln kennen.",
+        autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
+        erstelltAm: new Date(),
+        kategorie: "kochen"
+    },
+    {
+        id: "24",
+        ueberschrift: "Meal Prep für die Woche",
+        inhalt: "Wer unter der Woche wenig Zeit zum Kochen hat, sollte Meal Prep ausprobieren. Am Wochenende vorgekocht, können Gerichte wie Chili, Reisgerichte oder Ofengemüse portionsweise aufbewahrt werden. So sparst du Zeit und isst trotzdem frisch und gesund.",
+        autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
+        erstelltAm: new Date(),
+        kategorie: "kochen"
+    },
+    {
+        id: "25",
+        ueberschrift: "Smart Home für Einsteiger",
+        inhalt: "Ein Smart Home bietet Komfort und Sicherheit. Mit Sprachassistenten, smarten Lampen und Heizkörperthermostaten lässt sich der Alltag bequem per App oder Sprache steuern. Ideal für Technikbegeisterte, die ihr Zuhause modernisieren möchten.",
+        autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
+        erstelltAm: new Date(),
+        kategorie: "sonstiges"
+    },
+    {
+        id: "26",
+        ueberschrift: "Minimalismus im Wohnzimmer",
+        inhalt: "Weniger ist mehr: Ein minimalistisches Wohnzimmer schafft Ruhe und Ordnung. Klare Linien, helle Farben und wenige, aber hochwertige Möbelstücke verleihen dem Raum eine moderne, zeitlose Ästhetik. Ideal für alle, die bewusst wohnen möchten.",
+        autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
+        erstelltAm: new Date(),
+        kategorie: "sonstiges",
+        bild: 'src/assets/minimalismus-beitrag.jpg'
+    },
+    {
+        id: "27",
+        ueberschrift: "Die Zukunft von KI im Alltag",
+        inhalt: "Künstliche Intelligenz verändert unseren Alltag rasant. Vom personalisierten Einkaufserlebnis bis hin zur automatisierten Textbearbeitung – KI wird in vielen Bereichen zur Unterstützung eingesetzt. Ein spannender Blick auf kommende Entwicklungen.",
+        autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
+        erstelltAm: new Date(),
+        kategorie: "sonstiges",
+        bild: 'src/assets/ki-beitrag.jpg'
+    },
 
+    // { id: '1', ueberschrift: 'Willkommen im Blog', inhalt: 'Das ist der erste Beitrag.', autorId: '1', erstelltAm: '2025-07-01T00:00:00Z', kategorie:"sport"},
+    // { id: '2', ueberschrift: 'React lernen', inhalt: 'Hier teile ich meine Erfahrungen...', autorId: '2', erstelltAm: '2025-07-15T00:00:00Z', kategorie:"outdoor" },
+    // { id: '3',
+    //     ueberschrift: 'Getting Started with Chess',
+    //     inhalt: 'Schach ist ein Brettspiel für zwei Spieler, bei dem es darum geht, den gegnerischen König durch Schachmatt zu setzen. Das bedeutet, dass der König angegriffen wird und keine Möglichkeit hat, dem Angriff zu entkommen. Das Spiel wird auf einem 64-Felder-Brett mit weißen und schwarzen Feldern gespielt, wobei jeder Spieler 16 Figuren hat: einen König, eine Dame, zwei Türme, zwei Läufer, zwei Springer und acht Bauern',
+    //     autorId: '2',
+    //     erstelltAm: '2025-07-25T00:00:00Z',
+    //     kategorie: "sonstiges" },
+    // { id: '4', ueberschrift: 'Learn to Play Music', inhalt: 'Beginnen Sie mit den Grundlagen, setzen Sie sich realistische Ziele, üben Sie regelmäßig, und suchen Sie sich Unterstützung. \n' +
+    //         'Es ist wichtig, sich nicht zu überfordern, Spaß am Lernen zu haben und sich auch über kleine Erfolge zu freuen. \n' +
+    //         'Hier sind einige detaillierte Tipps:\n' +
+    //         '\n' +
+    //         '1. Grundlagen schaffen:\n' +
+    //         '\n' +
+    //         '2. Motivation und Spaß:\n' +
+    //         '\n' +
+    //         '3. Üben und Lernen:\n' +
+    //         '\n' +
+    //         '4. Unterstützung:\n', autorId: '1', erstelltAm: '2025-07-25T00:00:00Z', kategorie:"kunst" }
 
 ];
 

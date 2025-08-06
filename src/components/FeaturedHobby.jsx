@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { FcLike } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import {FaComments} from "react-icons/fa";
 
-const FeaturedHobby = ({ hobby, benutzern }) => {
+const FeaturedHobby = ({ hobby, benutzern, kommentare }) => {
     const [liked, setLiked] = useState(false);
+
+    // Anzahl der Kommentare
+    let anzahlDerKommentare = kommentare ? kommentare.filter(k => k.beitragId === hobby.id).length : 0;
 
     // autorFoto wird in benutzern array gesucht.
     const autorFoto = benutzern && benutzern.find(benutzer => benutzer.id === hobby.autorId).foto;
@@ -44,7 +48,7 @@ const FeaturedHobby = ({ hobby, benutzern }) => {
                     </h2>
                 </Link>
 
-                <p className="mt-2 text-sm text-gray-600">{hobby.inhalt}</p>
+                <p className="mt-2 text-sm text-gray-600 line-clamp-3 text-justify">{hobby.inhalt}</p>
 
                 <div className="mt-4 flex items-center justify-between">
                     <div className="flex items-center">
@@ -63,7 +67,11 @@ const FeaturedHobby = ({ hobby, benutzern }) => {
                             {new Date(hobby.erstelltAm).toLocaleDateString("de-DE")}
                         </span>
                     </div>
-
+                    <span
+                        className={`flex items-center gap-x-1 mx-2 font-semibold ${anzahlDerKommentare > 4 ? 'text-yellow-600' : 'text-blue-950'}`}>
+                            <FaComments />
+                        {anzahlDerKommentare}
+                    </span>
                     <button onClick={toggleLike} className="text-red-500 text-xl cursor-pointer">
                         {liked ? <FcLike /> : "♡"}
                     </button>

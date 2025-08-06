@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import CommentSection from "./CommentSection.jsx";
 import DeleteButton from "./DeleteButton.jsx";
 import {useState} from "react";
-import {FaEdit} from "react-icons/fa";
+import {FaComments, FaEdit} from "react-icons/fa";
 import { motion } from "framer-motion";
 import { IoIosSave } from "react-icons/io";
 import { GrRevert } from "react-icons/gr";
@@ -13,6 +13,7 @@ import ImageUploader from "./ImageUploader.jsx";
 const HobbyDetails = (props) => {
     const { hobbyTitle } = useParams();
     const autorFoto = props.benutzern && props.benutzern.find(benutzer => benutzer.id === props.hobby.autorId).foto;
+    let anzahlDerKommentare = props.kommentare ? props.kommentare.filter(k => k.beitragId === props.hobby.id).length : 0;
 
     // useState Hooks to edit the Post, after the admin user clicks on "editPost"
     const [editBeitragId, setEditBeitragId] = useState(null);
@@ -81,8 +82,13 @@ const HobbyDetails = (props) => {
                 )}
             </div>
             <div>
-                <p className="mb-4 text-gray-700">{props.hobby.inhalt}</p>
+                <p className="mb-4 text-gray-700 text-justify">{props.hobby.inhalt}</p>
             </div>
+            <span
+                className={`flex items-center gap-x-1 mx-2 font-semibold ${anzahlDerKommentare > 4 ? 'text-yellow-600' : 'text-blue-950'}`}>
+                            <FaComments />
+                {anzahlDerKommentare}
+            </span>
             {/*<p className="text-sm text-gray-500">Category: {hobby.category}</p>*/}
         </div>
 
@@ -137,7 +143,7 @@ const HobbyDetails = (props) => {
             }
 
         {/*    Hier habe ich die Kommentare hinzugefügt, die zum Post/Hobby/Beitrag gehören*/}
-            <CommentSection postId={props.hobby.id} benutzer={props.benutzer} benutzern={props.benutzern}/>
+            <CommentSection postId={props.hobby.id} benutzer={props.benutzer} benutzern={props.benutzern} kommentare={props.kommentare} onKommentareHinzu={props.onKommenareHinzu} onKommentareLoeschen={props.onKommentareLoeschen}/>
         </>
     );
 };

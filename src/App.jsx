@@ -111,6 +111,16 @@ function App() {
         );
     }
 
+    // Add the new comment to the kommentare array.
+    function handleKommentareHinzufuegen(neuerKommentar){
+        setKommentare(prev => [...prev, neuerKommentar]);
+    }
+
+    // Delete the comment from the kommentare array.
+    function handleKommentarLoeschen(kommentarId) {
+        setKommentare(prev => prev.filter(k => k.id !== kommentarId));
+    }
+
     return (
         <>
             {/*<div className="fixed inset-0 -z-10">*/}
@@ -124,7 +134,7 @@ function App() {
                     <Route
                         key={beitrag.ueberschrift}
                         path={`/${beitrag.ueberschrift}`}
-                        element={<HobbyDetails hobby={beitrag} benutzer={aktuellerBenutzer} benutzern={benutzerListe} onBeitragLoeschen={handleBeitragLoeschen} onBeitragBearbeiten={handleBeitragBearbeiten}/>}
+                        element={<HobbyDetails hobby={beitrag} benutzer={aktuellerBenutzer} benutzern={benutzerListe} onBeitragLoeschen={handleBeitragLoeschen} onBeitragBearbeiten={handleBeitragBearbeiten} kommentare={kommentare} onKommenareHinzu={handleKommentareHinzufuegen} onKommentareLoeschen={handleKommentarLoeschen}/>}
                     />
                 ))}
 
@@ -149,22 +159,22 @@ function App() {
                 />
                 <Route
                     path={`/sport`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"sport"} benutzern={benutzerListe}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"sport"} benutzern={benutzerListe} kommentare={kommentare}/>}/>
                 <Route
                     path={`/kunst`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"kunst"} benutzern={benutzerListe}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"kunst"} benutzern={benutzerListe} kommentare={kommentare}/>}/>
                 <Route
                     path={`/outdoor`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"outdoor"} benutzern={benutzerListe}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"outdoor"} benutzern={benutzerListe} kommentare={kommentare}/>}/>
                 <Route
                     path={`/kochen`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"kochen"} benutzern={benutzerListe}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"kochen"} benutzern={benutzerListe} kommentare={kommentare}/>}/>
                 <Route
                     path={`/musik`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"musik"} benutzern={benutzerListe}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"musik"} benutzern={benutzerListe} kommentare={kommentare}/>}/>
                 <Route
                     path={`/sonstiges`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"sonstiges"} benutzern={benutzerListe}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"sonstiges"} benutzern={benutzerListe} kommentare={kommentare}/>}/>
 
             </Routes>
             <Footer />

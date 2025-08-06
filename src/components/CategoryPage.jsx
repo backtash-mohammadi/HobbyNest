@@ -1,7 +1,7 @@
 import FeaturedHobby from "./FeaturedHobby.jsx";
 import React from "react";
 
-export default function CategoryPage({beitraege, kategorie}){
+export default function CategoryPage({beitraege, kategorie, benutzern}){
     // console.log("vor: ", beitraege)
     // console.log("test k ", beitraege.filter(b => b.kategorie === "outdoor"));
 
@@ -13,7 +13,7 @@ export default function CategoryPage({beitraege, kategorie}){
                 {beitraege
                     .filter(b => b.kategorie === kategorie)
                     .map(hobby => (
-                        <FeaturedHobby key={hobby.id} hobby={hobby} />
+                        <FeaturedHobby key={hobby.id} hobby={hobby} benutzern={benutzern}/>
                     ))}
             </div>
 

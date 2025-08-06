@@ -12,6 +12,7 @@ import ImageUploader from "./ImageUploader.jsx";
 // Der Component wird zu einer bestimmen path in App.jsx verbunden.
 const HobbyDetails = (props) => {
     const { hobbyTitle } = useParams();
+    const autorFoto = props.benutzern && props.benutzern.find(benutzer => benutzer.id === props.hobby.autorId).foto;
 
     // useState Hooks to edit the Post, after the admin user clicks on "editPost"
     const [editBeitragId, setEditBeitragId] = useState(null);
@@ -29,6 +30,23 @@ const HobbyDetails = (props) => {
     return (
         <>
         <div className="p-6 max-w-2xl mx-auto bg-white shadow rounded-xl mt-4">
+            {/*Benutzers- Foto und Name */}
+            <div className="mt-4 flex items-center justify-between mb-4">
+                <div className="flex items-center">
+                    <img className="object-cover h-10 w-10 rounded-full"
+                        // https://via.placeholder.com/40 löst Felher in console aus.
+                        // src={hobby.autorBild || "https://via.placeholder.com/40"}
+                         src={autorFoto || "src/assets/user-placeholder-icon.PNG"}
+                         alt="Autor"
+                    />
+                    <span className="mx-2 font-semibold text-gray-500">
+                            {props.benutzern ? props.benutzern.find(b => b.id === props.hobby.autorId).benutzername : "Unbekannt"}
+                        </span>
+                    <span className="text-xs text-gray-400">
+                            {new Date(props.hobby.erstelltAm).toLocaleDateString("de-DE")}
+                        </span>
+                </div>
+            </div>
             <div >
                 <h2 className="text-3xl font-bold mb-4 text-[var(--cl-green)]">{props.hobby.ueberschrift}</h2>
             </div>

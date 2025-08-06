@@ -133,22 +133,22 @@ function App() {
                 />
                 <Route
                     path={`/sport`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"sport"}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"sport"} benutzern={benutzerListe}/>}/>
                 <Route
                     path={`/kunst`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"kunst"}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"kunst"} benutzern={benutzerListe}/>}/>
                 <Route
                     path={`/outdoor`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"outdoor"}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"outdoor"} benutzern={benutzerListe}/>}/>
                 <Route
                     path={`/kochen`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"kochen"}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"kochen"} benutzern={benutzerListe}/>}/>
                 <Route
                     path={`/musik`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"musik"}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"musik"} benutzern={benutzerListe}/>}/>
                 <Route
                     path={`/sonstiges`}
-                    element={<CategoryPage beitraege={beitraege} kategorie={"sonstiges"}/>}/>
+                    element={<CategoryPage beitraege={beitraege} kategorie={"sonstiges"} benutzern={benutzerListe}/>}/>
 
             </Routes>
             <Footer />

@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 const FeaturedHobby = ({ hobby, benutzern }) => {
     const [liked, setLiked] = useState(false);
 
+    // autorFoto wird in benutzern array gesucht.
+    const autorFoto = benutzern && benutzern.find(benutzer => benutzer.id === hobby.autorId).foto;
+
     // Beim Laden Like-Status aus localStorage lesen
     useEffect(() => {
         const likedPosts = JSON.parse(localStorage.getItem("likedPosts") || "{}");
@@ -50,9 +53,7 @@ const FeaturedHobby = ({ hobby, benutzern }) => {
                             // https://via.placeholder.com/40 löst Felher in console aus.
                             //ich nutze eine temporäre Variante, die ein Bild von assets nimmt.
                             // src={hobby.autorBild || "https://via.placeholder.com/40"}
-                            src={hobby.autorBild || "src/assets/user-placeholder-icon.PNG"}
-
-
+                            src={autorFoto || "src/assets/user-placeholder-icon.PNG"}
                             alt="Autor"
                         />
                         <span className="mx-2 font-semibold text-gray-700">

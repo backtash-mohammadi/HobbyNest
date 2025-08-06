@@ -81,7 +81,7 @@ export function DialogWithForm({ benutzerListe, onLogin, onRegistrieren }) {
                                 <Input
                                     value={bn}
                                     onChange={e => setBn(e.target.value)}
-                                    className="h-8 text-xl mb-6"
+                                    className="h-8 text-xl mb-6 pl-3"
                                     placeholder=" Benutzername"
                                     size="lg"
                                 />
@@ -92,7 +92,7 @@ export function DialogWithForm({ benutzerListe, onLogin, onRegistrieren }) {
                                     type="password"
                                     value={pw}
                                     onChange={e => setPw(e.target.value)}
-                                    className="h-8 text-xl mb-10"
+                                    className="h-8 text-xl mb-10 pl-3"
                                     placeholder=" Passwort"
                                     size="lg"
 

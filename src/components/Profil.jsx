@@ -13,9 +13,10 @@ import { FaSignOutAlt, FaTimes, FaUpload, FaEdit } from "react-icons/fa";
 import { FcCancel } from "react-icons/fc";
 import { IoCloseSharp } from "react-icons/io5";
 import platzhalterBild from '../assets/platzhalter.webp';
+import DeleteButton from "./DeleteButton.jsx";
 
 // Komponente für Benutzerprofil mit Bearbeitungsfunktion
-export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSpeichern }) {
+export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSpeichern, onLoeschen }) {
     // Nur Admin darf Rolle ändern und nicht sich selbst
     const darfRolleAendern = currentUser?.rolle === "admin" && currentUser.id !== aktuellerBenutzer.id;
 
@@ -32,6 +33,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
     const [neuesPasswort, setNeuesPasswort] = useState("");
     const [passwortBestaetigung, setPasswortBestaetigung] = useState("");
     const [passwortFehler, setPasswortFehler] = useState("");
+    const darfBenutzerLoeschen = darfRolleAendern;
 
     // Datum formatieren
     const datum = new Date(aktuellerBenutzer.erstelltAm).toLocaleDateString("de-DE", {
@@ -138,14 +140,14 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     onChange={e => setVorname(e.target.value)}
                                     size="lg"
                                     label="Vorname"
-                                    className="text-xl"
+                                    className="text-xl pl-3"
                                 />
                                 <Input
                                     value={nachname}
                                     onChange={e => setNachname(e.target.value)}
                                     size="lg"
                                     label="Nachname"
-                                    className="text-xl"
+                                    className="text-xl pl-3"
                                 />
                             </div>
                         ) : (
@@ -169,7 +171,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                     onChange={(e) => setEmail(e.target.value)}
                                     size="lg"
                                     label="E-Mail"
-                                    className="text-xl"
+                                    className="text-xl pl-3"
                                 />
                                 {/* Passwortänderung nur für sich selbst */}
                                 {currentUser.id === aktuellerBenutzer.id && (
@@ -180,7 +182,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                             onChange={(e) => setAktuellesPasswort(e.target.value)}
                                             size="lg"
                                             label="Aktuelles Passwort"
-                                            className="text-xl"
+                                            className="text-xl pl-3"
                                         />
                                         <Input
                                             type="password"
@@ -188,7 +190,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                             onChange={(e) => setNeuesPasswort(e.target.value)}
                                             size="lg"
                                             label="Neues Passwort"
-                                            className="text-xl"
+                                            className="text-xl pl-3"
                                         />
                                         <Input
                                             type="password"
@@ -196,7 +198,7 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                             onChange={(e) => setPasswortBestaetigung(e.target.value)}
                                             size="lg"
                                             label="Passwort bestätigen"
-                                            className="text-xl"
+                                            className="text-xl pl-3"
                                         />
                                         {passwortFehler && (
                                             <Typography variant="small" color="red">
@@ -211,8 +213,6 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                 <span className="font-bold ">E-Mail:</span> {email}
                             </Typography>
                         )}
-
-
 
                         {/* Rolle oder Auswahl */}
                         {bearbeitungsModus && darfRolleAendern ? (
@@ -280,14 +280,32 @@ export function Profil({ aktuellerBenutzer, currentUser, onLogout, onClose, onSp
                                 >
                                     <FaEdit /> Bearbeiten
                                 </Button>
-                                <Button
+                                {darfBenutzerLoeschen ? (
+                                  <Button
+                                      variant="outlined"
+                                      size="sm"
+                                      className="normal-case flex items-center gap-2 cursor-pointer text-sm"
+                                    onClick={() => {
+                                      if (window.confirm(
+                                        `Soll der Benutzer "${aktuellerBenutzer.benutzername}" wirklich gelöscht werden?`
+                                      )) {
+                                        onLoeschen(aktuellerBenutzer.id);
+                                        onClose();
+                                      }
+                                    }}
+                                  >
+                                      🗑️ Löschen
+                                  </Button>
+                                ) : (
+                                  <Button
                                     variant="outlined"
                                     size="sm"
                                     onClick={onLogout}
                                     className="normal-case flex items-center gap-2 cursor-pointer text-sm"
-                                >
+                                  >
                                     <FaSignOutAlt /> Abmelden
-                                </Button>
+                                  </Button>
+                                )}
                                 {/* Schließen-Button unten */}
                                 <Button
                                     variant="outlined"

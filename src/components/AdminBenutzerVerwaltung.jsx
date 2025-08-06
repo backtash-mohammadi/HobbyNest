@@ -13,7 +13,7 @@ import platzhalterBild from '../assets/platzhalter.webp';
 import { motion } from "framer-motion";
 
 // Komponente für den Administrator: Liste der Benutzer, Filter nach Name und Rolle, Paginierung
-export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzerAktualisieren }) {
+export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzerAktualisieren, onLoeschen}) {
     const [ausgewaehlterBenutzer, setAusgewaehlterBenutzer] = useState(null);
     const [suchName, setSuchName] = useState("");
     const [rollenFilter, setRollenFilter] = useState("alle");
@@ -62,7 +62,7 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
 
             {/* Nach Rolle filtern */}
             <div className="flex gap-4 mb-4">
-                <label className="flex items-center gap-2">
+                <label className="flex items-center gap-2 h-10">
                     <span>Rolle:</span>
                     <select
                         value={rollenFilter}
@@ -77,10 +77,10 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
 
                 {/* Suche nach Name oder Login */}
                 <Input
-                    label="Suche nach Name oder Benutzername"
+                    placeholder="Suche nach Name oder Benutzername"
                     value={suchName}
                     onChange={handleSucheChange}
-                    className="flex-1"
+                    className="flex-1 pl-3 text-xl h-10"
                 />
             </div>
 
@@ -152,6 +152,7 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
                         onBenutzerAktualisieren(geänderterBenutzer);
                         setAusgewaehlterBenutzer(null);
                     }}
+                    onLoeschen={onLoeschen}
                 />
             )}
         </div>

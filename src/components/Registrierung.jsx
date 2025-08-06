@@ -123,7 +123,7 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                             value={benutzername}
                             onChange={e => setBenutzername(e.target.value)}
                             placeholder="Benutzername"
-                            className="h-8 text-xl mb-6"
+                            className="h-8 text-xl mb-6 pl-3"
                             size="lg"
                         />
                         <label className="">
@@ -134,7 +134,7 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                             value={passwort}
                             onChange={e => setPasswort(e.target.value)}
                             placeholder="Passwort"
-                            className="h-8 text-xl mb-6"
+                            className="h-8 text-xl mb-6 pl-3"
                             size="lg"
                         />
                         <label className="">
@@ -145,21 +145,21 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                             value={passwortBestaetigung}
                             onChange={e => setPasswortBestaetigung(e.target.value)}
                             placeholder="Passwort bestätigen"
-                            className="h-8 text-xl mb-6"
+                            className="h-8 text-xl mb-6 pl-3"
                             size="lg"
                         />
                         <Input
                             value={vorname}
                             onChange={e => setVorname(e.target.value)}
                             placeholder="Vorname"
-                            className="h-8 text-xl mb-6"
+                            className="h-8 text-xl mb-6 pl-3"
                             size="lg"
                         />
                         <Input
                             value={nachname}
                             onChange={e => setNachname(e.target.value)}
                             placeholder="Nachname"
-                            className="h-8 text-xl mb-6"
+                            className="h-8 text-xl mb-6 pl-3"
                             size="lg"
                         />
                         <Input
@@ -167,7 +167,7 @@ export function Registrierung({ benutzerListe, onRegistrieren, onClose }) {
                             value={email}
                             onChange={e => setEmail(e.target.value)}
                             placeholder="E-Mail"
-                            className="h-8 text-xl mb-6"
+                            className="h-8 text-xl mb-6 pl-3"
                             size="lg"
                         />
 

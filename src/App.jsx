@@ -103,6 +103,14 @@ function App() {
         navigate(`/${encodeURIComponent(neuerBeitrag.ueberschrift)}`);
     }
 
+    // Funktion zum Löschen eines Benutzers nach ID
+    const handleBenutzerLoeschen = (benutzerId) => {
+        // Entfernen eines Benutzers aus der Liste
+        setBenutzerListe(prev =>
+            prev.filter(u => u.id !== benutzerId)
+        );
+    }
+
     return (
         <>
             {/*<div className="fixed inset-0 -z-10">*/}
@@ -128,6 +136,7 @@ function App() {
                                 benutzerListe={benutzerListe}
                                 currentUser={aktuellerBenutzer}
                                 onBenutzerAktualisieren={handleProfilSpeichern}
+                                onLoeschen={handleBenutzerLoeschen}
                             />
                         ) : (
                             <Navigate to="/" replace />

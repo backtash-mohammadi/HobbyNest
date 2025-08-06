@@ -55,7 +55,7 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
     };
 
     return (
-        <div className="p-6">
+        <div className="p-6 bg-[var(--cl-base)]">
             <Typography variant="h2" className="mb-10 text-center font-medium">
                 Benutzerverwaltung (Admin)
             </Typography>
@@ -86,21 +86,21 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 mt-4">
                 {angezeigteBenutzer.map((benutzer) => (
-                    <BewegteKarte key={benutzer.id} className="flex items-center gap-4 p-4 "
+                    <BewegteKarte key={benutzer.id} className="flex items-center gap-4 p-4"
                                   whileHover={{ scale: 1.04 }}
                                   transition={{ type: "spring", stiffness: 250, damping: 40 }}
                     >
                         <Avatar
                             src={benutzer.foto || platzhalterBild}
                             alt={benutzer.benutzername}
-                            size="xs"
+                            className="h-40 w-40 object-cover"
                             variant="circular"
                         />
                         <div className="flex-1 ">
-                            <Typography variant="small" className="font-bold text-base">
+                            <Typography variant="small" className="font-bold text-base text-center">
                                 {benutzer.vorname} {benutzer.nachname}
                             </Typography>
-                            <Typography variant="small" className="text-gray-500 text-base">
+                            <Typography variant="small" className="text-gray-500 text-base text-center">
                                 @{benutzer.benutzername} • Rolle: {benutzer.rolle}
                             </Typography>
                         </div>

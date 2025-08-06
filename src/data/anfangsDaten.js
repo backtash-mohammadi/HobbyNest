@@ -136,9 +136,9 @@ export const anfangsBenutzer = [
     },
     {
         id: "a8f4b1b7-41ae-4861-b6c2-0975f1f0e427",
-        benutzername: "user14",
+        benutzername: "mondschatten",
         passwortHash: "$2b$10$qW7s1pX2QhbCrdEeVLtQWO5T9DXoEw6qTmwUMcmn449Nc09.xINLi",
-        rolle: "mondschatten",
+        rolle: "user",
         vorname: "Simon",
         nachname: "Jäger",
         email: "",

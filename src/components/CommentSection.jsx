@@ -114,11 +114,11 @@ const CommentSection = ({postId, benutzer, benutzern, onKommentareHinzu, onKomme
                                         <span>{benutzern.find(b => b.id === c.autorId)?.benutzername || "Unbekannt"}</span>
                                         <span className="text-xs text-[var(--cl-subtext1)]">
                                 </span>
-
+                                        <span className="text-xs text-[var(--cl-subtext1)]">{c.erstelltAm}</span>
                                         {/*Der DeleteButton ist nur für Admin und für den Author des Kommentares sichtbar*/}
                                         { benutzer && (benutzer.id === c.autorId || benutzer.rolle === "admin") &&
                                             <div className="flex items-center space-x-2">
-                                                <span className="text-xs text-[var(--cl-subtext1)]">{c.erstelltAm}</span>
+
                                                 <DeleteButton onClick={() => onKommentareLoeschen(c.id)} />
                                             </div>
                                         }

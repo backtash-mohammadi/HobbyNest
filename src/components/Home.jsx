@@ -44,6 +44,9 @@ const Home = (props) => {
         }
     }, [props.benutzer, props.beitraege, likesChanged]); // Re-run if user, posts, or a like changes
 
+    useEffect(() => {
+        setAktuelleSeite(1);
+    }, [showLiked, suchUeberschrift]);
 
     // --- Combine likes filter and search filter ---
     // 1. If "show only liked" is enabled, filter to only liked posts
@@ -65,7 +68,7 @@ const Home = (props) => {
             .includes(suchUeberschrift.toLowerCase())
     );
 
-    const gesamtSeiten = Math.ceil(gefilterteBeitraege.length / eintraegeProSeite) || 1;
+    const gesamtSeiten = Math.ceil(filteredPosts.length / eintraegeProSeite) || 1;
 
     const indexLetzter = aktuelleSeite * eintraegeProSeite;
     const indexErster = indexLetzter - eintraegeProSeite;

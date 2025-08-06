@@ -27,6 +27,7 @@ export default function ImageUploader({ onImageUpload }) {
                     src={preview}
                     alt="Vorschau"
                     className="mt-2 max-h-48 rounded-md shadow cursor-pointer"
+
                 />
             )}
         </motion.div>

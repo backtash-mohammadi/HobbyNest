@@ -12,7 +12,12 @@ import ImageUploader from "./ImageUploader.jsx";
 // Der Component wird zu einer bestimmen path in App.jsx verbunden.
 const HobbyDetails = (props) => {
     const { hobbyTitle } = useParams();
-    const autorFoto = props.benutzern && props.benutzern.find(benutzer => benutzer.id === props.hobby.autorId).foto;
+    // const autorFoto = props.benutzern && props.benutzern.find(benutzer => benutzer.id === props.hobby.autorId).foto;
+    const autorFoto = props.benutzern
+            ?.find(benutzer => benutzer.id === props.hobby.autorId)
+            ?.foto
+        ?? 'src/assets/user-placeholder-icon.PNG';
+
     let anzahlDerKommentare = props.kommentare ? props.kommentare.filter(k => k.beitragId === props.hobby.id).length : 0;
 
     // useState Hooks to edit the Post, after the admin user clicks on "editPost"
@@ -46,7 +51,12 @@ const HobbyDetails = (props) => {
                          alt="Autor"
                     />
                     <span className="mx-2 font-semibold text-gray-500">
-                            {props.benutzern ? props.benutzern.find(b => b.id === props.hobby.autorId).benutzername : "Unbekannt"}
+                            {/*{props.benutzern ? props.benutzern.find(b => b.id === props.hobby.autorId).benutzername : "Unbekannt"}*/}
+                        { props.benutzern
+                                ?.find(b => b.id === props.hobby.autorId)
+                                ?.benutzername
+                            ?? "Unbekannt"
+                        }
                         </span>
                     <span className="text-xs text-gray-400">
                             {new Date(props.hobby.erstelltAm).toLocaleDateString("de-DE")}
@@ -104,11 +114,12 @@ const HobbyDetails = (props) => {
                     <h3 className="text-3xl font-bold mb-2 text-[var(--cl-green)]">Beitrag bearbeiten</h3>
                     <form onSubmit={(e) => {
                         e.preventDefault();
+                        const uebernehmeBild = bild ?? props.hobby.bild;
                         props.onBeitragBearbeiten({
                             ...props.hobby,
                             ueberschrift: bearbeiteUeberschrift.trim(),
                             inhalt: bearbeiteInhalt,
-                            bild: bild
+                            bild: uebernehmeBild
                         });
                         setEditBeitragId(null);
 

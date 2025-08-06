@@ -5,10 +5,14 @@ import FeaturedHobby from "./FeaturedHobby.jsx";
 import NewPost from "./NewPost.jsx";
 import CategoryNavBar from "./CategoryNavBar.jsx";
 import {Input} from "@material-tailwind/react";
+import Pagination from './Pagination.jsx';
 
 const Home = (props) => {
     const [suchUeberschrift, setSuchUeberschrift] = useState("");
+    const [aktuelleSeite, setAktuelleSeite] = useState(1);
     const benutzernListe = props.benutzern;
+
+    const eintraegeProSeite = 9;
     // const colors = [
     //     "#ff0088", // pink
     //     "#00d1ff", // sky blue
@@ -34,6 +38,12 @@ const Home = (props) => {
             .includes(suchUeberschrift.toLowerCase())
     );
 
+    const gesamtSeiten = Math.ceil(gefilterteBeitraege.length / eintraegeProSeite) || 1;
+
+    const indexLetzter = aktuelleSeite * eintraegeProSeite;
+    const indexErster = indexLetzter - eintraegeProSeite;
+    const sichtbareBeitraege = gefilterteBeitraege.slice(indexErster, indexLetzter);
+
     return (
         // <div className="min-h-screen px-6 py-10 bg-[var(--cl-base)] text-[var(--cl-text)]">
         <div className="min-h-screen px-6 py-10 bg-[var(--cl-base)] text-[var(--cl-text)]">
@@ -48,7 +58,10 @@ const Home = (props) => {
                 <Input
                     placeholder="Suche nach Hobby-Titel"
                     value={suchUeberschrift}
-                    onChange={(e) => setSuchUeberschrift(e.target.value)}
+                    onChange={(e) => {
+                        setSuchUeberschrift(e.target.value);
+                        setAktuelleSeite(1);
+                    }}
                     className="w-full text-xl pl-3 h-12"
                 />
             </div>
@@ -67,8 +80,8 @@ const Home = (props) => {
                 {/*</div>*/}
 
                 {/* Right: List of Featured Hobby Cards */}
-                <div className="grid place-items-top grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                    {gefilterteBeitraege.map((hobby) => (
+                <div className="grid place-items-top grid-cols-1 md:grid-cols-3 gap-6 w-full justify-items-stretch items-start">
+                    {sichtbareBeitraege.map((hobby) => (
                         <motion.div
                             key={hobby.id}
                             whileHover={{ scale: 1.03 }}
@@ -80,6 +93,11 @@ const Home = (props) => {
                     ))}
                 </div>
             </div>
+            <Pagination
+                aktuelleSeite={aktuelleSeite}
+                gesamtSeiten={gesamtSeiten}
+                onSeitewechsel={(seite) => setAktuelleSeite(seite)}
+            />
             {/* Ich habe die CommentSection Component innerhalb dem HobbyDetails component versetzt.  */}
             {/*Auf Wunsch, kann man auch die ganze Liste der Kommentare hier in Home page sichtbar lassen.*/}
             {/*<CommentSection />*/}

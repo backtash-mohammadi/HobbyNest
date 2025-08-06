@@ -91,7 +91,7 @@ const Navbar = ({
                                         >
                                             <Link
                                                 to="/neuerBeitrag"
-                                                className="bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
+                                                className="bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold whitespace-nowrap"
                                             >
                                                 Neuer Beitrag
                                             </Link>
@@ -102,7 +102,7 @@ const Navbar = ({
                                         >
                                             <Link
                                                 to="/admin/benutzer"
-                                                className="bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
+                                                className="bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold whitespace-nowrap"
                                             >
                                                 Benutzer verwalten
                                             </Link>

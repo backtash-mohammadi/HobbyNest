@@ -125,7 +125,7 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
                     onClick={geheZuVorheriger}
                     className="normal-case cursor-pointer flex items-center text-base"
                 >
-                    <FaBackward />{"\u00A0"}Zurück
+                    <FaBackward />{"\u00A0"}Vorherige
                 </Button>
                 <Typography variant="small" className="text-base">
                     Seite {aktuelleSeite} von {gesamtSeiten}

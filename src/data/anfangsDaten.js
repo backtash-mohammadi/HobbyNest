@@ -236,7 +236,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Waldabenteuer mit Kindern",
         inhalt: "Ein Tag im Wald ist für Kinder ein echtes Abenteuer. Zwischen Bäumen, Moos und kleinen Tieren können sie spielerisch die Natur entdecken. Mit einer Lupe im Gepäck wird jeder Käfer spannend und ein selbst gebautes Waldtipi regt die Fantasie an. Gleichzeitig lernen Kinder den respektvollen Umgang mit Pflanzen und Tieren.",
         autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2025-07-11'),
         kategorie: "outdoor",
         bild: 'src/assets/kindern-beitrag-1.jpeg'
     },
@@ -245,7 +245,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Familienausflug zum Barfußpfad",
         inhalt: "Barfußpfade sind ein tolles Erlebnis für Groß und Klein. Kinder lieben es, verschiedene Untergründe wie Sand, Kies, Holz und Schlamm mit den Füßen zu ertasten. Es fördert nicht nur die Sinne und das Gleichgewicht, sondern sorgt auch für viel Spaß an der frischen Luft. Ideal für einen aktiven Familiennachmittag.",
         autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2025-07-21'),
         kategorie: "outdoor",
         bild: 'src/assets/barfusspad-beitrag.webp'
     },
@@ -254,7 +254,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Wandern in den Alpen",
         inhalt: "Eine Wanderung in den Alpen bietet nicht nur atemberaubende Ausblicke, sondern auch eine wunderbare Möglichkeit, Körper und Geist zu stärken. Die frische Bergluft, das Zwitschern der Vögel und die stille Natur helfen beim Abschalten vom Alltag. Ob eine gemütliche Tagestour oder eine anspruchsvolle Mehrtageswanderung – die Alpen bieten für jede Fitnessstufe die passende Route.",
         autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
-        erstelltAm: new Date("2025-08-12"),
+        erstelltAm: new Date("2025-08-02"),
         kategorie: "outdoor",
         bild: 'src/assets/alpen-beitrag.jpg'
     },
@@ -263,7 +263,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Kanutour auf der Mecklenburgischen Seenplatte",
         inhalt: "Die Mecklenburgische Seenplatte ist ein Paradies für Wassersportfreunde. Eine Kanutour dort führt durch idyllische Flussläufe und klare Seen, vorbei an dichten Wäldern und kleinen Dörfern. Wer Ruhe und Natur sucht, ist hier genau richtig. Unterwegs kann man Biber, Fischreiher und mit etwas Glück sogar Seeadler beobachten.",
         autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2025-07-11'),
         kategorie: "outdoor",
         bild: 'src/assets/kanu-beitrag.jpg'
     },
@@ -272,7 +272,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Klettern im Elbsandsteingebirge",
         inhalt: "Das Elbsandsteingebirge ist bekannt für seine markanten Felsformationen und zählt zu den besten Klettergebieten Europas. Neben klassischen Routen bietet die Region auch Klettersteige und Wanderwege mit spektakulären Aussichten. Wer lieber festen Boden unter den Füßen hat, kann auf zahlreichen Aussichtspunkten die Kletternden bestaunen.",
         autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2025-07-13'),
         kategorie: "outdoor",
         bild: 'src/assets/klettern-beitrag.webp',
 
@@ -282,7 +282,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Radfahren entlang der Nordseeküste",
         inhalt: "Der Nordseeküstenradweg führt durch Dünenlandschaften, kleine Fischerdörfer und vorbei an historischen Leuchttürmen. Eine Radtour entlang der Küste bietet frische Seeluft, landschaftliche Vielfalt und viele Gelegenheiten zum Verweilen. Besonders schön sind die Sonnenuntergänge über dem Meer nach einem aktiven Tag im Sattel.",
         autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2025-01-21'),
         kategorie: "outdoor",
         bild: 'src/assets/radfahren-beitrag.png'
     },
@@ -291,7 +291,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Schnelle Pasta unter 20 Minuten",
         inhalt: "Für stressige Tage ist eine schnelle Pasta genau das Richtige. Mit nur wenigen Zutaten wie Knoblauch, Tomaten und Basilikum zauberst du ein leckeres Gericht, das der ganzen Familie schmeckt. Ideal für den Feierabend – unkompliziert, frisch und sättigend.",
         autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2025-06-01'),
         kategorie: "kochen",
         bild: 'src/assets/pasta-beitrag.jpg'
 
@@ -301,7 +301,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Vegane Gerichte einfach gemacht",
         inhalt: "Veganes Kochen muss nicht kompliziert sein. Mit Linsen, Kichererbsen und frischem Gemüse entstehen nahrhafte Gerichte, die nicht nur gesund sind, sondern auch köstlich schmecken. Probiere ein veganes Curry oder eine Gemüsepfanne – einfach, lecker und tierfrei.",
         autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2025-05-01'),
         kategorie: "kochen",
         bild: 'src/assets/vegane-beitrag.jpeg'
     },
@@ -310,7 +310,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Backen mit Kindern",
         inhalt: "Backen macht Kindern riesigen Spaß! Ob einfache Muffins, Kekse oder ein bunter Kuchen – beim Rühren, Kneten und Verzieren können sie sich kreativ austoben. Gleichzeitig lernen sie spielerisch Mengen, Zutaten und den Umgang mit Lebensmitteln kennen.",
         autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2025-03-01'),
         kategorie: "kochen",
         bild: 'src/assets/backen-kindern-beitrag.jpg'
     },
@@ -319,7 +319,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Meal Prep für die Woche",
         inhalt: "Wer unter der Woche wenig Zeit zum Kochen hat, sollte Meal Prep ausprobieren. Am Wochenende vorgekocht, können Gerichte wie Chili, Reisgerichte oder Ofengemüse portionsweise aufbewahrt werden. So sparst du Zeit und isst trotzdem frisch und gesund.",
         autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2025-07-12'),
         kategorie: "kochen",
         bild: 'src/assets/meal-prep-beitrag.jpg'
     },
@@ -328,7 +328,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Smart Home für Einsteiger",
         inhalt: "Ein Smart Home bietet Komfort und Sicherheit. Mit Sprachassistenten, smarten Lampen und Heizkörperthermostaten lässt sich der Alltag bequem per App oder Sprache steuern. Ideal für Technikbegeisterte, die ihr Zuhause modernisieren möchten.",
         autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2025-06-01'),
         kategorie: "sonstiges",
         bild: 'src/assets/smarhome-beitrag.jpg'
     },
@@ -337,7 +337,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Minimalismus im Wohnzimmer",
         inhalt: "Weniger ist mehr: Ein minimalistisches Wohnzimmer schafft Ruhe und Ordnung. Klare Linien, helle Farben und wenige, aber hochwertige Möbelstücke verleihen dem Raum eine moderne, zeitlose Ästhetik. Ideal für alle, die bewusst wohnen möchten.",
         autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2025-02-01'),
         kategorie: "sonstiges",
         bild: 'src/assets/minimalismus-beitrag.jpg',
     },
@@ -346,7 +346,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Die Zukunft von KI im Alltag",
         inhalt: "Künstliche Intelligenz verändert unseren Alltag rasant. Vom personalisierten Einkaufserlebnis bis hin zur automatisierten Textbearbeitung – KI wird in vielen Bereichen zur Unterstützung eingesetzt. Ein spannender Blick auf kommende Entwicklungen.",
         autorId: "ee9558ac-eee7-4efd-9df4-72e25e241b87",
-        erstelltAm: new Date(),
+        erstelltAm: new Date('2024-08-01'),
         kategorie: "sonstiges",
         bild: 'src/assets/ki-beitrag.jpg'
     },
@@ -374,8 +374,130 @@ export const anfangsBeitraege = [
 ];
 
 export const anfangsKommentare = [
-    { id: '1', beitragId: '1', autorId: '2', inhalt: 'Toller Start!', erstelltAm: '2025-07-02T00:00:00Z' },
-    { id: '2', beitragId: '2', autorId: '1', inhalt: 'Weiter so!', erstelltAm: '2025-07-16T00:00:00Z' },
+    // Beitrag 5
+    { id: '1', beitragId: '5', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Ausdauertraining hat meine Kondition enorm verbessert.', erstelltAm: '2025-08-02T08:15:00Z' },
+    { id: '2', beitragId: '5', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Die täglichen 30 Minuten tun mir richtig gut!', erstelltAm: '2025-08-03T10:30:00Z' },
+    { id: '3', beitragId: '5', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Aufwärmen nicht vergessen, sehr wichtig gegen Muskelkater.', erstelltAm: '2025-08-04T07:45:00Z' },
+    { id: '4', beitragId: '5', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Mein Schlaf hat sich seitdem deutlich verbessert.', erstelltAm: '2025-08-05T21:20:00Z' },
+
+    // Beitrag 6
+    { id: '5', beitragId: '6', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Die Dehnübungen haben mir beim Aufwärmen sehr geholfen.', erstelltAm: '2025-08-04T09:00:00Z' },
+    { id: '6', beitragId: '6', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Vor allem die Hüftkreise sind bei mir nun fester Bestandteil.', erstelltAm: '2025-08-05T12:10:00Z' },
+    { id: '7', beitragId: '6', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Ich fühle mich nach dem Dehnen weniger verspannt.', erstelltAm: '202508-068:55:00Z' },
+
+    // Beitrag 7
+    { id: '8', beitragId: '7', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Die Technikhinweise waren besonders wertvoll für Einsteiger.', erstelltAm: '2025-erstelltAmT08:25:00Z' },
+    { id: '9', beitragId: '7', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Langsam steigern hat meine Motivation hochgehalten.', erstelltAm: '2025-08-06T11:05:00Z' },
+    { id: '10', beitragId: '7', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Regeneration ist wirklich ein Schlüssel zum Erfolg.', erstelltAm: '2025-08-06T16:50:00Z' },
+
+    // Beitrag 8
+    { id: '11', beitragId: '8', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Musik hat meine Stimmung beim Arbeiten verbessert.', erstelltAm: '2025-08-02T09:30:00Z' },
+    { id: '12', beitragId: '8', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Interessant, wie unser Herzrhythmus auf Töne reagiert.', erstelltAm: '2025-08-03T14:15:00Z' },
+    { id: '13', beitragId: '8', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Musiktherapie könnte ich mir für stressige Tage gut vorstellen.', erstelltAm: '2025-08-04T11:50:00Z' },
+
+    // Beitrag 9
+    { id: '14', beitragId: '9', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Veganes Curry war ein Hit bei meiner Familie.', erstelltAm: '2025-08-04T10:20:00Z' },
+    { id: '15', beitragId: '9', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Durchs Musizieren habe ich mein Gedächtnis verbessert.', erstelltAm: '2025-08-05T13:45:00Z' },
+    { id: '16', beitragId: '9', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Stressabbau durch Musik wirkt bei mir sehr gut.', erstelltAm: '202508-067:30:00Z' },
+
+    // Beitrag 10
+    { id: '17', beitragId: '10', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Kopfhörer sind ideal für unterwegs.', erstelltAm: '202508-062:00:00Z' },
+    { id: '18', beitragId: '10', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Mit Lautsprechern im Garten habe ich tolle Abende.', erstelltAm: '2025-08-06T15:25:00Z' },
+    { id: '19', beitragId: '10', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Beim Filmeabend darf der Raumklang nicht fehlen.', erstelltAm: '2025-08-06T09:10:00Z' },
+
+    // Beitrag 11
+    { id: '20', beitragId: '11', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Moderne Kunst regt mich oft zum Nachdenken an.', erstelltAm: '2025-08-02T10:00:00Z' },
+    { id: '21', beitragId: '11', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Manchmal erschließt sich die Aussage erst auf den zweiten Blick.', erstelltAm: '2025-08-03T11:30:00Z' },
+    { id: '22', beitragId: '11', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Tolle Einladung zum Dialog mit den Betrachtern.', erstelltAm: '2025-08-04T12:45:00Z' },
+
+    // Beitrag 12
+    { id: '23', beitragId: '12', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Rottöne verwende ich nun häufiger in meinen Bildern.', erstelltAm: '2025-08-02T13:15:00Z' },
+    { id: '24', beitragId: '12', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Blaue Nuancen wirken in meinem Wohnzimmer sehr beruhigend.', erstelltAm: '2025-08-03T14:55:00Z' },
+    { id: '25', beitragId: '12', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Gelb bringt jetzt mehr Optimismus in meine Kunst.', erstelltAm: '2025-08-04T16:30:00Z' },
+
+    // Beitrag 13
+    { id: '26', beitragId: '13', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Die Skulpturen sind tolle Treffpunkte in der Stadt.', erstelltAm: '2025-08-02T09:45:00Z' },
+    { id: '27', beitragId: '13', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Abstrakte Formen regen meine Fantasie an.', erstelltAm: '2025-08-03T10:20:00Z' },
+    { id: '28', beitragId: '13', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Öffentliche Kunst macht unsere Stadt lebendiger.', erstelltAm: '2025-08-05T11:10:00Z' },
+
+    // Beitrag 14
+    { id: '29', beitragId: '14', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Das Waldtipi war das Highlight unseres Ausflugs.', erstelltAm: '2025-erstelltAmT08:00:00Z' },
+    { id: '30', beitragId: '14', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Kinder lieben es, die Natur so hautnah zu erleben.', erstelltAm: '2025-08-06T14:30:00Z' },
+    { id: '31', beitragId: '14', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Eine schöne Idee, um Respekt vor der Umwelt zu fördern.', erstelltAm: '2025-08-06T16:00:00Z' },
+
+    // Beitrag 15
+    { id: '32', beitragId: '15', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Der Barfußpfad war ein Riesenspaß für unsere Familie.', erstelltAm: '2025-erstelltAmT09:15:00Z' },
+    { id: '33', beitragId: '15', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Verschiedene Untergründe stimulieren die Sinne toll.', erstelltAm: '2025-08-06T10:45:00Z' },
+    { id: '34', beitragId: '15', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Balancetraining macht gleich doppelt Spaß hier.', erstelltAm: '2025-08-06T12:30:00Z' },
+
+    // Beitrag 16
+    { id: '35', beitragId: '16', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Die Alpenwanderung war atemberaubend schön.', erstelltAm: '2025-08-06T07:00:00Z' },
+    { id: '36', beitragId: '16', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Frische Bergluft tut Körper und Geist gut.', erstelltAm: '2025-08-06T09:30:00Z' },
+    { id: '37', beitragId: '16', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Aussichten waren spektakulär!', erstelltAm: '2025-08-06T18:00:00Z' },
+    { id: '38', beitragId: '16', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Die Route ist ideal für Einsteiger.', erstelltAm: '2025-08-06T08:45:00Z' },
+
+    // Beitrag 17
+    { id: '39', beitragId: '17', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Die Seenplatte ist wirklich ein Paradies für Kanufahrer.', erstelltAm: '2025-08-06T10:00:00Z' },
+    { id: '40', beitragId: '17', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Biber-Beobachtungen waren das Highlight unserer Tour.', erstelltAm: '2025-08-06T14:20:00Z' },
+    { id: '41', beitragId: '17', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Wasserwege sind ruhig und malerisch.', erstelltAm: '2025-08-06T16:45:00Z' },
+    { id: '42', beitragId: '17', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Perfekt für eine entspannte Auszeit in der Natur.', erstelltAm: '2025-08-06T11:15:00Z' },
+
+    // Beitrag 18
+    { id: '43', beitragId: '18', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Klettern im Elbsandsteingebirge ist eine echte Herausforderung.', erstelltAm: '2025-08-06T09:30:00Z' },
+    { id: '44', beitragId: '18', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Die Aussicht von oben war jede Mühe wert.', erstelltAm: '2025-08-06T13:00:00Z' },
+    { id: '45', beitragId: '18', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Routenvielfalt für Anfänger und Profis.', erstelltAm: '2025-08-06T15:50:00Z' },
+    { id: '46', beitragId: '18', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Unbedingt Klettersteig-Ausrüstung mitnehmen.', erstelltAm: '2025-08-06T17:25:00Z' },
+
+    // Beitrag 19
+    { id: '47', beitragId: '19', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Der Nordseeküstenradweg ist perfekt für lange Touren.', erstelltAm: '2025-08-06T08:10:00Z' },
+    { id: '48', beitragId: '19', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Leuchttürme und Dünen sind wunderbare Fotomotive.', erstelltAm: '2025-08-06T12:35:00Z' },
+    { id: '49', beitragId: '19', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Frische Seeluft motiviert zum Weiterfahren.', erstelltAm: '2025-08-06T14:55:00Z' },
+    { id: '50', beitragId: '19', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Sonnenuntergänge am Deich sind unvergesslich.', erstelltAm: '2025-08-06T19:40:00Z' },
+
+    // Beitrag 20
+    { id: '51', beitragId: '20', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Schnelle Pasta rettet wirklich jeden Feierabend.', erstelltAm: '2025-08-06T18:00:00Z' },
+    { id: '52', beitragId: '20', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Knoblauch-Tomaten-Kombi ist mein Favorit.', erstelltAm: '2025-08-06T17:15:00Z' },
+    { id: '53', beitragId: '20', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Frisches Basilikum macht den Unterschied.', erstelltAm: '2025-08-06T16:25:00Z' },
+    { id: '54', beitragId: '20', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Perfekt für Koch-Anfänger.', erstelltAm: '2025-08-06T15:10:00Z' },
+
+    // Beitrag 21
+    { id: '55', beitragId: '21', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Das vegane Curry war unglaublich lecker.', erstelltAm: '2025-08-06T11:50:00Z' },
+    { id: '56', beitragId: '21', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Linsen und Kichererbsen sind tolle Proteinquellen.', erstelltAm: '2025-08-06T12:55:00Z' },
+    { id: '57', beitragId: '21', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Sehr einfache Zubereitung – dankeschön!', erstelltAm: '2025-08-06T14:30:00Z' },
+    { id: '58', beitragId: '21', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Perfekt für cleane Ernährung.', erstelltAm: '2025-08-06T09:20:00Z' },
+
+    // Beitrag 22
+    { id: '59', beitragId: '22', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Backen mit Kindern macht richtig Spaß!', erstelltAm: '2025-08-06T09:10:00Z' },
+    { id: '60', beitragId: '22', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Muffins sind bei uns jetzt Standard.', erstelltAm: '2025-08-06T10:40:00Z' },
+    { id: '61', beitragId: '22', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Keksdeko mit Kindern ist super kreativ.', erstelltAm: '2025-08-06T13:15:00Z' },
+    { id: '62', beitragId: '22', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Tolle Einführung in Mengenlehre fürs Kind.', erstelltAm: '2025-08-06T15:00:00Z' },
+
+    // Beitrag 23
+    { id: '63', beitragId: '23', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Meal Prep spart mir täglich Zeit.', erstelltAm: '2025-08-06T14:00:00Z' },
+    { id: '64', beitragId: '23', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Chili und Ofengemüse sind meine Favoriten.', erstelltAm: '2025-08-06T16:10:00Z' },
+    { id: '65', beitragId: '23', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Perfekt für stressige Wochen.', erstelltAm: '2025-08-06T18:20:00Z' },
+    { id: '66', beitragId: '23', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Super Tipps zum Portionieren.', erstelltAm: '2025-08-06T09:30:00Z' },
+
+    // Beitrag 25
+    { id: '69', beitragId: '25', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Minimalismus im Wohnzimmer schafft wirklich Ruhe.', erstelltAm: '2025-08-06T09:00:00Z' },
+    { id: '70', beitragId: '25', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Helle Farben und klare Linien wirken bei mir sehr beruhigend.', erstelltAm: '2025-08-06T11:20:00Z' },
+    { id: '71', beitragId: '25', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Weniger Möbel, mehr Platz – das gefällt mir sehr.', erstelltAm: '2025-08-06T14:45:00Z' },
+    { id: '72', beitragId: '25', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Ich habe meine Deko reduziert und fühle mich freier.', erstelltAm: '2025-08-06T16:10:00Z' },
+    { id: '73', beitragId: '25', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Tolle Ideen für eine zeitlose Einrichtung.', erstelltAm: '2025-08-06T09:30:00Z' },
+
+    // Beitrag 26
+    { id: '74', beitragId: '26', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Die Zukunft von KI im Alltag ist spannend.', erstelltAm: '2025-08-06T10:05:00Z' },
+    { id: '75', beitragId: '26', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Automatisierte Textbearbeitung spare ich jetzt täglich.', erstelltAm: '2025-08-06T12:15:00Z' },
+    { id: '76', beitragId: '26', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Personalisierte Einkaufstipps sind sehr nützlich.', erstelltAm: '2025-08-06T15:40:00Z' },
+    { id: '77', beitragId: '26', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Spannender Blick auf kommende Entwicklungen.', erstelltAm: '2025-08-06T17:55:00Z' },
+    { id: '78', beitragId: '26', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'KI-Assistenten erleichtern mir viele Aufgaben.', erstelltAm: '2025-08-06T08:20:00Z' },
+
+    // Beitrag 27
+    { id: '79', beitragId: '27', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Smart Home Integration ist der nächste Schritt.', erstelltAm: '2025-08-06T11:25:00Z' },
+    { id: '80', beitragId: '27', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'KI im Haushalt begeistert mich sehr.', erstelltAm: '2025-08-06T13:50:00Z' },
+    { id: '81', beitragId: '27', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Automatisierte Lichtsteuerung ist praktisch.', erstelltAm: '2025-08-06T16:05:00Z' },
+    { id: '82', beitragId: '27', autorId: 'ee9558ac-eee7-4efd-9df4-72e25e241b87', inhalt: 'Sprachassistenten erleichtern den Alltag enorm.', erstelltAm: '2025-08-06T18:30:00Z' },
+    { id: '83', beitragId: '27', autorId: 'e201c320-c6dc-45d8-9dda-174c0c5bef7e', inhalt: 'Spannende Technologie mit großem Potential.', erstelltAm: '2025-08-06T07:45:00Z' },
     {
         id: '5',
         beitragId: '5',

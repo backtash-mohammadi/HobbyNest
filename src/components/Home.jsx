@@ -86,6 +86,7 @@ const Home = (props) => {
                 Einfache Anleitungen für Anfänger zu unterhaltsamen und lohnenden Hobbys!
             </p>
 
+            <div className="flex justify-start">
             {/* Toggle for likes filter */}
             {props.benutzer && (
                 <div className="flex items-center gap-2 mb-6 justify-center">
@@ -109,7 +110,7 @@ const Home = (props) => {
             )}
 
             {/* Поле поиска */}
-            <div className="mb-8">
+            <div className="ml-15 mb-8 w-80">
                 <Input
                     placeholder="Suche nach Hobby-Titel"
                     value={suchUeberschrift}
@@ -117,13 +118,14 @@ const Home = (props) => {
                         setSuchUeberschrift(e.target.value);
                         setAktuelleSeite(1);
                     }}
-                    className="w-full text-xl pl-3 h-12"
+                    className="text-xl pl-3 h-12 "
                 />
             </div>
+        </div>
 
             <div className="flex items-start gap-6 mb-12">
                 {/* Post Cards */}
-                <div className="grid place-items-top grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                <div className="grid place-items-top grid-cols-1 md:grid-cols-3 gap-6 w-full ">
                     {sichtbareBeitraege.map((hobby) => (
                         <motion.div
                             key={hobby.id}

@@ -122,7 +122,7 @@ function App() {
     }
 
     return (
-        <>
+        <div className="bg-[var(--cl-base)] min-h-screen flex flex-col">
             {/*<div className="fixed inset-0 -z-10">*/}
             {/*    <UseTime />*/}
             {/*</div>*/}
@@ -178,7 +178,7 @@ function App() {
 
             </Routes>
             <Footer />
-        </>
+        </div>
     );
 }
 

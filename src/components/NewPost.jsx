@@ -44,7 +44,7 @@ export default function NewPost({ author, onBeitragHinzufuegen }) {
             <form onSubmit={handleSubmit}>
                 {/* Überschrift */}
                 <input
-                    className="w-full p-2 border border-gray-300 rounded-md resize mb-4"
+                    className="w-full p-2 border border-green-300 rounded-md resize mb-4"
                     value={ueberschrift}
                     onChange={e => setUeberschrift(e.target.value)}
                     placeholder="Überschrift"
@@ -53,7 +53,7 @@ export default function NewPost({ author, onBeitragHinzufuegen }) {
 
                 {/* Inhalt */}
                 <textarea
-                    className="w-full p-2 border border-gray-300 rounded-md resize mb-4 min-h-[240px]"
+                    className="w-full p-2 border border-green-300 rounded-md resize mb-4 min-h-[240px]"
                     value={inhalt}
                     onChange={e => setInhalt(e.target.value)}
                     placeholder="Inhalt"

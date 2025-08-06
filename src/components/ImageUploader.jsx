@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ImageUploader({ onImageUpload }) {
     const [preview, setPreview] = useState(null);
@@ -18,8 +19,9 @@ export default function ImageUploader({ onImageUpload }) {
     }
 
     return (
-        <div className="mb-4 m-2">
-            <input type="file" accept="image/*" onChange={handleImageChange} className="cursor-pointer"/>
+        <motion.div className="mb-4 m-2" whileHover={{ scale: 1.1 }}
+        >
+            <input type="file" accept="image/*" onChange={handleImageChange} className="bg-[var(--cl-green)] text-white px-4 py-2 rounded-md hover:bg-green-700 cursor-pointer"/>
             {preview && (
                 <img
                     src={preview}
@@ -27,6 +29,6 @@ export default function ImageUploader({ onImageUpload }) {
                     className="mt-2 max-h-48 rounded-md shadow cursor-pointer"
                 />
             )}
-        </div>
+        </motion.div>
     );
 }

@@ -15,6 +15,7 @@ import HobbyDetails from "./components/HobbyDetails.jsx";
 import LikeButton from "./components/Like.jsx";
 import Like from "./components/Like.jsx";
 import CategoryPage from "./components/CategoryPage.jsx";
+import NewPost from "./components/NewPost.jsx";
 
 function App() {
     const [benutzerListe, setBenutzerListe] = useState(ladeListe(STORAGE_KEYS.BENUTZER) || anfangsBenutzer);
@@ -130,6 +131,10 @@ function App() {
                             <Navigate to="/" replace />
                         )
                     }
+                />
+                <Route
+                    path={'/neuerBeitrag'}
+                    element={<NewPost author={aktuellerBenutzer} onBeitragHinzufuegen={handleBeitragHinzufuegen}/>}
                 />
                 <Route
                     path={`/sport`}

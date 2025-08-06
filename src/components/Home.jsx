@@ -7,24 +7,24 @@ import CategoryNavBar from "./CategoryNavBar.jsx";
 
 const Home = (props) => {
     const benutzernListe = props.benutzern;
-    const colors = [
-        "#ff0088", // pink
-        "#00d1ff", // sky blue
-        "#34d399", // teal
-        "#facc15", // yellow
-        "#f87171", // red
-        "#a78bfa", // violet
-        "#4ade80", // green
-        "#38bdf8", // blue
-        "#f472b6"  // rose
-    ];
-
-    const boxStyle = {
-        width: 25,
-        height: 25,
-        borderRadius: 7,
-        margin: "1px",
-    };
+    // const colors = [
+    //     "#ff0088", // pink
+    //     "#00d1ff", // sky blue
+    //     "#34d399", // teal
+    //     "#facc15", // yellow
+    //     "#f87171", // red
+    //     "#a78bfa", // violet
+    //     "#4ade80", // green
+    //     "#38bdf8", // blue
+    //     "#f472b6"  // rose
+    // ];
+    //
+    // const boxStyle = {
+    //     width: 25,
+    //     height: 25,
+    //     borderRadius: 7,
+    //     margin: "1px",
+    // };
 
     return (
         // <div className="min-h-screen px-6 py-10 bg-[var(--cl-base)] text-[var(--cl-text)]">
@@ -37,16 +37,16 @@ const Home = (props) => {
 
             <div className="flex items-start gap-6 mb-12">
                 {/* Left: Animated Color Boxes */}
-                <div className="flex flex-col gap-3">
-                    {colors.map((color, index) => (
-                        <motion.div
-                            key={index}
-                            style={{ ...boxStyle, backgroundColor: color }}
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-                        />
-                    ))}
-                </div>
+                {/*<div className="flex flex-col gap-3">*/}
+                {/*    {colors.map((color, index) => (*/}
+                {/*        <motion.div*/}
+                {/*            key={index}*/}
+                {/*            style={{ ...boxStyle, backgroundColor: color }}*/}
+                {/*            animate={{ rotate: 360 }}*/}
+                {/*            transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}*/}
+                {/*        />*/}
+                {/*    ))}*/}
+                {/*</div>*/}
 
                 {/* Right: List of Featured Hobby Cards */}
                 <div className="grid place-items-center grid-cols-1 md:grid-cols-3 gap-6 w-full">
@@ -61,7 +61,7 @@ const Home = (props) => {
 
 
             {/*    New Post section. This section acn be moved elsewhere, if needed.*/}
-            <NewPost author={props.benutzer} onBeitragHinzufuegen={props.onBeitragHinzufuegen}/>
+            {/*<NewPost author={props.benutzer} onBeitragHinzufuegen={props.onBeitragHinzufuegen}/>*/}
         </div>
     );
 };

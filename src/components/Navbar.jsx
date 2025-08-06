@@ -34,7 +34,7 @@ const Navbar = ({
                             whileTap={{ scale: 0.95 }}>
                             <Link
                             to="/"
-                            className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded-2xl font-bold shadow hover:bg-[var(--cl-green)] transition-colors duration-200"
+                            className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold shadow hover:bg-[var(--cl-green)] transition-colors duration-200"
                         >
                             Home
                         </Link>
@@ -78,12 +78,31 @@ const Navbar = ({
 
                                 {/* Admin only: Manage users button */}
                                 {currentUser.rolle === "admin" && (
-                                    <Link
-                                        to="/admin/benutzer"
-                                        className="bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
-                                    >
-                                        Benutzer verwalten
-                                    </Link>
+                                    <>
+                                        <motion.div
+                                            type="button"
+                                            whileHover={{ scale: 1.15 }}
+                                        >
+                                            <Link
+                                                to="/neuerBeitrag"
+                                                className="bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
+                                            >
+                                                Neuer Beitrag
+                                            </Link>
+                                        </motion.div>
+                                        <motion.div
+                                            type="button"
+                                            whileHover={{ scale: 1.15 }}
+                                        >
+                                            <Link
+                                                to="/admin/benutzer"
+                                                className="bg-[var(--cl-green)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
+                                            >
+                                                Benutzer verwalten
+                                            </Link>
+                                        </motion.div>
+
+                                    </>
                                 )}
 
                                 {/* Logout button */}

@@ -5,7 +5,7 @@ import { FaBackward, FaForward } from 'react-icons/fa';
 // Pagination-Komponente zur Navigation zwischen Seiten
 export function Pagination({ aktuelleSeite, gesamtSeiten, onSeitewechsel }) {
     return (
-        <div className="flex justify-center items-center mt-6 gap-4">
+        <div className="flex justify-center items-center mt-6 gap-4 mb-6">
             {/* ZURÜCK-Button */}
             <Button
                 size="sm"

@@ -28,6 +28,11 @@ const HobbyDetails = (props) => {
         return <p className="text-red-500">Keinen Beitrag gefunden</p>;
     }
 
+    const gefilterteKommentare = props.kommentare
+        ? props.kommentare.filter(k => k.beitragId === props.hobby.id)
+        : [];
+    const sortierteKommentare = [...gefilterteKommentare].sort((a, b) => new Date(a.erstelltAm) - new Date(b.erstelltAm));
+
     return (
         <>
         <div className="p-6 max-w-2xl mx-auto bg-white shadow rounded-xl mt-4">
@@ -143,7 +148,7 @@ const HobbyDetails = (props) => {
             }
 
         {/*    Hier habe ich die Kommentare hinzugefügt, die zum Post/Hobby/Beitrag gehören*/}
-            <CommentSection postId={props.hobby.id} benutzer={props.benutzer} benutzern={props.benutzern} kommentare={props.kommentare} onKommentareHinzu={props.onKommenareHinzu} onKommentareLoeschen={props.onKommentareLoeschen}/>
+            <CommentSection postId={props.hobby.id} benutzer={props.benutzer} benutzern={props.benutzern} kommentare={sortierteKommentare} onKommentareHinzu={props.onKommenareHinzu} onKommentareLoeschen={props.onKommentareLoeschen}/>
         </>
     );
 };

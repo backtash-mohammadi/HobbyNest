@@ -122,7 +122,9 @@ function App() {
     }
 
     return (
-        <div className="bg-[var(--cl-base)] min-h-screen flex flex-col">
+        <div className="flex flex-col min-h-screen">
+
+        <div className="bg-[var(--cl-base)] min-h-screen flex flex-col flex-1 pb-32" >
             {/*<div className="fixed inset-0 -z-10">*/}
             {/*    <UseTime />*/}
             {/*</div>*/}
@@ -177,7 +179,9 @@ function App() {
                     element={<CategoryPage beitraege={beitraege} kategorie={"sonstiges"} benutzern={benutzerListe} kommentare={kommentare}/>}/>
 
             </Routes>
+        </div>
             <Footer />
+
         </div>
     );
 }

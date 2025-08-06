@@ -27,7 +27,7 @@ export default function CategoryPage({beitraege, kategorie, benutzern, kommentar
     );
 
     return (
-        <div className="px-7"> {/* padding here */}
+        <div className="px-7 min-h-screen"> {/* padding here */}
             <CategoryNavBar/>
             <h1 className="text-5xl font-bold mb-4 ml-4">{capitalized}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">

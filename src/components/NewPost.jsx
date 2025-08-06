@@ -38,7 +38,7 @@ export default function NewPost({ author, onBeitragHinzufuegen }) {
     if (!author || author.rolle !== "admin") return null;
 
     return (
-        <div className="p-6 max-w-2xl mx-auto bg-white shadow rounded-xl mt-4">
+        <div className="p-6 max-w-2xl mx-auto bg-white shadow rounded-xl mt-4 min-h-screen">
             <h3 className="text-3xl font-bold mb-2 text-[var(--cl-green)]">Neuer Beitrag</h3>
 
             <form onSubmit={handleSubmit}>

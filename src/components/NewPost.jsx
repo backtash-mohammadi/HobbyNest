@@ -89,7 +89,7 @@ export default function NewPost({ author, onBeitragHinzufuegen }) {
                     <motion.button
                         type="submit"
                         whileHover={{ scale: 1.1 }}
-                        className="bg-[var(--cl-green)] text-white px-4 py-2 rounded-md hover:bg-green-700"
+                        className="bg-[var(--cl-green)] text-white px-4 py-2 rounded-md hover:bg-green-700 cursor-pointer"
                     >
                         Beitrag hinzufügen
                     </motion.button>

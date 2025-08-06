@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { DialogWithForm } from "./DialogWithForm.jsx";
@@ -17,8 +17,13 @@ const Navbar = ({
                     onSpeichern,
                 }) => {
     const [profileOffen, setProfileOffen] = useState(false);
+    const [avatarQuelle, setAvatarQuelle] = useState(currentUser?.foto || platzhalterBild);
     // Toggles the user profile dialog open/close
     const toggleProfileOffen = () => setProfileOffen((cur) => !cur);
+
+    useEffect(() => {
+        setAvatarQuelle(currentUser?.foto || platzhalterBild);
+    }, [currentUser?.foto]);
 
     return (
         <>
@@ -70,7 +75,8 @@ const Navbar = ({
                                     aria-label="Profil öffnen"
                                 >
                                     <Avatar
-                                        src={currentUser.foto || platzhalterBild}
+                                        key={avatarQuelle}
+                                        src={avatarQuelle}
                                         alt={currentUser.benutzername}
                                         className="h-10 w-10 rounded-full object-cover cursor-pointer"
                                     />

@@ -10,6 +10,7 @@ import { Profil } from "./Profil.jsx";
 import { FaUserEdit } from "react-icons/fa";
 import { FaBackward, FaForward } from "react-icons/fa6";
 import platzhalterBild from '../assets/platzhalter.webp';
+import { motion } from "framer-motion";
 
 // Komponente für den Administrator: Liste der Benutzer, Filter nach Name und Rolle, Paginierung
 export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzerAktualisieren }) {
@@ -18,6 +19,8 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
     const [rollenFilter, setRollenFilter] = useState("alle");
     const [aktuelleSeite, setAktuelleSeite] = useState(1);
     const eintraegeProSeite = 12;
+
+    const BewegteKarte = motion(Card);
 
     // Filter nach Name, Login und Rolle
     const gefilterteBenutzer = benutzerListe
@@ -83,7 +86,10 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 mt-4">
                 {angezeigteBenutzer.map((benutzer) => (
-                    <Card key={benutzer.id} className="flex items-center gap-4 p-4 ">
+                    <BewegteKarte key={benutzer.id} className="flex items-center gap-4 p-4 "
+                                  whileHover={{ scale: 1.04 }}
+                                  transition={{ type: "spring", stiffness: 250, damping: 40 }}
+                    >
                         <Avatar
                             src={benutzer.foto || platzhalterBild}
                             alt={benutzer.benutzername}
@@ -106,7 +112,7 @@ export function AdminBenutzerVerwaltung({ benutzerListe, currentUser, onBenutzer
                         >
                             <FaUserEdit /> Bearbeiten
                         </Button>
-                    </Card>
+                    </BewegteKarte>
                 ))}
             </div>
 

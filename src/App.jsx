@@ -80,6 +80,7 @@ function App() {
             prev.map(u => u.id === aktualisierterBenutzer.id ? aktualisierterBenutzer : u)
         );
         setCurrentUser(aktualisierterBenutzer);
+        setAktuellerBenutzer(aktualisierterBenutzer);
     };
 
     // Delete a pos/Beitrag/hobby from the Beiträge array.

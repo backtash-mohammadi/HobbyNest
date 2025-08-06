@@ -165,7 +165,7 @@ const CommentSection = ({postId, benutzer, benutzern}) => {
                         <motion.button
                             type="submit"
                             whileHover={{ scale: 1.2 }}
-                            className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold"
+                            className="bg-[var(--cl-blue)] text-[var(--cl-text-dark)] px-4 py-2 rounded font-bold cursor-pointer"
                         >
                             Absenden
                         </motion.button>

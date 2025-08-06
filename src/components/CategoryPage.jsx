@@ -27,10 +27,8 @@ export default function CategoryPage({beitraege, kategorie, benutzern, kommentar
     );
 
     return (
-        <>
-            <div>
-                <CategoryNavBar/>
-            </div>
+        <div className="px-7"> {/* padding here */}
+            <CategoryNavBar/>
             <h1 className="text-5xl font-bold mb-4 ml-4">{capitalized}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                 {sichtbareBeitraege.map((hobby) => (
@@ -48,8 +46,9 @@ export default function CategoryPage({beitraege, kategorie, benutzern, kommentar
                 gesamtSeiten={gesamtSeiten}
                 onSeitewechsel={(seite) => setAktuelleSeite(seite)}
             />
-        </>
+        </div>
     )
+
 
 
 

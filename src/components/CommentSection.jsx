@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaRegCommentAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "./DeleteButton.jsx"
 import DeleteButton from "./DeleteButton.jsx";
-import {ladeListe, speichereListe, STORAGE_KEYS} from "../utils/localStorage.js";
-import {anfangsKommentare} from "../data/anfangsDaten.js";
-
 
 // Main component for displaying and submitting comments
-const CommentSection = ({postId, benutzer, benutzern}) => {
+const CommentSection = ({postId, benutzer, benutzern, onKommentareHinzu, onKommentareLoeschen, kommentare}) => {
     // State for the list of comments
     // const [kommentare, setKommentare] = useState([]);
     //
@@ -68,10 +65,7 @@ const CommentSection = ({postId, benutzer, benutzern}) => {
     //     setKommentare(updated);
     // };
 
-    const [kommentare, setKommentare] = useState(ladeListe(STORAGE_KEYS.KOMMENTARE) || anfangsKommentare);
-    useEffect(() => {
-        speichereListe(STORAGE_KEYS.KOMMENTARE, kommentare);
-    }, [kommentare]);
+    const [inhalt, setInhalt] = useState('');
 
     function kommentarHinzufuegen(e) {
         e.preventDefault();
@@ -83,15 +77,16 @@ const CommentSection = ({postId, benutzer, benutzern}) => {
             minute: "2-digit",
         })
         const neuerKommentar = { id: crypto.randomUUID(), beitragId: postId, autorId: benutzer.id, inhalt, erstelltAm: now};
-        setKommentare(prev => [...prev, neuerKommentar]);
+        onKommentareHinzu(neuerKommentar);
+        // setKommentare(prev => [...prev, neuerKommentar]);
         setInhalt("");
-    }
 
-    function handleKommentarLoeschen(kommentarId) {
-        setKommentare(prev => prev.filter(k => k.id !== kommentarId));
     }
+    // function handleKommentarLoeschen(kommentarId) {
+    //     setKommentare(prev => prev.filter(k => k.id !== kommentarId));
 
-    const [inhalt, setInhalt] = useState('');
+    // }
+
     return (
         <FaRegCommentAlt />,
             <div className="mt-10 max-w-2xl mx-auto bg-[var(--cl-surface0)] text-[var(--cl-text-name)] p-6 rounded-xl shadow-md">
@@ -124,7 +119,7 @@ const CommentSection = ({postId, benutzer, benutzern}) => {
                                         { benutzer && (benutzer.id === c.autorId || benutzer.rolle === "admin") &&
                                             <div className="flex items-center space-x-2">
                                                 <span className="text-xs text-[var(--cl-subtext1)]">{c.erstelltAm}</span>
-                                                <DeleteButton onClick={() => handleKommentarLoeschen(c.id)} />
+                                                <DeleteButton onClick={() => onKommentareLoeschen(c.id)} />
                                             </div>
                                         }
                                     </div>

@@ -254,7 +254,7 @@ export const anfangsBeitraege = [
         ueberschrift: "Wandern in den Alpen",
         inhalt: "Eine Wanderung in den Alpen bietet nicht nur atemberaubende Ausblicke, sondern auch eine wunderbare Möglichkeit, Körper und Geist zu stärken. Die frische Bergluft, das Zwitschern der Vögel und die stille Natur helfen beim Abschalten vom Alltag. Ob eine gemütliche Tagestour oder eine anspruchsvolle Mehrtageswanderung – die Alpen bieten für jede Fitnessstufe die passende Route.",
         autorId: "e201c320-c6dc-45d8-9dda-174c0c5bef7e",
-        erstelltAm: new Date(),
+        erstelltAm: new Date("2025-08-12"),
         kategorie: "outdoor",
         bild: 'src/assets/alpen-beitrag.jpg'
     },

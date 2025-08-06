@@ -137,7 +137,7 @@ const HobbyDetails = (props) => {
             }
 
         {/*    Hier habe ich die Kommentare hinzugefügt, die zum Post/Hobby/Beitrag gehören*/}
-            <CommentSection postId={props.hobby.id} benutzer={props.benutzer} benutzern={props.benutzern}/>
+            <CommentSection postId={props.hobby.id} benutzer={props.benutzer} benutzern={props.benutzern} kommentare={props.kommentare} onKommentareHinzu={props.onKommenareHinzu} onKommentareLoeschen={props.onKommentareLoeschen}/>
         </>
     );
 };

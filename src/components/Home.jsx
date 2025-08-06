@@ -68,7 +68,9 @@ const Home = (props) => {
 
                 {/* Right: List of Featured Hobby Cards */}
                 <div className="grid place-items-top grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                    {gefilterteBeitraege.map((hobby) => (
+                    {gefilterteBeitraege
+                        .sort((a, b) => new Date(b.erstelltAm) - new Date(a.erstelltAm))
+                        .map((hobby) => (
                         <motion.div
                             key={hobby.id}
                             whileHover={{ scale: 1.03 }}

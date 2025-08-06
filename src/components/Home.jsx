@@ -1,11 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import { motion } from "framer-motion";
 import CommentSection from "./CommentSection.jsx";
 import FeaturedHobby from "./FeaturedHobby.jsx";
 import NewPost from "./NewPost.jsx";
 import CategoryNavBar from "./CategoryNavBar.jsx";
+import {Input} from "@material-tailwind/react";
 
 const Home = (props) => {
+    const [suchUeberschrift, setSuchUeberschrift] = useState("");
     const benutzernListe = props.benutzern;
     // const colors = [
     //     "#ff0088", // pink
@@ -26,6 +28,12 @@ const Home = (props) => {
     //     margin: "1px",
     // };
 
+    const gefilterteBeitraege = props.beitraege.filter((beitrag) =>
+        beitrag.ueberschrift
+            .toLowerCase()
+            .includes(suchUeberschrift.toLowerCase())
+    );
+
     return (
         // <div className="min-h-screen px-6 py-10 bg-[var(--cl-base)] text-[var(--cl-text)]">
         <div className="min-h-screen px-6 py-10 bg-[var(--cl-base)] text-[var(--cl-text)]">
@@ -34,6 +42,16 @@ const Home = (props) => {
             <p className="text-lg mb-10 text-[var(--cl-subtext1)] text-center">
                 Einfache Anleitungen für Anfänger zu unterhaltsamen und lohnenden Hobbys!
             </p>
+
+            {/* Поле поиска */}
+            <div className="mb-8">
+                <Input
+                    placeholder="Suche nach Hobby-Titel"
+                    value={suchUeberschrift}
+                    onChange={(e) => setSuchUeberschrift(e.target.value)}
+                    className="w-full text-xl pl-3 h-12"
+                />
+            </div>
 
             <div className="flex items-start gap-6 mb-12">
                 {/* Left: Animated Color Boxes */}
@@ -49,8 +67,8 @@ const Home = (props) => {
                 {/*</div>*/}
 
                 {/* Right: List of Featured Hobby Cards */}
-                <div className="grid place-items-center grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                    {props.beitraege.map((hobby) => (
+                <div className="grid place-items-top grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                    {gefilterteBeitraege.map((hobby) => (
                         <FeaturedHobby key={hobby.id} hobby={hobby} benutzern={benutzernListe} kommentare={props.kommentare}/>
                     ))}
                 </div>
